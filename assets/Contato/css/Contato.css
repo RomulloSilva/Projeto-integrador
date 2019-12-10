@@ -1,0 +1,15 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+  
+    background-image: url("../Images/background.png");
+}
+.container{
+    margin-top:30px;
+    color:white;
+    padding:50px;
+    background-color:rgb(27, 102, 146);
+    opacity: 90%;
+}
