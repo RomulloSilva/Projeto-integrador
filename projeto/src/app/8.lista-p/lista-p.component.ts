@@ -3,7 +3,6 @@ import { Subscriber, from } from 'rxjs';
 
 import{Postagem} from './../model/postagem';
 import {ProdutosService} from './../serviço/produtos.service';
-import { Produtos} from './../model/postagem';
 
 @Component({
   selector: 'app-lista-p',
