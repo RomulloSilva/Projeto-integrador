@@ -31,20 +31,20 @@ export class FormularioAComponent implements OnInit {
     var i = 0;
 
     if (this.nome == "" || this.nome == null) {
-      this._msgNome = "Digite um numero valido";
+      this._msgNome = "Digite um nome valido";
       i++;
     } else {
       this._msgNome = null;
     }
     if (this.sobrenome == "" || this.sobrenome == null) {
-      this._msgSobrenome = "Digite um numero valido";
+      this._msgSobrenome = "Digite um sobrenome valido";
       i++;
     } else {
       this._msgSobrenome = null;
     }
     if (this.email == "" || this.email == null || this.email.indexOf("@") == -1) {
 
-      this._msgEmail = "Digite um numero valido";
+      this._msgEmail = "Digite um e-mail valido";
       i++;
     } else {
       this._msgEmail = null;
@@ -56,19 +56,19 @@ export class FormularioAComponent implements OnInit {
       this._msgTelefone = null;
     }
     if (this.cidade == "" || this.cidade == null) {
-      this._msgCidade = "Digite um numero valido";
+      this._msgCidade = "Digite um valor valido";
       i++;
     } else {
       this._msgCidade = null;
     }
     if (this.estado == "" || this.estado == null) {
-      this._msgEstado = "Digite um numero valido";
+      this._msgEstado = "Digite um valor valido";
       i++;
     } else {
       this._msgEstado = null;
     }
     if (this.msg == "" || this.msg == null) {
-      this._msgTexto = "Digite um numero valido";
+      this._msgTexto = "Digite uma mensagem valido";
       i++;
     } else {
       this._msgTexto = null;

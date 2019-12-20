@@ -4,6 +4,7 @@ import { Subscriber, from } from 'rxjs';
 import{Postagem} from './../model/postagem';
 import {ProdutosService} from './../serviço/produtos.service';
 
+
 @Component({
   selector: 'app-lista-p',
   templateUrl: './lista-p.component.html',
