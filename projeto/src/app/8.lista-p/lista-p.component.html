@@ -23,9 +23,19 @@
 
 
 <!---Conteúdo dos produtos-->
-<div class="container"  *ngIf="produto == null">
+<div class="container text-center"  *ngIf="produto == null">
     <div class="row" *ngFor="let prod of  post"  >
-        <div class="col-md-4">
+        <div class="col-md-6 mt-4 mb-4">
+            <div class="card" style="width: 18rem;" >
+                <img class="card-img-top" src='{{prod.linkimg}}' alt="Imagem de capa do card">
+                <div class="card-body">
+                  <h5 class="card-title">{{prod.titulo}}</h5>
+                  <p class="card-text">{{prod.texto}}</p>
+                  <a href="#" class="btn btn-primary">Visitar</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-6 mt-4 mb-4">
             <div class="card" style="width: 18rem;" >
                 <img class="card-img-top" src='{{prod.linkimg}}' alt="Imagem de capa do card">
                 <div class="card-body">
