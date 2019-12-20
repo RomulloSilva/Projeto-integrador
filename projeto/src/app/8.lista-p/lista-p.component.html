@@ -1,8 +1,39 @@
-<!--Card--><div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-    <div class="card-body">
-      <h5 class="card-title">Título do card</h5>
-      <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-      <a href="#" class="btn btn-primary">Visitar</a>
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="searchbar">
+      <input class="search_input" type="text" id="campoPesquisa" placeholder="Search..." [(ngModel)]="idBusca">
+      <button (click)="pesquisar()"  class="search_icon"><i class="fas fa-search"></i></button>
     </div>
   </div>
+</div>
+<!---Conteúdo pesquisado-->
+<div id="pesquisado" class="row center" *ngIf="produto != null">
+    <div class="col-md-8">
+        <div class="card" style="width: 18rem;" >
+            <img class="card-img-top" src='{{produto.linkimg}}' alt="Imagem de capa do card">
+            <div class="card-body">
+              <h5 class="card-title">{{produto.titulo}}</h5>
+              <p class="card-text">{{produto.texto}}</p>
+              <a href="#" class="btn btn-primary">Visitar</a>
+            </div>
+          </div>
+    </div>
+  </div>
+
+
+
+<!---Conteúdo dos produtos-->
+<div class="container"  *ngIf="produto == null">
+    <div class="row" *ngFor="let prod of  post"  >
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;" >
+                <img class="card-img-top" src='{{prod.linkimg}}' alt="Imagem de capa do card">
+                <div class="card-body">
+                  <h5 class="card-title">{{prod.titulo}}</h5>
+                  <p class="card-text">{{prod.texto}}</p>
+                  <a href="#" class="btn btn-primary">Visitar</a>
+                </div>
+              </div>
+        </div>
+      </div>
+</div>

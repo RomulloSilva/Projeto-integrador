@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';// importação para validar o formulário.
+import {HttpClientModule} from '@angular/common/http';// importação para injetar serviço pela url(objeto).
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,7 +38,9 @@ import { FormularioAComponent } from './6.formulario-a/formulario-a.component';
     /**forms para validar o  */
     FormsModule,
     ReactiveFormsModule,
-    
+    /* http para o serviço de buscar o objeto numa url */
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
