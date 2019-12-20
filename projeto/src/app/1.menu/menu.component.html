@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!--nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -34,4 +34,32 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav>-->
+<div class="row-md-12">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Login
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="#">Sou Empreendedor</a>
+    <a class="dropdown-item" [routerLink]="'/formularioA'">Sou Investidor</a>
+    <a class="dropdown-item" href="#">Cadastre-se</a>
+    </div>
+    </li>
+    <li class="nav-item active">
+    <a class="nav-link" [routerLink]="'listaP'">Cases</a>
+    </li>
+    <li class="nav-item active">
+    <a class="nav-link" [routerLink]="'/sobre'">Sobre nós</a>
+    </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2 bg-dark text-light" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
+    </div>
+    </nav>
+</div>

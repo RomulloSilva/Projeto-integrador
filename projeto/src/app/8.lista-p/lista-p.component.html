@@ -1,4 +1,4 @@
-<div class="container h-100">
+<!--<div class="container h-100">
   <div class="d-flex justify-content-center h-100">
     <div class="searchbar">
       <input class="search_input" type="text" id="campoPesquisa" placeholder="Search..." [(ngModel)]="idBusca">
@@ -6,7 +6,7 @@
     </div>
   </div>
 </div>
-<!---Conteúdo pesquisado-->
+
 <div id="pesquisado" class="row center" *ngIf="produto != null">
   <div class="col-md-8">
     <div class="card" style="width: 18rem;">
@@ -20,45 +20,81 @@
   </div>
 </div>
 
-<!---Conteúdo dos produtos-->
-<!--div class="container d-flex justify-content-between" id="" *ngIf="produto == null">
 
-  <div class="row " *ngFor="let prod of  post">
-    
-    <div class=" col-md-12">
-      
-      <div class="card" style="width: 18rem;">
-        
-        <img class="card-img-top" src='{{prod.linkimg}}' alt="Imagem de capa do card">
-        
-        <div class="card-body">
-          <h5 class="card-title">{{prod.titulo}}</h5>
-          <p class="card-text">{{prod.texto}}</p>
-          <a href="#" class="btn btn-primary">Visitar</a>
+<div class="container"  *ngIf="produto == null">
+    <div class="row" *ngFor="let prod of  post"  >
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;" >
+                <img class="card-img-top" src='{{prod.linkimg}}' alt="Imagem de capa do card">
+                <div class="card-body">
+                  <h5 class="card-title">{{prod.titulo}}</h5>
+                  <p class="card-text">{{prod.texto}}</p>
+                  <a href="#" class="btn btn-primary">Visitar</a>
+                </div>
+              </div>
         </div>
-
+      </div>
+</div>-->
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="searchbar">
+        <input class="search_input" type="text" id="campoPesquisa" placeholder="Search..." [(ngModel)]="idBusca">
+        <button (click)="pesquisar()" class="search_icon"><i class="fa fa-search"></i></button>
       </div>
     </div>
   </div>
-
-</div-->
-
-<div *ngIf='produto == null'>
-
-  <div class="row d-flex justify-content-center">
-
-    <div *ngFor="let prod of  post">
-      <div class="card mx-3 mb-3" style="width: 18rem;">
-        <img class="card-img-top" src='{{prod.linkimg}}' alt="Imagem de capa do card">
+  <!---Conteúdo pesquisado-->
+  <div id="pesquisado" class="row center" *ngIf="produto != null">
+    <div class="col-md-8">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src='{{produto.linkimg}}' alt="Imagem de capa do card">
         <div class="card-body">
+          <h5 class="card-title">{{produto.titulo}}</h5>
+          <p class="card-text">{{produto.texto}}</p>
+          <a href="#" class="btn btn-primary">Visitar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!---Conteúdo dos produtos-->
+  <!--div class="container d-flex justify-content-between" id="" *ngIf="produto == null">
+  
+    <div class="row " *ngFor="let prod of  post">
+      
+      <div class=" col-md-12">
+        
+        <div class="card" style="width: 18rem;">
+          
+          <img class="card-img-top" src='{{prod.linkimg}}' alt="Imagem de capa do card">
+          
+          <div class="card-body">
             <h5 class="card-title">{{prod.titulo}}</h5>
             <p class="card-text">{{prod.texto}}</p>
             <a href="#" class="btn btn-primary">Visitar</a>
+          </div>
+  
         </div>
       </div>
     </div>
-    
+  
+  </div-->
+  
+  <div *ngIf='produto == null'>
+  
+    <div class="row d-flex justify-content-center">
+  
+      <div *ngFor="let prod of  post">
+        <div class="card mx-3 mb-3" style="width: 18rem;">
+          <img class="card-img-top" src='{{prod.linkimg}}' alt="Imagem de capa do card">
+          <div class="card-body">
+              <h5 class="card-title">{{prod.titulo}}</h5>
+              <p class="card-text">{{prod.texto}}</p>
+              <a href="#" class="btn btn-primary">Visitar</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<!--oioioioioioioioioioi-->
+  
+  

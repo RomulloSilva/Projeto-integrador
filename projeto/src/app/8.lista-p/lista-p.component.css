@@ -1,4 +1,12 @@
 
+    body,html{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: #e74c3c !important;
+        }
+    
         .searchbar{
         margin-bottom: 5px;
         margin-top:5px;
@@ -43,29 +51,5 @@
         text-decoration:none;
         }
         #pesquisado{
-            border: solid 20px aqua;
+            border: solid 8px rgb(42, 63, 70);
         }
-
-        /*Estilo do container e cards centralizados no feed centralizado*/
-       /* #BlocoDeProduto{
-            position: relative;
-            background: #3DB8B6;
-            border-radius: 10px;
-            height: 500px;
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-            resize: both;
-            overflow: auto;
-            box-shadow: 5px 10px #6ECFBD;
-        }*/
-        /*.cardDeProduto{
-            
-            width: 33%;
-            height: 100px;
-            float: right;
-            margin: 80px 0 0 -120px;
-            top: 50%;
-            left: 30%;
-            padding: 20px;
-        }*/

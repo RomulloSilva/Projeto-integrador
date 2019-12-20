@@ -4,13 +4,14 @@
 }
 
 #caixasobreNos{
-    background-color:rgb(74, 232, 232);
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color:rgb(99, 177, 177);
     padding:30px;
-    height:450px;
+    height:400px;
     margin-top:60px;
     box-shadow: 1px 1px 5px;
-    color: rgb(74, 232, 232);
-    opacity: 80%;
+    color: rgb(95, 161, 161);
+    opacity: 80%;    
    
     
 }
@@ -19,7 +20,7 @@
     box-shadow: 1px 1px 5px;
     color: rgb(255, 255, 255);
     opacity: 95%;
-    height:450px;
+    height:400px;
     margin-top:60px;
 }
 #textosobreNos{
@@ -28,32 +29,32 @@
     align-items: center;
     height: 350px;
     font-size: 50px;
-    font-family:'Times New Roman', Times, serif;
     color:white;
     font-family:'Permanent marker', cursive;
 
 }
 #imgFernanda{
-    height:90px;
-    width: 90px;
+    height:75px;
+    width: 75px;
     border-radius: 60px;
     margin-top: 15px;
+    
 }
 #imgGuilherme{
-    height:90px;
-    width: 90px;
+    height:75px;
+    width: 75px;
     border-radius: 60px;
     margin-top: 15px;
 }
 #imgGabi{
-    height:90px;
-    width: 90px;
+    height:75px;
+    width: 75px;
     border-radius: 60px;
     margin-top: 15px;
 }
 #imgRomulo{
-    height:90px;
-    width: 90px;
+    height:75px;
+    width: 75px;
     border-radius: 60px;
     margin-top: 15px;
 }
@@ -72,7 +73,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(74, 232, 232);
+    background-color: rgb(95, 161, 161);
     overflow: hidden;
     width: 0;
     height: 100%;
@@ -93,7 +94,7 @@
   }
   
   .text {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     position: relative;
     top: 50%;
