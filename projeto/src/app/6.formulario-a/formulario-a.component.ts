@@ -9,7 +9,7 @@ export class FormularioAComponent implements OnInit {
   private nome: string;
   private sobrenome: string;
   private email: string;
-  private telefone: number;
+  private telefone: string;
   private cidade: string;
   private estado: string;
   private msg: string;
@@ -27,61 +27,55 @@ export class FormularioAComponent implements OnInit {
 
   }
   private pesquisar() {
-    if (this.nome == "" || this.nome == null) {
-   
-      this._msgNome = "Digite um numero valido";
-    }
-    else {
-      this._msgNome = "ok";
-    }
-    /************************************************************************** */
-    if (this.sobrenome == "" || this.sobrenome == null) {
 
+    var i = 0;
+
+    if (this.nome == "" || this.nome == null) {
+      this._msgNome = "Digite um numero valido";
+      i++;
+    } else {
+      this._msgNome = null;
+    }
+    if (this.sobrenome == "" || this.sobrenome == null) {
       this._msgSobrenome = "Digite um numero valido";
+      i++;
+    } else {
+      this._msgSobrenome = null;
     }
-    else {
-      this._msgSobrenome = "ok";
-    }
-    /***************************************************************************** */
-    if (this.email == "" || this.email == null) {
+    if (this.email == "" || this.email == null || this.email.indexOf("@") == -1) {
 
       this._msgEmail = "Digite um numero valido";
+      i++;
+    } else {
+      this._msgEmail = null;
     }
-    else {
-      this._msgEmail = "ok";
-    }
-    /***************************************************************************** */
-    if (this.telefone == 0 || this.telefone == null) {
-
+    if (this.telefone == "" || this.telefone == null || this.telefone.length < 14) {
       this._msgTelefone = "Digite um numero valido";
+      i++;
+    } else {
+      this._msgTelefone = null;
     }
-    else {
-      this._msgTelefone = "ok";
-    }
-
-    /***************************************************************************** */
     if (this.cidade == "" || this.cidade == null) {
-
       this._msgCidade = "Digite um numero valido";
+      i++;
+    } else {
+      this._msgCidade = null;
     }
-    else {
-      this._msgCidade = "ok";
-    }
-    /***************************************************************************** */
     if (this.estado == "" || this.estado == null) {
-
       this._msgEstado = "Digite um numero valido";
+      i++;
+    } else {
+      this._msgEstado = null;
     }
-    else {
-      this._msgEstado = "ok";
-    }
-    /***************************************************************************** */
     if (this.msg == "" || this.msg == null) {
-
       this._msgTexto = "Digite um numero valido";
+      i++;
+    } else {
+      this._msgTexto = null;
     }
-    else {
-      this._msgTexto = "ok";
+
+    if (i < 1) {
+      alert('Msg enviada');
     }
 
   };
