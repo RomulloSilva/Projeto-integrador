@@ -1,3 +1,10 @@
 #menu {
     position: static;
 }
+
+#senhaFraca{
+    color: red;
+}
+#senhaForte{
+    color: green;
+}
