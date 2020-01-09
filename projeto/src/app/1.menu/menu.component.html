@@ -1,65 +1,207 @@
-<!--nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="'/home'">Home <span class="sr-only">(página atual)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/login'">Login</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="'/formularioE'">formulario e</a>
-            <a class="dropdown-item" [routerLink]="'/formularioA'">formulario A</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Perfil</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" [routerLink]="'listaP'">Lista de produto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" [routerLink]="'/sobre'">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">doação</a>
-        </li>
-      </ul>
+<div class="container-fluid" id="menu">
+    <div class="row-md-12">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-transparent" id="navbar">
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="navbar-nav mr-auto">
+                    <li>
+                        <a class="navbar-brand" href="#">
+                            <img src="../../assets/imagens/logo.menu.png" width="115" height="40" alt="BelieveOn">
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="'/formularioA'">Fale Conosco</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="'listaP'">Vitrine</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="'/sobre'">Sobre nós</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ml-auto">
+                    <ul class="nav nav-pills nav-fill">
+                        <li>
+                            <a class="nav-item nav-link text-secondary" data-toggle="modal" data-target="#modalCadastro">Cadastre-se</a>
+                        </li>
+                        <li>
+                            <button type="button" data-toggle="modal" data-target="#modalLogin" class="btn btn-outline-info">Entrar</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="card-title text-center">Entrar</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-signin">
+                                    <div class="form-label-group">
+                                        <label for="inputEmail">E-mail</label>
+                                        <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus>
+                                    </div>
+                                    <div class="form-label-group mt-3">
+                                        <label for="inputPassword">Senha</label>
+                                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3 mt-3">
+                                        <label class="custom-control-label " for="customCheck1">Lembrar-me</label>
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <br>
+                                        <a href="#">Esqueci minha senha.</a>
+                                    </div>
+                                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="container register">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sou Empreendedor</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Sou Investidor</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                <h3 class="register-heading"></h3>
+                                                <div class="row register-form">
+                                                    <div class="col-md-12">
+                                                        <form class="needs-validation" novalidate>
+                                                            <div class="form-row">
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label for="validationTooltip01">First name</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" value="Mark" required>
+                                                                    <div class="valid-tooltip">
+                                                                        Looks good!
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label for="validationTooltip02">Last name</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name" value="Otto" required>
+                                                                    <div class="valid-tooltip">
+                                                                        Looks good!
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label for="validationTooltipUsername">Username</label>
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
+                                                                        <div class="invalid-tooltip">
+                                                                            Please choose a unique and valid username.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col-md-6 mb-3">
+                                                                    <label for="validationTooltip03">City</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip03" placeholder="City" required>
+                                                                    <div class="invalid-tooltip">
+                                                                        Please provide a valid city.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 mb-3">
+                                                                    <label for="validationTooltip04">State</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip04" placeholder="State" required>
+                                                                    <div class="invalid-tooltip">
+                                                                        Please provide a valid state.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 mb-3">
+                                                                    <label for="validationTooltip05">Zip</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip05" placeholder="Zip" required>
+                                                                    <div class="invalid-tooltip">
+                                                                        Please provide a valid zip.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-primary" type="submit">Submit form</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade show text-align form-new" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                                <h3 class="register-heading"></h3>
+                                                <div class="row register-form">
+                                                    <div class="col-md-12">
+                                                        <form class="needs-validation" novalidate>
+                                                            <div class="form-row">
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label for="validationTooltip01">First name</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" value="Mark" required>
+                                                                    <div class="valid-tooltip">
+                                                                        Looks good!
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label for="validationTooltip02">Last name</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name" value="Otto" required>
+                                                                    <div class="valid-tooltip">
+                                                                        Looks good!
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 mb-3">
+                                                                    <label for="validationTooltipUsername">Username</label>
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
+                                                                        <div class="invalid-tooltip">
+                                                                            Please choose a unique and valid username.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col-md-6 mb-3">
+                                                                    <label for="validationTooltip03">City</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip03" placeholder="City" required>
+                                                                    <div class="invalid-tooltip">
+                                                                        Please provide a valid city.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 mb-3">
+                                                                    <label for="validationTooltip04">State</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip04" placeholder="State" required>
+                                                                    <div class="invalid-tooltip">
+                                                                        Please provide a valid state.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 mb-3">
+                                                                    <label for="validationTooltip05">Zip</label>
+                                                                    <input type="text" class="form-control" id="validationTooltip05" placeholder="Zip" required>
+                                                                    <div class="invalid-tooltip">
+                                                                        Please provide a valid zip.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-primary" type="submit">Submit form</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
-  </nav>-->
-<div class="row-md-12">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
-    <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Login
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="#">Sou Empreendedor</a>
-    <a class="dropdown-item" [routerLink]="'/formularioA'">Sou Investidor</a>
-    <a class="dropdown-item" href="#">Cadastre-se</a>
-    </div>
-    </li>
-    <li class="nav-item active">
-    <a class="nav-link" [routerLink]="'listaP'">Cases</a>
-    </li>
-    <li class="nav-item active">
-    <a class="nav-link" [routerLink]="'/sobre'">Sobre nós</a>
-    </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2 bg-dark text-light" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-    </form>
-    </div>
-    </nav>
 </div>
