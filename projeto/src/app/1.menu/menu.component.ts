@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+//Importar a classe de usuario.
+import{Usuario} from '../model/Usuario';
+import{ProdutosService} from '../serviço/produtos.service';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -8,42 +12,65 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
 
-      private nome: string;
-      private email: string;
-      private telefone: String;
-      private senha: string;
-      private confirmaSenha: string;
-      private msgNome: string = null;
-      private msgEmail: string = null;
-      private msgTelefone: string = null;
-      private msgSenha: string = null;
-      private msgSenha1: string = null;
-      private msgSenha2: string = null;
-      private msgConfirmaSenha: string = null;
-      //------------INVESTIDOR--------//
-      private nomeInvest: string;
-      private emailInvest: string;
-      private telefoneInvest: String;
-      private senhaInvest: string;
-      private confirmaSenhaInvest: string;
-      private msgNomeInvest: string = null;
-      private msgEmailInvest: string = null;
-      private msgTelefoneInvest: string = null;
-      private msgSenhaInvest: string = null;
-      private msgSenhaInvest1: string = null;
-      private msgSenhaInvest2: string = null;
-      private msgConfirmaSenhaInvest: string = null;
+  //Varáveis de validação.
+  private confirmaSenha: string;
+  private msgNome: string = null;
+  private msgEmail: string = null;
+  private msgTelefone: string = null;
+  private msgSenha: string = null;
+  private msgSenha1: string = null;
+  private msgSenha2: string = null;
+  private msgConfirmaSenha: string = null;
+  //------------INVESTIDOR--------//
+  private nomeInvest: string;
+  private emailInvest: string;
+  private telefoneInvest: string;
+  private senhaInvest: string;
+  private confirmaSenhaInvest: string;
+  private msgNomeInvest: string = null;
+  private msgEmailInvest: string = null;
+  private msgTelefoneInvest: string = null;
+  private msgSenhaInvest: string = null;
+  private msgSenhaInvest1: string = null;
+  private msgSenhaInvest2: string = null;
+  private msgConfirmaSenhaInvest: string = null;
 
-  constructor() { }
+  //Variável para invocar o objeto Usuário(sempre da new para não da erro).
+  public usuario: Usuario = new Usuario();
+
+//
+  constructor(private busca: ProdutosService) { }
 
   ngOnInit() {
   }
 
+
+
+// Criar função que enviar os dados e tem menssagem de erro caso o email seja duplicado e outra de sucesso.(tem de ser fora do ngOnInit)*/
+enviarDados(){
+  this.busca.insere(this.usuario).subscribe(
+    res=>{
+      console.log(res);
+      alert("Inserido com sucesso");
+    },
+    error=>{
+      console.log(error);
+      alert("Erro ao enserir");
+    }
+  );
+}
+
+
+
+
+
+
+//Funções de validação.
   private forcaSenha(){
-    if( this.senha.indexOf("@") >=0  && this.senha.length >=10 || this.senha.indexOf("#") >=0  && this.senha.length >=10 || this.senha.indexOf("$") >=0  && this.senha.length >=10 || this.senha.indexOf("%") >=0  && this.senha.length >=10 || this.senha.indexOf("&") >=0 && this.senha.length >=10 ){
+    if( this.usuario.senha.indexOf("@") >=0  && this.usuario.senha.length >=10 || this.usuario.senha.indexOf("#") >=0  && this.usuario.senha.length >=10 || this.usuario.senha.indexOf("$") >=0  && this.usuario.senha.length >=10 || this.usuario.senha.indexOf("%") >=0  && this.usuario.senha.length >=10 || this.usuario.senha.indexOf("&") >=0 && this.usuario.senha.length >=10 ){
       this.msgSenha1 = "Senha Forte!";
       this.msgSenha2 = null;
-    }else if (this.senha.length < 10){
+    }else if (this.usuario.senha.length < 10){
       this.msgSenha2 = "Senha Fraca!";
       this.msgSenha1 = null;
     }
@@ -53,34 +80,34 @@ export class MenuComponent implements OnInit {
     var u =0;
     var regex = /[0-9]/;
 
-    if (this.nome == "" || this.nome == null || regex.test(this.nome)) {
+    if (this.usuario.nome == "" || this.usuario.nome == null || regex.test(this.usuario.nome) || this.usuario.nome.indexOf(" ") == -1) {
       this.msgNome = "Digite um nome válido";
       u++;
     } else {
       this.msgNome = null;
     }
-    if (this.email == "" || this.email == null || this.email.indexOf("@") == -1 || this.email.indexOf(".") == -1) {
+    if (this.usuario.email == "" || this.usuario.email == null || this.usuario.email.indexOf("@") == -1 || this.usuario.email.indexOf(".com") == -1) {
 
       this.msgEmail = "Digite um e-mail valido";
       u++;
     } else {
       this.msgEmail = null;
     }
-    var tel = Number(this.telefone);
-    if ( this.telefone == null || this.telefone.length != 11 || isNaN(tel)) {
+    var tel = Number(this.usuario.telefone);
+    if ( this.usuario.telefone == null || this.usuario.telefone.length != 11 || isNaN(tel)) {
       this.msgTelefone = "Digite um numero de telefone válido";
       u++;
     } else {
       this.msgTelefone = null;
     }
-    if(this.senha == "" || this.senha == null){
+    if(this.usuario.senha == "" || this.usuario.senha == null){
       this.msgSenha = "Digite uma senha"
       u++
     }else{
       this.msgSenha = null;
     }
     
-    if(this.confirmaSenha != this.senha || this.confirmaSenha == null){
+    if(this.confirmaSenha != this.usuario.senha || this.confirmaSenha == null){
       this.msgConfirmaSenha = "Senhas incompatíveis";
       u++
     } else{
@@ -88,7 +115,8 @@ export class MenuComponent implements OnInit {
     }
 
     if(u < 1){
-      alert("Bem-vindo ao B.lieveOn "+this.nome);
+      alert("Bem-vindo ao B.lieveOn "+this.usuario.nome);
+     
     }
   }
 
@@ -116,7 +144,7 @@ export class MenuComponent implements OnInit {
     } else {
       this.msgNomeInvest = null;
     }
-    if (this.emailInvest == "" || this.emailInvest == null || this.emailInvest.indexOf("@") == -1 || this.emailInvest.indexOf(".") == -1) {
+    if (this.emailInvest == "" || this.emailInvest == null || this.emailInvest.indexOf("@") == -1 || this.emailInvest.indexOf(".com") == -1) {
 
       this.msgEmailInvest = "Digite um e-mail valido";
       u++;
@@ -146,7 +174,10 @@ export class MenuComponent implements OnInit {
 
     if(u < 1){
       alert("Bem-vindo ao B.lieveOn "+this.nomeInvest);
+      
     }
   }
-  }
+
+
+  }//Termina o export.
 

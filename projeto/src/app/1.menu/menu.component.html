@@ -17,33 +17,42 @@
                     <li class="nav-item active">
                         <a class="nav-link" [routerLink]="'/sobre'">Sobre nós</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="'/listagem'">Listagem</a>
+                    </li>
                 </ul>
                 <div class="navbar-nav ml-auto">
                     <ul class="nav nav-pills nav-fill">
                         <li>
-                            <a class="nav-item nav-link text-secondary" data-toggle="modal" data-target="#modalCadastro">Cadastre-se</a>
+                            <a class="nav-item nav-link text-secondary" data-toggle="modal"
+                                data-target="#modalCadastro">Cadastre-se</a>
                         </li>
                         <li>
-                            <button type="button" data-toggle="modal" data-target="#modalLogin" class="btn btn-outline-info">Entrar</button>
+                            <button type="button" data-toggle="modal" data-target="#modalLogin"
+                                class="btn btn-outline-info">Entrar</button>
                         </li>
                     </ul>
                 </div>
-                <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="card-title text-center">Entrar</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span
+                                        aria-hidden="true">&times;</span></button>
                             </div>
                             <div class="modal-body">
                                 <form class="form-signin">
                                     <div class="form-label-group">
                                         <label for="inputEmail">E-mail</label>
-                                        <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus>
+                                        <input type="email" id="inputEmail" class="form-control"
+                                            placeholder="Endereço de e-mail" required autofocus>
                                     </div>
                                     <div class="form-label-group mt-3">
                                         <label for="inputPassword">Senha</label>
-                                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                                        <input type="password" id="inputPassword" class="form-control"
+                                            placeholder="Senha" required>
                                     </div>
                                     <div class="custom-control custom-checkbox mb-3 mt-3">
                                         <label class="custom-control-label " for="customCheck1">Lembrar-me</label>
@@ -51,13 +60,15 @@
                                         <br>
                                         <a href="#">Esqueci minha senha.</a>
                                     </div>
-                                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+                                    <button class="btn btn-lg btn-primary btn-block text-uppercase"
+                                        type="submit">Entrar</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="container register">
@@ -65,99 +76,175 @@
                                     <div class="col-md-12">
                                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sou Empreendedor</a>
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                                    role="tab" aria-controls="home" aria-selected="true">Sou
+                                                    Empreendedor</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Sou Investidor</a>
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
+                                                    role="tab" aria-controls="profile" aria-selected="false">Sou
+                                                    Investidor</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                            <!---EMPREENDEDOR-->
+                                            <div class="tab-pane fade show active text-align form-new" id="home"
+                                                role="tabpanel" aria-labelledby="home-tab">
                                                 <h3 class="register-heading"></h3>
                                                 <div class="row register-form">
                                                     <div class="col-md-12">
                                                         <form class="needs-validation" novalidate>
                                                             <div class="form-row">
                                                                 <div class="col-md-10 mb-3">
-                                                                    <label for="validationTooltip01">Nome Completo</label>
-                                                                    <input [(ngModel)]="nome" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationTooltip01" placeholder="Digite seu nome" value="" required>
-                                                                    <span *ngIf = 'msgNome'>{{msgNome}}</span><!--msg de erro-->
+                                                                    <label for="validationTooltip01">Nome
+                                                                        Completo</label>
+                                                                    <input [(ngModel)]="usuario.nome"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="text" class="form-control"
+                                                                        placeholder="Digite seu nome" value="" required>
+                                                                    <span *ngIf='msgNome'>{{msgNome}}</span>
+                                                                    <!--msg de erro-->
                                                                 </div>
                                                             </div>
                                                             <div class="form-row">
                                                                 <div class="col-md-5 mb-3">
                                                                     <label for="validationTooltip01">E-mail</label>
-                                                                    <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationTooltip01" placeholder="Digite seu E-mail" value="" required>
-                                                                    <span *ngIf = 'msgEmail'>{{msgEmail}}</span><!--msg de erro-->
+                                                                    <input [(ngModel)]="usuario.email"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="text" class="form-control"
+                                                                        placeholder="Digite seu E-mail" value=""
+                                                                        required>
+                                                                    <span *ngIf='msgEmail'>{{msgEmail}}</span>
+                                                                    <!--msg de erro-->
                                                                 </div>
                                                                 <div class="col-md-5 mb-3">
                                                                     <label for="validationTooltip01">Telefone</label>
-                                                                    <input [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationTooltip01" placeholder="Insira seu Telefone" value="" required>
-                                                                    <span *ngIf = 'msgTelefone'>{{msgTelefone}}</span><!--msg de erro-->
+                                                                    <input [(ngModel)]="usuario.telefone"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="text" class="form-control"
+                                                                        placeholder="Insira seu Telefone" value=""
+                                                                        required>
+                                                                    <span *ngIf='msgTelefone'>{{msgTelefone}}</span>
+                                                                    <!--msg de erro-->
                                                                 </div>
                                                             </div>
                                                             <div class="form-row">
                                                                 <div class="col-md-5 mb-3">
                                                                     <label for="validationTooltip01">Senha</label>
-                                                                    <input (keyup)="forcaSenha()"  [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationTooltip01" placeholder="senha" value="" required>
-                                                                    <span id="senhaForte" *ngIf = 'msgSenha1'>{{msgSenha1}}</span><!--msg de senha forte-->
-                                                                    <span id="senhaFraca"*ngIf = 'msgSenha2'>{{msgSenha2}}</span><!--msg de senha fraca-->
-                                                                    <span *ngIf = 'msgSenha'>{{msgSenha}}</span><!--msg de erro-->
+                                                                    <input (keyup)="forcaSenha()"
+                                                                        [(ngModel)]="usuario.senha"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="text" class="form-control"
+                                                                        id="validationTooltip01" placeholder="senha"
+                                                                        value="" required>
+                                                                    <span id="senhaForte"
+                                                                        *ngIf='msgSenha1'>{{msgSenha1}}</span>
+                                                                    <!--msg de senha forte-->
+                                                                    <span id="senhaFraca"
+                                                                        *ngIf='msgSenha2'>{{msgSenha2}}</span>
+                                                                    <!--msg de senha fraca-->
+                                                                    <span *ngIf='msgSenha'>{{msgSenha}}</span>
+                                                                    <!--msg de erro-->
                                                                 </div>
                                                                 <div class="col-md-5 mb-3">
-                                                                    <label for="validationTooltip01">Confirmar Senha</label>
-                                                                    <input [(ngModel)]="confirmaSenha" [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="validationTooltip01" placeholder="Confirme a Senha" value="" required>
-                                                                    <span *ngIf = 'msgConfirmaSenha'>{{msgConfirmaSenha}}</span><!--msg de erro-->
+                                                                    <label for="validationTooltip01">Confirmar
+                                                                        Senha</label>
+                                                                    <input [(ngModel)]="confirmaSenha"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="password" class="form-control"
+                                                                        placeholder="Confirme a Senha" value=""
+                                                                        required>
+                                                                    <span
+                                                                        *ngIf='msgConfirmaSenha'>{{msgConfirmaSenha}}</span>
+                                                                    <!--msg de erro-->
                                                                 </div>
                                                             </div>
-                                                            <button (click)="validacao()" class="btn btn-primary mb-2" type="submit">Cadastrar</button>
+                                                            <button (click)="validacao(); enviarDados()" class="btn btn-primary mb-2"
+                                                                type="submit">Cadastrar</button>
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!---Cadastro investidor-->
-                                            <div class="tab-pane fade show text-align form-new" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div class="tab-pane fade show text-align form-new" id="profile"
+                                                role="tabpanel" aria-labelledby="profile-tab">
                                                 <h3 class="register-heading"></h3>
                                                 <div class="row register-form">
-                                                        <div class="col-md-12">
-                                                            <form class="needs-validation" novalidate>
-                                                                <div class="form-row">
-                                                                    <div class="col-md-10 mb-3">
-                                                                        <label for="validationTooltip01">Nome Completo</label>
-                                                                        <input [(ngModel)]="nomeInvest" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationTooltip01" placeholder="Digite seu nome" value="" required>
-                                                                        <span *ngIf = 'msgNomeInvest'>{{msgNomeInvest}}</span><!--msg de erro-->
-                                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <form class="needs-validation" novalidate>
+                                                            <div class="form-row">
+                                                                <div class="col-md-10 mb-3">
+                                                                    <label for="validationTooltip01">Nome
+                                                                        Completo</label>
+                                                                    <input [(ngModel)]="nomeInvest"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="text" class="form-control"
+                                                                        placeholder="Digite seu nome" value="" required>
+                                                                    <span *ngIf='msgNomeInvest'>{{msgNomeInvest}}</span>
+                                                                    <!--msg de erro-->
                                                                 </div>
-                                                                <div class="form-row">
-                                                                    <div class="col-md-5 mb-3">
-                                                                        <label for="validationTooltip01">E-mail</label>
-                                                                        <input [(ngModel)]="emailInvest" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationTooltip01" placeholder="Digite seu E-mail" value="" required>
-                                                                        <span *ngIf = 'msgEmailInvest'>{{msgEmailInvest}}</span><!--msg de erro-->
-                                                                    </div>
-                                                                    <div class="col-md-5 mb-3">
-                                                                        <label for="validationTooltip01">Telefone</label>
-                                                                        <input [(ngModel)]="telefoneInvest" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationTooltip01" placeholder="Insira seu Telefone" value="" required>
-                                                                        <span *ngIf = 'msgTelefoneInvest'>{{msgTelefoneInvest}}</span><!--msg de erro-->
-                                                                    </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col-md-5 mb-3">
+                                                                    <label for="validationTooltip01">E-mail</label>
+                                                                    <input [(ngModel)]="emailInvest"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="text" class="form-control"
+                                                                        placeholder="Digite seu E-mail" value=""
+                                                                        required>
+                                                                    <span
+                                                                        *ngIf='msgEmailInvest'>{{msgEmailInvest}}</span>
+                                                                    <!--msg de erro-->
                                                                 </div>
-                                                                <div class="form-row">
-                                                                    <div class="col-md-5 mb-3">
-                                                                        <label for="validationTooltip01">Senha</label>
-                                                                        <input (keyup)="forcaSenhaInvest()"  [(ngModel)]="senhaInvest" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationTooltip01" placeholder="senha" value="" required>
-                                                                        <span id="senhaForte" *ngIf = 'msgSenhaInvest1'>{{msgSenhaInvest1}}</span><!--msg de senha forte-->
-                                                                        <span id="senhaFraca"*ngIf = 'msgSenhaInvest2'>{{msgSenhaInvest2}}</span><!--msg de senha fraca-->
-                                                                        <span *ngIf = 'msgSenhaInvest'>{{msgSenhaInvest}}</span><!--msg de erro-->
-                                                                    </div>
-                                                                    <div class="col-md-5 mb-3">
-                                                                        <label for="validationTooltip01">Confirmar Senha</label>
-                                                                        <input [(ngModel)]="confirmaSenhaInvest" [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="validationTooltip01" placeholder="Confirme a Senha" value="" required>
-                                                                        <span *ngIf = 'msgConfirmaSenhaInvest'>{{msgConfirmaSenhaInvest}}</span><!--msg de erro-->
-                                                                    </div>
+                                                                <div class="col-md-5 mb-3">
+                                                                    <label for="validationTooltip01">Telefone</label>
+                                                                    <input [(ngModel)]="telefoneInvest"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="text" class="form-control"
+                                                                        placeholder="Insira seu Telefone" value=""
+                                                                        required>
+                                                                    <span
+                                                                        *ngIf='msgTelefoneInvest'>{{msgTelefoneInvest}}</span>
+                                                                    <!--msg de erro-->
                                                                 </div>
-                                                                <button (click)="validacaoInvestidor()" class="btn btn-primary mb-2" type="submit">Cadastrar</button>
-                                                            </form>
-                                                        </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col-md-5 mb-3">
+                                                                    <label for="validationTooltip01">Senha</label>
+                                                                    <input (keyup)="forcaSenhaInvest()"
+                                                                        [(ngModel)]="senhaInvest"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="text" class="form-control"
+                                                                        placeholder="senha" value="" required>
+                                                                    <span id="senhaForte"
+                                                                        *ngIf='msgSenhaInvest1'>{{msgSenhaInvest1}}</span>
+                                                                    <!--msg de senha forte-->
+                                                                    <span id="senhaFraca"
+                                                                        *ngIf='msgSenhaInvest2'>{{msgSenhaInvest2}}</span>
+                                                                    <!--msg de senha fraca-->
+                                                                    <span
+                                                                        *ngIf='msgSenhaInvest'>{{msgSenhaInvest}}</span>
+                                                                    <!--msg de erro-->
+                                                                </div>
+                                                                <div class="col-md-5 mb-3">
+                                                                    <label for="validationTooltip01">Confirmar
+                                                                        Senha</label>
+                                                                    <input [(ngModel)]="confirmaSenhaInvest"
+                                                                        [ngModelOptions]="{standalone: true}"
+                                                                        type="password" class="form-control"
+                                                                        placeholder="Confirme a Senha" value=""
+                                                                        required>
+                                                                    <span
+                                                                        *ngIf='msgConfirmaSenhaInvest'>{{msgConfirmaSenhaInvest}}</span>
+                                                                    <!--msg de erro-->
+                                                                </div>
+                                                            </div>
+                                                            <button (click)="validacaoInvestidor()"
+                                                                class="btn btn-primary mb-2"
+                                                                type="submit">Cadastrar</button>
+                                                        </form>
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

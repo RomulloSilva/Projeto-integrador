@@ -16,6 +16,8 @@ import { DescricaoPComponent } from './9.descricao-p/descricao-p.component';
 import { PaginaDoacaoComponent } from './10.pagina-doacao/pagina-doacao.component';
 import { SobreComponent } from './11.sobre/sobre.component';
 import { FormularioAComponent } from './6.formulario-a/formulario-a.component';
+import { ListagemComponent } from './listagem/listagem.component';
+import { EditaUserComponent } from './edita-user/edita-user.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FormularioAComponent } from './6.formulario-a/formulario-a.component';
     ListaPComponent,
     DescricaoPComponent,
     PaginaDoacaoComponent,
-    SobreComponent
+    SobreComponent,
+    ListagemComponent,
+    EditaUserComponent
   ],
   imports: [
     BrowserModule,
