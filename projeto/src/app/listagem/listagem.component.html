@@ -1,6 +1,7 @@
 <div class="container">
-        <div class="row">
-           <div class="col-md-12 d-block bg-light" id="listagem">
+        <div class="row ">
+           <div class="col-md-12 d-block bg-light rounded-pill" id="listagem">
+               
                <div *ngFor='let USER of listaUser'><!--Criando a alimentação no componente.-->
                    <p>
                        <a [routerLink]="['/editaUser', USER.idUsuario]"> {{USER.nome}}</a><!--Criando o botão no nome dos usuários, para modificar os usuarios-->

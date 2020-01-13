@@ -116,6 +116,7 @@ enviarDados(){
 
     if(u < 1){
       alert("Bem-vindo ao B.lieveOn "+this.usuario.nome);
+      this.enviarDados();
      
     }
   }
