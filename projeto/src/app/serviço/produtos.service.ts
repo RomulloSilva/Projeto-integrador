@@ -16,6 +16,18 @@ Criando serviços para os produtos dentro export.------------------------*/
     return this.http.get("http://cloud.professorisidro.com.br:8088/postagens");// vai retornar todos os objetos.
   }
 
+
+
+
+  pegarNovasPostagens(idPostagem: number):any{
+    return this.http.get(`http://cloud.professorisidro.com.br:8088/postagens/${idPostagem}`);
+    /**Método responsável por exibir as 5 postagens novas na home da página, ou seja toda vez que novas Startup forem cadastradas elas seram exibidas aqui */
+  }
+
+
+
+
+
   buscarCodigoDoProjeto(idPostagem: number):any {
     return this.http.get(`http://cloud.professorisidro.com.br:8088/postagens/${idPostagem}`);//vai buscar pelo id da postagem.
 

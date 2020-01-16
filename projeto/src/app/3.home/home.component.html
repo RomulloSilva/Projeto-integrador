@@ -38,51 +38,77 @@
         </a>
     </div>
 </div>
+<!--Inicio dos Cards que ficam os novos Produtos-->
 <div class="container-fluid" id="sessaoA">
-    <p class="text-justify">
-        <b>Últimas atualizações...</b>
-    </p>
-    <div class="card position-sticky" style="width: 250px; height: 450px;">
-        <img class="card-img-top" src="../../assets/imagens/card (1).jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <h5 class="card-title">Empreendendo fora.</h5>
-            <p class="card-text">Rodrigo conta os maiores desafios que enfrentou em sua expansão internacional</p>
-        </div>
-        <div class="card-body">
-            <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
-        </div>
+        <p class="text-justify">
+                <b>Últimas atualizações...</b>
+            </p>
+    <div *ngIf="post1!= null">
+            <div class="card position-sticky" style="width: 250px; height: 450px;">
+                    <img class="card-img-top" src='{{post1.linkimg}}' alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{post1.titulo}}</h5>
+                        <p class="card-text">{{post1.texto}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
+                    </div>
+                </div>
     </div>
-    <div class="card position-sticky" style="width: 250px; height: 450px">
-        <img class="card-img-top" src="../../assets/imagens/card (2).jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <h5 class="card-title">Tive uma Ideia, e agora?</h5>
-            <p class="card-text">Dicas de especialistas para tirar ideias do papel e não deixar projetos engavetados.</p>
-        </div>
-        <div class="card-body">
-            <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
-        </div>
+    <div *ngIf="post2 != null">
+            <div class="card position-sticky" style="width: 250px; height: 450px">
+                    <img class="card-img-top" src='{{post2.linkimg}}' alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{post2.titulo}}</h5>
+                        <p class="card-text">{{post2.texto}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
+                    </div>
+                </div>
     </div>
-    <div class="card position-sticky" style="width: 250px; height: 450px">
-        <img class="card-img-top" src="../../assets/imagens/card (3).jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <h5 class="card-title">Aprimoramento pessoal.</h5>
-            <p class="card-text">Carlos Spiniazolli conta uma história sobre a importância de investir em si mesmo, e sobre como acreditar no próprio potencial.</p>
-        </div>
-        <div class="card-body">
-            <a href="#" class="btn btn-info">Saiba mais</a>
-        </div>
+    <div *ngIf="post3!= null">
+            <div class="card position-sticky" style="width: 250px; height: 450px">
+                    <img class="card-img-top" src='{{post3.linkimg}}' alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{post3.titulo}}</h5>
+                        <p class="card-text">{{post3.texto}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-info">Saiba mais</a>
+                    </div>
+                </div>
     </div>
-    <div class="card position-sticky" style="width: 250px; height: 450px">
-        <img class="card-img-top" src="../../assets/imagens/card (4).jpg" alt="Imagem de capa do card">
-        <div class="card-body">
-            <h5 class="card-title">Novos negócios.</h5>
-            <p class="card-text">Entenda como um grupo de jovens criou riqueza do zero elaborando filtros divertidos para redes sociais.</p>
-        </div>
-        <div class="card-body">
-            <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
-        </div>
+    <div *ngIf="post4 != null">
+            <div class="card position-sticky" style="width: 250px; height: 450px">
+                    <img class="card-img-top" src='{{post4.linkimg}}' alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{post4.titulo}}.</h5>
+                        <p class="card-text">{{post4.texto}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a [routerLink]= "'/paginaDoacao'" class="btn btn-info align-bottom">Saiba mais</a>
+                    </div>
+                </div>
     </div>
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
 </div>
+
+
+
+<!---Caixa descritiva do Believe on-->
 <div class="container-fluid" id="descricao">
     <div class="row " id="sessaoB">
         <div class="col"></div>

@@ -1,0 +1,25 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.container{
+    background-color: aliceblue;
+    width:800px;
+    height: 600px;
+    border-radius: 5px;
+    box-shadow: 14px -4px 85px 24px rgba(78,94,48,1);
+    overflow: visible;
+  
+
+
+}
+
+#carrosel{
+    background-color: black;
+    width: 100px;
+    height: 590px;
+    margin: 0%;
+    margin-left: 5px;
+}
+
