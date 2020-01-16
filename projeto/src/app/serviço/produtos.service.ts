@@ -22,7 +22,7 @@ Criando serviços para os produtos dentro export.------------------------*/
   }
 
 /*------------------------------------
-Criando serviços para o Usuarios dentro export.------------------------*/
+Criando serviços para o Usuarios dentro do export.------------------------*/
 
 recuperaTodos(){
   //Aqui essa função vai retornar todos os usuários.
@@ -45,6 +45,10 @@ recuperaDetalhe(id:number){//Como queremos a info através do id, criamos uma va
 
   public atualiza(usuario: Usuario){
     return this.http.put("http://cloud.professorisidro.com.br:8088/usuario",usuario)
+  }
+  //gui-validandologin1=anuncia o metodo post
+  public login(usuario: Usuario){
+    return this.http.post("http://cloud.professorisidro.com.br:8088/usuario/login",usuario)
   }
 
 }

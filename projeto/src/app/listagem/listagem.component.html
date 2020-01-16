@@ -1,13 +1,14 @@
 <div class="container">
-        <div class="row ">
-           <div class="col-md-12 d-block bg-light rounded-pill" id="listagem">
-               
-               <div *ngFor='let USER of listaUser'><!--Criando a alimentação no componente.-->
-                   <p>
-                       <a [routerLink]="['/editaUser', USER.idUsuario]"> {{USER.nome}}</a><!--Criando o botão no nome dos usuários, para modificar os usuarios-->
-                    </p>
-                
-               </div>
-           </div>
+    <div class="row" *ngFor='let USER of listaUser'>
+        <div class="col-md-8" id="usuario">
+            <!--Criando a alimentação no componente.-->
+            <img src="../../assets/imagens/default user.jfif" height="35px" width="35px">
+            <a > {{USER.nome}}</a>
+            <!--Criando o botão no nome dos usuários, para modificar os usuarios-->
         </div>
+            <div class="col-md-1" id="editaIcone">
+                <a><img src="../../assets/imagens/tools.png" height="25px" width="25px" [routerLink]="['/editaUser', USER.idUsuario]"></a>
+            </div>
+        
     </div>
+</div>

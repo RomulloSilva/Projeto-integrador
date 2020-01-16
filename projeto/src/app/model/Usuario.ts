@@ -4,4 +4,6 @@ export class Usuario{
     public telefone: string;
     public email: string;
     public senha: string;
+
+    
 }
