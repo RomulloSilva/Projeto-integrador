@@ -38,6 +38,10 @@ export class MenuComponent implements OnInit {
   public msgSenhaInvest2: string = null;
   public msgConfirmaSenhaInvest: string = null;
   public idResposta: String = null;
+  //Mensagen para login.
+  public msgLogin: string = null;
+  
+
 
   //Variável para invocar o objeto Usuário(sempre da new para não da erro).
   public usuario: Usuario = new Usuario();
@@ -58,11 +62,12 @@ export class MenuComponent implements OnInit {
       (res) => {
         alert("Bem vindo à B.lieve On");
         console.log();
+        this.msgLogin = null;
       },
       (err) => {
-        alert("Usuário não existente");
         console.log(this.usuario.email);
         console.log(this.usuario.senha);
+        this.msgLogin = "Usuário ou senha inválidos"
       });
   }
 

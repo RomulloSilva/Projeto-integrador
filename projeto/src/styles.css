@@ -1,5 +1,7 @@
 body {
-    background-image: url("./assets/imagens/background.png");
+    background-image: url("./assets/imagens/background.png"); 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 
 * {

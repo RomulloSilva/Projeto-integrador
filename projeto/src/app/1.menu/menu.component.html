@@ -45,6 +45,8 @@
                             <!--formulario de login-->
                             <div class="modal-body">
                                 <form class="form-signin">
+                                        <span id="msgLogin"
+                                        *ngIf='msgLogin'>{{msgLogin}}</span>
                                     <div class="form-label-group">
                                         <label for="inputEmail">E-mail</label>
                                         <input [(ngModel)]="inputEmail" [ngModelOptions]="{standalone: true}" type="email" id="inputEmail" class="form-control"
