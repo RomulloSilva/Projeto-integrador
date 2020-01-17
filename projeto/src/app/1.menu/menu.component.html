@@ -8,21 +8,21 @@
                             <img src="../../assets/imagens/logo.menu.png" width="115" height="40" alt="BelieveOn">
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item active" id="navEffect">
                         <a class="nav-link" [routerLink]="'/formularioA'">Fale Conosco</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item active" id="navEffect">
                         <a class="nav-link" [routerLink]="'listaP'">Vitrine</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item active" id="navEffect">
                         <a class="nav-link" [routerLink]="'/sobre'">Sobre nós</a>
                     </li>
-                    <li class="nav-item active">
+                    <li *ngIf="estaLogado == true" class="nav-item active" id="navEffect">
                         <a class="nav-link" [routerLink]="'/listagem'">Usuários</a>
                     </li>
                 </ul>
                 <div class="navbar-nav ml-auto">
-                    <ul class="nav nav-pills nav-fill">
+                    <ul *ngIf="produto == null" class="nav nav-pills nav-fill">
                         <li>
                             <a class="nav-item nav-link text-secondary" data-toggle="modal"
                                 data-target="#modalCadastro">Cadastre-se</a>
@@ -33,6 +33,7 @@
                         </li>
                     </ul>
                 </div>
+                <!--Código do login-->
                 <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -45,8 +46,6 @@
                             <!--formulario de login-->
                             <div class="modal-body">
                                 <form class="form-signin">
-                                        <span id="msgLogin"
-                                        *ngIf='msgLogin'>{{msgLogin}}</span>
                                     <div class="form-label-group">
                                         <label for="inputEmail">E-mail</label>
                                         <input [(ngModel)]="inputEmail" [ngModelOptions]="{standalone: true}" type="email" id="inputEmail" class="form-control"
@@ -63,13 +62,14 @@
                                         <br>
                                         <a href="#">Esqueci minha senha.</a>
                                     </div>
-                                   <!--formulario de login--> <button (click)="efetuaLogin()" class="btn btn-lg btn-primary btn-block text-uppercase"
+                                   <!--Botão formulario de login--> <button (click)="efetuaLogin()" class="btn btn-lg btn-primary btn-block text-uppercase"
                                         type="submit">Entrar</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">

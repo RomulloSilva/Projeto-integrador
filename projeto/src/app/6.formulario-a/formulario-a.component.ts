@@ -30,7 +30,7 @@ export class FormularioAComponent implements OnInit {
 
     var i = 0;
 
-    if (this.nome == "" || this.nome == null || this.nome.indexOf(" ") == -1) {
+    if (this.nome == "" || this.nome == null) {
       this._msgNome = "Digite um nome valido";
       i++;
     } else {
@@ -42,7 +42,7 @@ export class FormularioAComponent implements OnInit {
     } else {
       this._msgSobrenome = null;
     }
-    if (this.email == "" || this.email == null || this.email.indexOf("@") == -1 || this.email.indexOf(".com")) {
+    if (this.email == "" || this.email == null || this.email.indexOf("@") == -1) {
 
       this._msgEmail = "Digite um e-mail valido";
       i++;

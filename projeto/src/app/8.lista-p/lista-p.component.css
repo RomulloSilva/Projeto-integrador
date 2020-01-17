@@ -1,6 +1,7 @@
 /*Card que lista todas as Startup*/
 .listaProduto{
     margin-top:20px;
+    overflow: hidden;
 }
 .listaProduto .btn{
     border-radius:2px;

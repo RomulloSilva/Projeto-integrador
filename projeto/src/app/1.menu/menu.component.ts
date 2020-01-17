@@ -3,13 +3,20 @@ import { Component, OnInit } from '@angular/core';
 //Importar a classe de usuario.
 import { Usuario } from '../model/Usuario';
 import { ProdutosService } from '../serviço/produtos.service';
+import { Router } from '@angular/router';
+import { Globals } from '../model/Globals';
+//importação do jquery
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
+  providers: [Globals]
+  
 })
 export class MenuComponent implements OnInit {
+
 
 
   //Varáveis de validação.
@@ -38,47 +45,69 @@ export class MenuComponent implements OnInit {
   public msgSenhaInvest2: string = null;
   public msgConfirmaSenhaInvest: string = null;
   public idResposta: String = null;
-  //Mensagen para login.
-  public msgLogin: string = null;
-  
 
+ 
 
   //Variável para invocar o objeto Usuário(sempre da new para não da erro).
   public usuario: Usuario = new Usuario();
 
+  //Variável que é usada para retirar dados que só podem ser utilizados qquando logado.
+  public estaLogado: boolean = false;
+  
+  
+  
 
-  //
-  constructor(private busca: ProdutosService, private srv: ProdutosService) { }
+
+
+  
+  constructor(private busca: ProdutosService, private srv: ProdutosService, private router: Router) { }
 
 
   ngOnInit() {
+    
+
+    
+
+    
   }
+
+   
+
   //gui-validandologin3=esta função compara os dados e valida (compara a api com os dados inseridos nos inputs do form de login)
-  public efetuaLogin(usuario : Usuario) {
-    this.usuario.email = this.inputEmail;
-    this.usuario.senha = this.inputPassword;
+    public efetuaLogin() {
 
-    this.srv.login(this.usuario).subscribe(
-      (res) => {
-        alert("Bem vindo à B.lieve On");
-        console.log();
-        this.msgLogin = null;
+      this.usuario.email = this.inputEmail;
+      this.usuario.senha = this.inputPassword;
+  
+      this.srv.login(this.usuario).subscribe((res:Usuario)=>{
+        console.log("Conectado");
+
+          //Atribuir o Globals ao objet
+          Globals.USUARIO = res;
+
+          //var que faz os dados aparecerem.
+          this.estaLogado = true;
+        
+        this.router.navigate(['login']);
+        //jquery que faz o modal sair após ser logado.
+        $('#modalLogin').hide();//Aqui vai o id do modal.
+        $('.modal-backdrop').hide();
       },
-      (err) => {
-        console.log(this.usuario.email);
-        console.log(this.usuario.senha);
-        this.msgLogin = "Usuário ou senha inválidos"
-      });
+      (erro)=>{
+        console.log("Não conectado");
+        alert("Senha ou email errados")
+        //Como somos o commerce não vamos ter rota, só msg de erro.
+
+      })
   }
 
 
-  // Cria função que envia os dados e tem mensagem de erro caso o email seja duplicado e outra de sucesso.(tem de ser fora do ngOnInit)*/
+  // Cria função que envia os dados e tem mensagem de erro caso o email seja duplicado e outra de sucesso.(tem de ser fora do ngOnInit).
   enviarDados() {
     this.busca.insere(this.usuario).subscribe(
       res => {
         console.log(res);
         alert("Bem-vindo ao B.lieveOn " + this.usuario.nome);
-
       },
       error => {
         console.log(error);

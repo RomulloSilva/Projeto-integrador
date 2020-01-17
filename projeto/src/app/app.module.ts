@@ -18,7 +18,6 @@ import { SobreComponent } from './11.sobre/sobre.component';
 import { FormularioAComponent } from './6.formulario-a/formulario-a.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import { EditaUserComponent } from './edita-user/edita-user.component';
-import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +34,7 @@ import { FaqComponent } from './faq/faq.component';
     PaginaDoacaoComponent,
     SobreComponent,
     ListagemComponent,
-    EditaUserComponent,
-    FaqComponent
+    EditaUserComponent
   ],
   imports: [
     BrowserModule,
