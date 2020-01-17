@@ -12,6 +12,7 @@ import { PaginaDoacaoComponent } from './10.pagina-doacao/pagina-doacao.componen
 import { SobreComponent } from './11.sobre/sobre.component';
 import {ListagemComponent} from './listagem/listagem.component';
 import {EditaUserComponent} from './edita-user/edita-user.component';
+import {FaqComponent} from './faq/faq.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,9 @@ const routes: Routes = [
   {path: 'paginaDoacao', component: PaginaDoacaoComponent},
   {path: 'sobre', component: SobreComponent},
   {path: 'listagem', component: ListagemComponent},
-  {path: 'editaUser/:id', component: EditaUserComponent}//chmar a página com os detalhes de um usuário específico pelo ID.
+  {path: 'editaUser/:id', component: EditaUserComponent},
+  {path: 'faq', component:FaqComponent}
+  //chmar a página com os detalhes de um usuário específico pelo ID.
   
 
 
