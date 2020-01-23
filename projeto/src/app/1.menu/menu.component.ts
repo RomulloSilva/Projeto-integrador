@@ -90,8 +90,8 @@ export class MenuComponent implements OnInit {
         
         this.router.navigate(['login']);
         //jquery que faz o modal sair após ser logado.
-        $('#modalLogin').hide();//Aqui vai o id do modal.
-        $('.modal-backdrop').hide();
+        $('#fecharModal').click();//Aqui vai o id do modal.
+      
       },
       (erro)=>{
         console.log("Não conectado");
