@@ -1,3 +1,70 @@
+<div class="container-fluid" id="welcomeSession">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="style fade-in2" id="bv1">O nosso maior projeto é <br>o seu sucesso.</h2>
+            <p class="style fade-in3" id="bv2">Somos uma solução transformadora que une recursos<br> a ideias incríveis.</p>
+        </div>
+        <div class="col-md-6" id="logoMain">
+
+            <img class="style fade-in" src="../../assets/imagens/Logo.simples.png">
+        </div>
+    </div>
+
+</div>
+<div class="container-fluid" id="sessaoA">
+    <p class="text-justify">
+        <b>Últimas atualizações...</b>
+    </p>
+    <div *ngIf="post1!= null">
+        <div class="card position-sticky" style="width: 250px; height: 450px;">
+            <img class="card-img-top" src='{{post1.linkimg}}' alt="Imagem de capa do card">
+            <div class="card-body">
+                <h5 class="card-title">{{post1.titulo}}</h5>
+                <p class="card-text">{{post1.texto}}</p>
+            </div>
+            <div class="card-body">
+                <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="post2 != null">
+        <div class="card position-sticky" style="width: 250px; height: 450px">
+            <img class="card-img-top" src='{{post2.linkimg}}' alt="Imagem de capa do card">
+            <div class="card-body">
+                <h5 class="card-title">{{post2.titulo}}</h5>
+                <p class="card-text">{{post2.texto}}</p>
+            </div>
+            <div class="card-body">
+                <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="post3!= null">
+        <div class="card position-sticky" style="width: 250px; height: 450px">
+            <img class="card-img-top" src='{{post3.linkimg}}' alt="Imagem de capa do card">
+            <div class="card-body">
+                <h5 class="card-title">{{post3.titulo}}</h5>
+                <p class="card-text">{{post3.texto}}</p>
+            </div>
+            <div class="card-body">
+                <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="post4 != null">
+        <div class="card position-sticky" style="width: 250px; height: 450px">
+            <img class="card-img-top" src='{{post4.linkimg}}' alt="Imagem de capa do card">
+            <div class="card-body">
+                <h5 class="card-title">{{post4.titulo}}.</h5>
+                <p class="card-text">{{post4.texto}}</p>
+            </div>
+            <div class="card-body">
+                <a [routerLink]="'/paginaDoacao'" class="btn btn-info align-bottom">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+
+</div>
 <div class="container-fluid" id="carousel">
     <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -37,92 +104,27 @@
             <span class="sr-only">Próximo</span>
         </a>
     </div>
-</div>
-<!--Inicio dos Cards que ficam os novos Produtos-->
-<div class="container-fluid" id="sessaoA">
-        <p class="text-justify">
-                <b>Últimas atualizações...</b>
-            </p>
-    <div *ngIf="post1!= null">
-            <div class="card position-sticky" style="width: 250px; height: 450px;">
-                    <img class="card-img-top" src='{{post1.linkimg}}' alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{post1.titulo}}</h5>
-                        <p class="card-text">{{post1.texto}}</p>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
-                    </div>
-                </div>
-    </div>
-    <div *ngIf="post2 != null">
-            <div class="card position-sticky" style="width: 250px; height: 450px">
-                    <img class="card-img-top" src='{{post2.linkimg}}' alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{post2.titulo}}</h5>
-                        <p class="card-text">{{post2.texto}}</p>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
-                    </div>
-                </div>
-    </div>
-    <div *ngIf="post3!= null">
-            <div class="card position-sticky" style="width: 250px; height: 450px">
-                    <img class="card-img-top" src='{{post3.linkimg}}' alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{post3.titulo}}</h5>
-                        <p class="card-text">{{post3.texto}}</p>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
-                    </div>
-                </div>
-    </div>
-    <div *ngIf="post4 != null">
-            <div class="card position-sticky" style="width: 250px; height: 450px">
-                    <img class="card-img-top" src='{{post4.linkimg}}' alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{post4.titulo}}.</h5>
-                        <p class="card-text">{{post4.texto}}</p>
-                    </div>
-                    <div class="card-body">
-                        <a [routerLink]= "'/paginaDoacao'" class="btn btn-info align-bottom">Saiba mais</a>
-                    </div>
-                </div>
-    </div>
+
+    <!--Inicio dos Cards que ficam os novos Produtos-->
 
 
 
 
-
-
-
-
-    
-    
-    
-    
-    
-</div>
-
-
-
-<!---Caixa descritiva do Believe on-->
-<div class="container-fluid" id="descricao">
-    <div class="row " id="sessaoB">
-        <div class="col"></div>
-        <div class="col">
-            <figure class="figure" id="sessaoB-in">
-                <img class="figure-img img-fluid w-50" src="../../assets/imagens/sessaoB-innerIMG.jpg">
-                <p class="text-justify ml-5">A <b>B.LIEVE ON</b> é uma iniciativa de Investimentos nascida em 2019 a partir de uma ideia elaborada em sala de aula por quatro amigos programadores. Seu foco é agregar valor a projetos de microempreendedores criativos provenientes dos
-                    mais diversos cantos do Brasil, conectando-os a uma vasta rede de investidores interessados em financiar ideias de sucesso. Nosso modelo de negócio é focado em preencher as lacunas sociais e jurídicas que impedem o crescimento dessas
-                    ideias inovadoras, fornecendo assessoria especializada e assistência a ambas as partes interessadas em fechar parcerias. Nossa equipe é composta não por máquinas, mas por pessoas. Pessoas comprometidas e inventivas que tem um desejo
-                    profundo de impactar positivamente as vidas de outras pessoas. <br><br>Nós acreditamos no potencial de todos.</p>
-            </figure>
+    <!---Caixa descritiva do Believe on-->
+    <div class="container-fluid" id="descricao">
+        <div class="row " id="sessaoB">
+            <div class="col"></div>
             <div class="col">
+                <figure class="figure" id="sessaoB-in">
+                    <img class="figure-img img-fluid w-50" src="../../assets/imagens/sessaoB-innerIMG.jpg">
+                    <p class="text-justify ml-5">A <b>B.LIEVE ON</b> é uma iniciativa de Investimentos nascida em 2019 a partir de uma ideia elaborada em sala de aula por quatro amigos programadores. Seu foco é agregar valor a projetos de microempreendedores criativos provenientes
+                        dos mais diversos cantos do Brasil, conectando-os a uma vasta rede de investidores interessados em financiar ideias de sucesso. Nosso modelo de negócio é focado em preencher as lacunas sociais e jurídicas que impedem o crescimento
+                        dessas ideias inovadoras, fornecendo assessoria especializada e assistência a ambas as partes interessadas em fechar parcerias. Nossa equipe é composta não por máquinas, mas por pessoas. Pessoas comprometidas e inventivas que tem
+                        um desejo profundo de impactar positivamente as vidas de outras pessoas. <br><br>Nós acreditamos no potencial de todos.</p>
+                </figure>
+                <div class="col">
+                </div>
             </div>
+            <div class="col"></div>
         </div>
-        <div class="col"></div>
     </div>
-</div>
