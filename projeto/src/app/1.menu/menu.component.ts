@@ -8,6 +8,7 @@ import { Globals } from '../model/Globals';
 //importação do jquery
 import * as $ from 'jquery';
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -54,8 +55,7 @@ export class MenuComponent implements OnInit {
   //Variável que é usada para retirar dados que só podem ser utilizados qquando logado.
   public estaLogado: boolean = false;
   
-  
-  
+   
 
 
 
