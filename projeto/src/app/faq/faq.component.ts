@@ -56,7 +56,7 @@ export class FaqComponent implements OnInit {
     }
 
     if (this.msg == "" || this.msg == null) {
-      this._msgTexto = "Digite uma mensagem válido.";
+      this._msgTexto = "Digite uma mensagem válida.";
       i++;
     } else {
       this._msgTexto = null;
@@ -68,6 +68,21 @@ export class FaqComponent implements OnInit {
 
 
 
+  }
+  private formataTel(){
+
+    if(this.telefone.length == 1 ){
+      this.telefone ="(" + this.telefone;
+    }
+    if(this.telefone.length == 3){
+      this.telefone = this.telefone + ")";
+    }
+    if(this.telefone.length == 4){
+      this.telefone = this.telefone + " ";
+    }
+    if(this.telefone.length == 10){
+      this.telefone = this.telefone + "-";
+    }
   }
 
 

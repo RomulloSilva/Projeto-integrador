@@ -1,30 +1,27 @@
 #formularioAjuda{
-    background-color: #2B3A41;
-    justify-content: center;
-    color:white;
+    background-color: rgb(255, 255, 255);
+   
+    color:rgb(0, 0, 0);
 }
-.botaoEnviaDuvidas{
-    background-color: #2F3840;
-    border-color:#4E5E30;
-}
+
 .card-header{
-    background-color: #2B3A41;
-    justify-content: center;
-    border-color: #4E5E30;
+    background-color: rgb(255, 255, 255);
+
+    border-color: rgb(255, 255, 255);
     
 
 }
 .collapse{
-    background-color: #2B3A41;
-    justify-content: center;
-    border-color: #4E5E30;
+    background-color: rgb(255, 255, 255);
+
+    border-color: rgb(255, 255, 255);
    
     
 }
 
 #sessaoFAQ{
 
-    background-color: #2B3A41;
+    background-color: rgb(255, 255, 255);
 }
 #msgErro {
     font-size: 12px;
@@ -38,9 +35,26 @@
     padding-bottom: 2px;
 }
 #accordionExample{
-    color:white;
+    color:rgb(0, 0, 0);
 
 }
 #btn{
     font-size: 14px;
+}
+.form-control{ 
+    background-color: rgb(235, 235, 235);
+    font-size: 14px;
+    height: 35px;
+}
+#duvidas{
+    font-family: 'Cuprum', sans-serif;
+    padding-left: 60px;
+    padding-top:20px;
+    padding-bottom:5px;
+}
+#faq{
+    font-family: 'Cuprum', sans-serif;
+    padding-left: 200px;
+    padding-top:20px;
+    padding-bottom:5px;
 }

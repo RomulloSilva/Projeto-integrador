@@ -12,28 +12,6 @@
     background-image: url(../../assets/imagens/testeForm.jpg);
 }
 
-.container {
-    margin-top: 50px;
-    color: white;
-    padding: 100px;
-    background-color: rgb(95, 161, 161);
-    opacity: 75%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto
-}
-
-.meninaimg {
-    position: absolute;
-    right: 180px;
-    /* posiciona a 90px para a esquerda */
-    top: 230px;
-    /* posiciona a 70px para baixo */
-    width: 220px;
-    height: 290px;
-    opacity: 100%;
-}
-
 .form-control {
     background-color: rgb(235, 235, 235);
     font-size: 14px;
@@ -41,11 +19,14 @@
 }
 
 #texto1 {
-    margin-top: 50px;
+    margin-top: 300px;
     font-family: 'Cuprum', sans-serif;
     margin-bottom: 20px;
 }
 
 #texto2 {
     font-family: 'Cuprum', sans-serif;
+}
+#teste{
+    padding-top:30px;
 }
