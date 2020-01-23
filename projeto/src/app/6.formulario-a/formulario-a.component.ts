@@ -79,4 +79,21 @@ export class FormularioAComponent implements OnInit {
     }
 
   };
+  
+private formataTel(){
+
+	if(this.telefone.length == 1 ){
+		this.telefone ="(" + this.telefone;
+	}
+	if(this.telefone.length == 3){
+    this.telefone = this.telefone + ")";
+  }
+  if(this.telefone.length == 4){
+    this.telefone = this.telefone + " ";
+  }
+  if(this.telefone.length == 10){
+    this.telefone = this.telefone + "-";
+  }
+}
+
 }
