@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 
-/**Importações utilizadas na tarefa 10, que valida o login do Administrador*/
-import { ProjetosService } from '../serviço/projetos.service';
-import {Token} from '../model/Token';
+/**Importações utilizadas na tarefa 10,CRUD*/
 import {Projeto} from '../model/Projeto';
-import {Administrador} from '../model/Administrador';
+import { ProjetosService } from '../serviço/projetos.service';
+
 //utilizamos o router tambem PAREI AQUI.
 
 
@@ -16,9 +15,27 @@ import {Administrador} from '../model/Administrador';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private proj: ProjetosService,) { }
+
+
+    //Variaveis
+
+  //variável que armazena as postagens feitas pelo admnistrador.
+  private projeto: Projeto[];
 
   ngOnInit() {
+
+      this.proj.listarProjetos().subscribe((res: Projeto[])=>{
+        this.projeto = res;
+      },(err)=>{
+        alert("ERRO")
+      });
   }
+
+
+
+public pesquisarProjeto(){
+
+}
 
 }

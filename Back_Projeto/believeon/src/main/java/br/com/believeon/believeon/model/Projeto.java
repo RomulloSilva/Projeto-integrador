@@ -8,6 +8,10 @@ public class Projeto {
 	private String descricao;
 	private String resumo;
 	private String meta;
+	
+	
+	
+	
 	public int getId() {
 		return id;
 	}

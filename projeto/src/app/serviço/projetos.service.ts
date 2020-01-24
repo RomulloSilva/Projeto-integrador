@@ -32,7 +32,7 @@ export class ProjetosService {
   }
 
   public atualizarProjeto(projeto: Projeto){
-    console.log(produto);
+    console.log(projeto);
     return this.http.put("http://localhost:8080", projeto)
   }
 

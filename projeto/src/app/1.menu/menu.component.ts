@@ -1,12 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import {ProdutosService} from '../serviço/produtos.service';
 
 //Importar a classe de usuario.
 import { Usuario } from '../model/Usuario';
-import { ProdutosService } from '../serviço/produtos.service';
 import { Router } from '@angular/router';
 import { Globals } from '../model/Globals';
 //importação do jquery
 import * as $ from 'jquery';
+
+
+
+/**Importações utilizadas na tarefa 10, que valida o login do Administrador*/
+import { AdministradorService } from '../serviço/administrador.service';
+import {Token} from '../model/Token';
+import {Projeto} from '../model/Projeto';
+import {Administrador} from '../model/Administrador';
+//utilizamos o router tambem.
 
 
 @Component({
@@ -55,15 +64,23 @@ export class MenuComponent implements OnInit {
   //Variável que é usada para retirar dados que só podem ser utilizados qquando logado.
   public estaLogado: boolean = false;
   
-   
+   //Variáveis do administrador
+   public admnistrador: Administrador = new Administrador();
+   public admLogado: boolean = false;
 
 
 
   
-  constructor(private busca: ProdutosService, private srv: ProdutosService, private router: Router) { }
+  constructor(private busca: ProdutosService, private srv: ProdutosService, private router: Router, private adm: AdministradorService) { }
 
 
   ngOnInit() {
+
+    //Salvando o Token no localStorage
+    if(localStorage.getItem("admToken")){
+      this.router.navigate(['/perfil']);
+    }
+    
     
 
     
@@ -76,29 +93,52 @@ export class MenuComponent implements OnInit {
   //gui-validandologin3=esta função compara os dados e valida (compara a api com os dados inseridos nos inputs do form de login)
     public efetuaLogin() {
 
-      this.usuario.email = this.inputEmail;
-      this.usuario.senha = this.inputPassword;
+
+      if(this.inputEmail == "ADM@adm.com" && this.inputPassword == "12345"){
+        this.admnistrador.emailADM = this.inputEmail;
+        this.admnistrador.senhaADM = this.inputPassword;
+        this.adm.loginAdm(this.admnistrador).subscribe((res:Administrador)=>{
+          console.log("Administrador logado")
+
+          //var que faz os componentes de ADM aparecer.
+          this.admLogado = true;
+          //Rota para levar ao componente perfil onde postamos os projetos.
+          this.router.navigate(['perfil']);
+          $('#fecharModal').click();
+        },
+        (err)=>{
+          console.log("Não conectado");
+        alert("Senha ou email do Administrador errados")
+        })
+      }else{
+
+        this.usuario.email = this.inputEmail;
+        this.usuario.senha = this.inputPassword;
+    
+        this.srv.login(this.usuario).subscribe((res:Usuario)=>{
+          console.log("Conectado");
   
-      this.srv.login(this.usuario).subscribe((res:Usuario)=>{
-        console.log("Conectado");
-
-          //Atribuir o Globals ao objet
-          Globals.USUARIO = res;
-
-          //var que faz os dados aparecerem.
-          this.estaLogado = true;
+            //Atribuir o Globals ao objet
+            Globals.USUARIO = res;
+  
+            //var que faz os dados aparecerem.
+            this.estaLogado = true;
+          
+          this.router.navigate(['login']);
+          //jquery que faz o modal sair após ser logado.
+          $('#fecharModal').click();//Aqui vai o id do modal.
         
-        this.router.navigate(['login']);
-        //jquery que faz o modal sair após ser logado.
-        $('#fecharModal').click();//Aqui vai o id do modal.
-      
-      },
-      (erro)=>{
-        console.log("Não conectado");
-        alert("Senha ou email errados")
-        //Como somos o commerce não vamos ter rota, só msg de erro.
+        },
+        (erro)=>{
+          console.log("Não conectado");
+          alert("Senha ou email errados")
+          //Como somos o commerce não vamos ter rota, só msg de erro.
+  
+        })
 
-      })
+      }
+
+     
   }
 
 
