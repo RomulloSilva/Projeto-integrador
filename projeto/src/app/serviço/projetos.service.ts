@@ -33,7 +33,7 @@ export class ProjetosService {
 
   public atualizarProjeto(projeto: Projeto){
     console.log(projeto);
-    return this.http.put("http://localhost:8080", projeto)
+    return this.http.put("http://localhost:8080/ajuste/projeto", projeto)
   }
 
   public deletar(id: number){
