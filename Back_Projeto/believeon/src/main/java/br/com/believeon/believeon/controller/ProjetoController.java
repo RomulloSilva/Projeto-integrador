@@ -3,6 +3,7 @@ package br.com.believeon.believeon.controller;
 import java.util.ArrayList;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,7 @@ import br.com.believeon.believeon.bd.bdProjeto;
 import br.com.believeon.believeon.model.Projeto;
 
 @RestController
-
+@CrossOrigin("*")
 public class ProjetoController {
 	
 	//Criei o meu banco de dados bdProjeto.

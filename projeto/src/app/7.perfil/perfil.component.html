@@ -1,11 +1,13 @@
 <div class="container">
-    <img src="../../assets/imagens/plus button.png" height="60px;"width="60px;" id="addButton" alt="Adicionar Projeto">
+    <h6 id="adicionar">Adicionar projetos</h6>
+    <img type="button" src="../../assets/imagens/plus button.png" height="60px;"width="60px;" id="addButton" alt="Adicionar Projeto" [routerLink]="'/cadastrarProjeto'">
 </div>
-<div class="container emp-profile">
+
+<div class="container emp-profile" *ngFor = 'let p of projeto'>
     <div class="row">
         <div class="col-md-4">
             <div class="profile-img">
-                <img src="../../assets/imagens/card (4).jpg"
+                <img src="{{p.imagens}}"
                     alt="" />
                 <div class="file btn btn-lg btn-primary">
                     (nome do projeto)
@@ -16,12 +18,12 @@
         <div class="col-md-6">
             <div class="profile-head">
                 <h5>
-                    (Nome do projeto)
+                    {{p.titulo}}
                 </h5>
                 <h6>
-                    (resumo)
+                    {{p.resumo}}
                 </h6>
-                <p class="proile-rating">(META): <span>R$ 30.000,00</span></p>
+                <p class="proile-rating">(META): <span>R$ {{p.meta}}</span></p>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
@@ -31,7 +33,8 @@
             </div>
         </div>
         <div class="col-md-2">
-            <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Editar Projeto:" />
+            <a [routerLink]="['/editaProjeto', p.id]" type="submit" class="profile-edit-btn" name="btnAddMore">Editar Projeto:</a>
+            <a (click)="deletarProjeto()" type="submit" class="profile-edit-btn" name="btnAddMore"> Deletar Projeto </a>
         </div>
     </div>
     <div class="row">
@@ -54,7 +57,7 @@
                             <label>Id:</label>
                         </div>
                         <div class="col-md-6">
-                            <p>(Id do projeto)</p>
+                            <p>{{p.id}}</p>
                         </div>
                     </div>
                     <div class="row">

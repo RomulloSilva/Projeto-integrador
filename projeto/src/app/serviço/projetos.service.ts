@@ -36,6 +36,10 @@ export class ProjetosService {
     return this.http.put("http://localhost:8080", projeto)
   }
 
+  public deletar(id: number){
+    return this.http.delete("http://localhost:8080/ajuste/projeto/"+id);
+  }
+
 
 
 }

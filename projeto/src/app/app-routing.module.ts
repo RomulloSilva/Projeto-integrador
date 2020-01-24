@@ -13,6 +13,8 @@ import { SobreComponent } from './11.sobre/sobre.component';
 import {ListagemComponent} from './listagem/listagem.component';
 import {EditaUserComponent} from './edita-user/edita-user.component';
 import {FaqComponent} from './faq/faq.component';
+import {EditaProjetoComponent} from './edita-projeto/edita-projeto.component';
+import {CadastrarProjetoComponent} from './cadastrar-projeto/cadastrar-projeto.component';
 
 
 const routes: Routes = [
@@ -28,7 +30,9 @@ const routes: Routes = [
   {path: 'sobre', component: SobreComponent},
   {path: 'listagem', component: ListagemComponent},
   {path: 'editaUser/:id', component: EditaUserComponent},
-  {path: 'faq', component:FaqComponent}
+  {path: 'faq', component:FaqComponent},
+  {path: 'editaProjeto/:id', component: EditaProjetoComponent},
+  {path: 'cadastrarProjeto', component: CadastrarProjetoComponent}
   //chmar a página com os detalhes de um usuário específico pelo ID.
   
 

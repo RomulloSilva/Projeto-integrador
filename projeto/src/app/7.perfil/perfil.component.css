@@ -1,5 +1,9 @@
 body{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+
+}
+#adicionar{
+    color: white;
 }
 .emp-profile{
     padding: 3%;

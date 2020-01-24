@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 /**Importações utilizadas na tarefa 10,CRUD*/
 import {Projeto} from '../model/Projeto';
 import { ProjetosService } from '../serviço/projetos.service';
+import { ActivatedRoute } from '@angular/router';
 
 //utilizamos o router tambem PAREI AQUI.
 
@@ -15,7 +16,7 @@ import { ProjetosService } from '../serviço/projetos.service';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor(private proj: ProjetosService,) { }
+  constructor(private proj: ProjetosService, private rota: ActivatedRoute) { }
 
 
     //Variaveis
@@ -31,11 +32,18 @@ export class PerfilComponent implements OnInit {
         alert("ERRO")
       });
   }
+   private pj: Projeto;
 
 
+   public deletarProjeto(id: number){
+     this.proj.deletar(id).subscribe((res)=>{
+       alert("Apagado com sucesso");
+       document.location.reload(true);
+     },
+     (err)=>{
+       alert("Não deletou")
+     })
+   }
 
-public pesquisarProjeto(){
-
-}
 
 }
