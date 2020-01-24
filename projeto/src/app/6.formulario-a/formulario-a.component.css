@@ -27,6 +27,19 @@
 #texto2 {
     font-family: 'Cuprum', sans-serif;
 }
-#teste{
-    padding-top:30px;
+
+#teste {
+    padding-top: 30px;
+}
+
+#msgErro {
+    font-size: 12px;
+    color: rgb(228, 102, 102);
+    border: 1px solid;
+    border-radius: 12px;
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 2px;
 }
