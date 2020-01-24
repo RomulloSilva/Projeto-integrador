@@ -48,9 +48,9 @@ public class ProjetoController {
 	
 	
 	@PutMapping("/ajuste/projeto")
-	public ResponseEntity<String> alteraProjeto(@RequestBody Projeto projeto){
+	public ResponseEntity<Projeto> alteraProjeto(@RequestBody Projeto projeto){
 		bd.atualizar(projeto);
-		return ResponseEntity.ok("Atualizado com sucesso");
+		return ResponseEntity.ok(projeto);
 	}
 	
 	
