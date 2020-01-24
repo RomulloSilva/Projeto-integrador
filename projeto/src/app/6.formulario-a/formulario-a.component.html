@@ -5,18 +5,16 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="form-control" id="nome1"></label>
-                        <input [(ngModel)]="nome" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
-                            id="nome" placeholder="Nome">
-                        <span *ngIf='_msgNome'>{{_msgNome}}</span>
+                        <input [(ngModel)]="nome" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="nome" placeholder="Nome:">
+                        <span *ngIf='_msgNome' id="msgErro">{{_msgNome}}</span>
                         <!--Mensagen de erro para nome vazio-->
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="form-control" id="sobrenome1"></label>
-                        <input [(ngModel)]="sobrenome" [ngModelOptions]="{standalone: true}" type="text"
-                            class="form-control" id="sobrenome" placeholder="Sobrenome">
-                        <span *ngIf='_msgSobrenome'>{{_msgSobrenome}}</span>
+                        <input [(ngModel)]="sobrenome" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="sobrenome" placeholder="Sobrenome:">
+                        <span *ngIf='_msgSobrenome' id="msgErro">{{_msgSobrenome}}</span>
                         <!--Mensagen de erro para nome vazio-->
                     </div>
                 </div>
@@ -24,19 +22,16 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="exampleInputEmail1"></label>
-                        <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="email"
-                            class="form-control" id="email1" placeholder="E-mail...">
-                        <span *ngIf='_msgEmail'>{{_msgEmail}}</span>
+                        <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="email1" placeholder="E-mail:">
+                        <span *ngIf='_msgEmail' id="msgErro">{{_msgEmail}}</span>
                         <!--Mensagen de erro para nome vazio-->
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="exampleInputEmail1"></label>
-                        <input [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" type="tel"
-                            class="form-control" id="telefone" placeholder="Telefone" maxlength="15"
-                            (keyup)="formataTel()">
-                        <span *ngIf='_msgTelefone'>{{_msgTelefone}}</span>
+                        <input [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" type="tel" class="form-control" id="telefone" placeholder="Telefone:" maxlength="15" (keyup)="formataTel()">
+                        <span *ngIf='_msgTelefone' id="msgErro">{{_msgTelefone}}</span>
                         <!--Mensagen de erro para nome vazio-->
                     </div>
                 </div>
@@ -44,19 +39,16 @@
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="inputCity"></label>
-                        <input [(ngModel)]="cidade" [ngModelOptions]="{standalone: true}" type="text"
-                            class="form-control" id="cidade1" placeholder="Sua cidade...">
-                        <span *ngIf='_msgCidade'>{{_msgCidade}}</span>
+                        <input [(ngModel)]="cidade" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="cidade1" placeholder="Sua cidade:">
+                        <span *ngIf='_msgCidade' id="msgErro">{{_msgCidade}}</span>
                         <!--Mensagen de erro para nome vazio-->
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="inputState"></label>
-                        <select [(ngModel)]="estado" [ngModelOptions]="{standalone: true}" id="inputState"
-                            class="form-control">
-                            <option selected>Selecione seu estado...</option>
-                            <option>SP</option>
+                        <select [(ngModel)]="estado" [ngModelOptions]="{standalone: true}" id="inputState" class="form-control">
+                            <option selected="true">SP</option>
                             <option>AC</option>
                             <option>AL</option>
                             <option>AP</option>
@@ -83,16 +75,15 @@
                             <option>SE</option>
                             <option>TO</option>
                         </select>
-                        <span *ngIf='_msgEstado'>{{_msgEstado}}</span>
+                        <span *ngIf='_msgEstado' id="msgErro">{{_msgEstado}}</span>
                         <!--Mensagen de erro para nome vazio-->
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-8">
                         <label for="exampleFormControlTextarea1"></label>
-                        <textarea [(ngModel)]="msg" [ngModelOptions]="{standalone: true}" class="form-control"
-                            id="mensagem" rows="4" maxlength="1200" placeholder="Digite sua mensagem..."></textarea>
-                        <span *ngIf='_msgTexto'>{{_msgTexto}}</span>
+                        <textarea [(ngModel)]="msg" [ngModelOptions]="{standalone: true}" class="form-control" id="mensagem" rows="4" maxlength="1200" placeholder="Digite sua mensagem..."></textarea>
+                        <span *ngIf='_msgTexto' id="msgErro">{{_msgTexto}}</span>
                         <!--Mensagen de erro para nome vazio-->
                     </div>
 
@@ -105,8 +96,7 @@
         </div>
         <div class="col-md-6" id="faleConosco">
             <h1 id="texto1">Fale Conosco</h1>
-            <p id="texto2">Tem um Feedback para nós? <br> Diga como podemos ajudar!<br>Sua opinião é importante para
-                nosso negócio.</p>
+            <p id="texto2">Tem um Feedback para nós? <br> Diga como podemos ajudar!<br>Sua opinião é importante para nosso negócio.</p>
         </div>
     </div>
 

@@ -31,51 +31,51 @@ export class FormularioAComponent implements OnInit {
     var i = 0;
 
     if (this.nome == "" || this.nome == null) {
-      this._msgNome = "Digite um nome valido";
+      this._msgNome = "Digite um nome válido.";
       i++;
     } else {
       this._msgNome = null;
     }
     if (this.sobrenome == "" || this.sobrenome == null) {
-      this._msgSobrenome = "Digite um sobrenome valido";
+      this._msgSobrenome = "Digite um sobrenome válido.";
       i++;
     } else {
       this._msgSobrenome = null;
     }
     if (this.email == "" || this.email == null || this.email.indexOf("@") == -1) {
 
-      this._msgEmail = "Digite um e-mail valido";
+      this._msgEmail = "Digite um e-mail válido.";
       i++;
     } else {
       this._msgEmail = null;
     }
     if (this.telefone == "" || this.telefone == null || this.telefone.length < 14) {
-      this._msgTelefone = "Digite um numero valido";
+      this._msgTelefone = "Insira um número válido.";
       i++;
     } else {
       this._msgTelefone = null;
     }
     if (this.cidade == "" || this.cidade == null) {
-      this._msgCidade = "Digite um valor valido";
+      this._msgCidade = "Insira sua Cidade.";
       i++;
     } else {
       this._msgCidade = null;
     }
     if (this.estado == "" || this.estado == null) {
-      this._msgEstado = "Digite um valor valido";
+      this._msgEstado = "Selecione seu estado.";
       i++;
     } else {
       this._msgEstado = null;
     }
     if (this.msg == "" || this.msg == null) {
-      this._msgTexto = "Digite uma mensagem valido";
+      this._msgTexto = "Insira sua mensagem.";
       i++;
     } else {
       this._msgTexto = null;
     }
 
     if (i < 1) {
-      alert('Msg enviada');
+      alert('Sua mensagem foi enviada com sucesso!');
     }
 
   };
