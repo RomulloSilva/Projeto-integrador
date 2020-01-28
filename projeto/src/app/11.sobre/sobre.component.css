@@ -1,133 +1,103 @@
-*{
-    margin:0px;
-    padding:0px;
-}
-/* verde agua*/
-#caixasobreNos{
-    font-family: 'Open Sans Condensed', sans-serif;
-    background-color:rgb(99, 177, 177);
-    padding:30px;
-    height:400px;
-    margin-top:60px;
-    box-shadow: 1px 1px 5px;
-    color: rgb(95, 161, 161);
-    opacity: 80%;    
-   
-    
-}
-#caixanos{
-    background-color:white;
-    box-shadow: 1px 1px 5px;
-    color: rgb(255, 255, 255);
-    opacity: 95%;
-    height:400px;
-   
-}
-#textosobreNos{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 350px;
-    font-size: 50px;
-    color:white;
-    font-family:'Permanent marker', cursive;
 
+.sobreIntegrantes{
+  background: #2E56A6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2F3840, #3B5157);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2F3840, #3B5157); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  float:left;
+  width:100%;
+  padding : 50px 0;
 }
-#imgFernanda{
-    height:75px;
-    width: 75px;
-    border-radius: 60px;
-    margin-top: 15px;
-    
+.sobreSucesso{
+  background: #2E56A6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #3B5157, #344D4B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #3B5157, #344D4B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  float:left;
+  width:100%;
+  padding : 50px 0;
 }
-#imgGuilherme{
-    height:75px;
-    width: 75px;
-    border-radius: 60px;
-    margin-top: 15px;
-}
-#imgGabi{
-    height:75px;
-    width: 75px;
-    border-radius: 60px;
-    margin-top: 15px;
-}
-#imgRomulo{
-    height:75px;
-    width: 75px;
-    border-radius: 60px;
-    margin-top: 15px;
-}
+/*------------------------------------------------------------------------------*/
 
 
-  
-  .image {
-    display: block;
-    height: auto;
-    position: relative;
-    width: 100%;
-  }
-  
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgb(95, 161, 161);
-    overflow: hidden;
-    width: 0;
-    height: 100%;
-    transition: .5s ease;
-  }
-  
-  #fernanda:hover .overlay {
-    width: 100%;
-  }
-  #Guilherme:hover .overlay {
-    width: 100%;
-  }
-  #romulo:hover .overlay {
-    width: 100%;
-  }
-  #gabi:hover .overlay {
-    width: 100%;
-  }
-  
-  .text {
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    white-space: wrap;
-    
+.sobreNos{
+  background: #2E56A6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #34344D, #3B4257);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #34344D, #3B4257); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+float:left;
+width:100%;
+padding : 50px 0;
+}
+
+.banner-sec{
+  background:url("../../assets/imagens/background.png")  
+  no-repeat left bottom; 
+  background-size:cover; 
+  min-height:500px;
+   border-radius: 0 10px 10px 0; 
+   padding:0;
+}
+.container{
+  background:#fff; 
+  border-radius: 10px;
+   box-shadow:15px 20px 0px rgba(0,0,0,0.1);
   }
 
-
-  /*CARD*/
- 
-
-
-#team {
-  background: #eee !important;
+.login-sec{
+  padding: 50px 30px; 
+  position:relative;
 }
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #108d6f;
-  border-color: #108d6f;
-  box-shadow: none;
-  outline: none;
+.login-sec .copy-text{
+  position:absolute; 
+  width:80%;
+   bottom:20px; 
+   font-size:13px; 
+   text-align:center;
+  }
+.login-sec .copy-text i{
+  color:#FEB58A;
 }
-
-.btn-primary {
-  color: #fff;
-  background-color: #007b5e;
-  border-color: #007b5e;
+.login-sec .copy-text a{
+  color:#E36262;
 }
+.login-sec h2{
+  margin-bottom:30px; 
+  font-weight:800; 
+  font-size:30px; 
+  color: #DE6262;
+}
+.login-sec h2:after{
+  content:" "; 
+  width:100px; 
+  height:5px; 
+  background:#FEB58A; 
+  display:block;
+  margin-top:20px;
+  border-radius:3px; 
+  margin-left:auto;
+  margin-right:auto;
+}
+.banner-text{
+  width:70%; 
+  position:absolute;
+  bottom:40px; 
+  padding-left:20px;}
+.banner-text h2{
+  color:#fff;
+  font-weight:600;}
+.banner-text h2:after{
+  content:" "; 
+  width:100px; 
+  height:5px; 
+  background:#FFF; 
+  display:block; 
+  margin-top:20px; 
+  border-radius:3px;}
+.banner-text p{color:#fff;}
+
+
+
+
+/*-------------------------------- CARD----------------------------------------------*/
+
 
 section {
   padding: 60px 0;
@@ -138,11 +108,6 @@ section .section-title {
   color: #007b5e;
   margin-bottom: 50px;
   text-transform: uppercase;
-}
-
-#team .card {
-  border: none;
-  background: #ffffff;
 }
 
 .image-flip:hover .backside,
@@ -194,9 +159,9 @@ section .section-title {
   -o-transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
-  -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-  -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-  box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+  -webkit-box-shadow: 5px 7px 9px -4px #41A3E8;
+  -moz-box-shadow: 5px 7px 9px -4px #41A3E8;
+  box-shadow: 5px 7px 9px -4px #41A3E8;
 }
 
 .frontside,
@@ -224,12 +189,12 @@ section .section-title {
 
 .backside .card a {
   font-size: 18px;
-  color: #007b5e !important;
+  color: #2E56A6!important;
 }
 
 .frontside .card .card-title,
 .backside .card .card-title {
-  color: #007b5e !important;
+  color: #2E56A6 !important;
 }
 
 .frontside .card .card-body img {

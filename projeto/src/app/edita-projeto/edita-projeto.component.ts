@@ -24,6 +24,10 @@ export class EditaProjetoComponent implements OnInit {
 	private  descricaoAlimenta: string; 
 	private  resumoAlimenta: string; 
   private  metaAlimenta: string; 
+  private  empreendedorAlimenta: string; 
+  private  emailAlimenta: string; 
+  private  telefoneAlimenta: string; 
+
   //var
   
   constructor(private rota: ActivatedRoute, private busca: ProjetosService) { }
@@ -38,8 +42,11 @@ export class EditaProjetoComponent implements OnInit {
       this.descricaoAlimenta =this.projeto.descricao;
       this.resumoAlimenta =this.projeto.resumo;
       this.metaAlimenta =this.projeto.meta;
+      this.empreendedorAlimenta =this.projeto.empreendedor;
+      this.emailAlimenta =this.projeto.email;
+      this.telefoneAlimenta =this.projeto.telefone;
     },(err)=>{
-      alert("Não funcionou a exibiçãod o produto")
+      alert("Não funcionou a exibição do produto")
     })
 
     
@@ -57,7 +64,7 @@ export class EditaProjetoComponent implements OnInit {
       this.projeto.resumo = this.resumoAlimenta;
       this.projeto.meta = this.metaAlimenta;
       this.busca.atualizarProjeto(this.projeto).subscribe((res)=>{
-        alert("Atualizado com sucesso")
+        alert("Atualizado com sucesso");
       },
       (err)=>{
         alert("Sem sucesso")

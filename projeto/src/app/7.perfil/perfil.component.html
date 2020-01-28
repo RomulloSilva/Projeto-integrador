@@ -1,95 +1,209 @@
-<div class="container">
-    <h6 id="adicionar">Adicionar projetos</h6>
-    <img type="button" src="../../assets/imagens/plus button.png" height="60px;"width="60px;" id="addButton" alt="Adicionar Projeto" [routerLink]="'/cadastrarProjeto'">
-</div>
-
-<div class="container emp-profile" *ngFor = 'let p of projeto'>
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-4">
-            <div class="profile-img">
-                <img src="{{p.imagens}}"
-                    alt="" />
-                <div class="file btn btn-lg btn-primary">
-                    (nome do projeto)
-                    <input type="file" name="file" />
+        <div class="col-md-11">
+            <form class="form-inline mt-4">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar projeto" aria-label="Buscar" [(ngModel)]="idBusca" [ngModelOptions]="{standalone: true}">
+                <button class="btn btn-outline-info" (click)="pesquisar()" type="submit">buscar</button>
+            </form>
+        </div>
+        <div class="col-md-1">
+            <div class="addButton mt-4" [routerLink]="'/cadastrarProjeto'">
+                <img src="../../assets/imagens/add1.png" height="40px;" width="40px;" id="grayAdd" alt="Adicionar Projeto">
+                <img src="../../assets/imagens/add2.png" height="40px;" width="40px;" id="blueAdd" alt="Adicionar Projeto" class="img-top">
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf='pesquisa == null'>
+    <div class="row" *ngFor='let p of all'>
+        <div class="col-md-11">
+            <div class="container emp-profile">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="" alt="" />
+                            <div class="file btn btn-lg btn-primary">
+                                {{p.titulo}}
+                                <input type="file" name="file" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                            <h5>
+                                {{p.titulo}}
+                            </h5>
+                            <h6>
+                                {{p.resumo}}
+                            </h6>
+                            <p class="profile-rating">META: <span>R$ {{p.meta}}</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sobre</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>Na Web:</p>
+                            <a href="">Site</a><br>
+                            <a href="">Facebook</a><br>
+                            <a href="">Instagram</a><br>
+                            <p>Referências:</p><br>
+                            <a href="">Repostagem 1:</a><br/>
+                            <a href="">Repotagem 2:</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Id:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{{p.id}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Empreendedor:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{{p.empreendedor}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Email:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{{p.email}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Telefone:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{{p.telefone}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Descrição:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{{p.descricao}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="profile-head">
-                <h5>
-                    {{p.titulo}}
-                </h5>
-                <h6>
-                    {{p.resumo}}
-                </h6>
-                <p class="proile-rating">(META): <span>R$ {{p.meta}}</span></p>
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                            aria-controls="home" aria-selected="true">Sobre</a>
-                    </li>
-                </ul>
+        <div class="col-md-1">
+            <a class="addButton mt-4" [routerLink]="['/editaProjeto', p.id]">
+                <img src="../../assets/imagens/edit1.png" height="40px;" width="40px;" id="grayAdd" alt="Adicionar Projeto">
+                <img src="../../assets/imagens/edit2.png" height="40px;" width="40px;" id="blueAdd" alt="Adicionar Projeto" class="img-top">
+            </a>
+            <div class="addButton mt-4" (click)="deletarProjeto()">
+                <img src="../../assets/imagens/delete1.png" height="40px;" width="40px;" id="grayAdd" alt="Adicionar Projeto">
+                <img src="../../assets/imagens/delete2.png" height="40px;" width="40px;" id="blueAdd" alt="Adicionar Projeto" class="img-top">
             </div>
-        </div>
-        <div class="col-md-2">
-            <a [routerLink]="['/editaProjeto', p.id]" type="submit" class="profile-edit-btn" name="btnAddMore">Editar Projeto:</a>
-            <a (click)="deletarProjeto()" type="submit" class="profile-edit-btn" name="btnAddMore"> Deletar Projeto </a>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="profile-work">
-                <p>Na Web:</p>
-                <a href="">Site</a><br />
-                <a href="">Facebook</a><br />
-                <a href="">Instagram</a>
-                <p>Referências:</p>
-                <a href="">Repostagem 1:</a><br />
-                <a href="">Repotagem 2:</a><br />
+</div>
+<div *ngIf='pesquisa != null'>
+    <div class="container emp-profile">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="" alt="" />
+                    <div class="file btn btn-lg btn-primary">{{projeto.titulo}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        {{projeto.titulo}}
+                    </h5>
+                    <h6>
+                        {{projeto.resumo}}
+                    </h6>
+                    <p class="proile-rating">META: <span>R$ {{projeto.meta}}</span></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sobre</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <a [routerLink]="['/editaProjeto/', pesquisa]" type="submit" class="profile-edit-btn" name="btnAddMore">Editar Projeto:</a>
+                <a (click)="deletarProjeto()" type="submit" class="profile-edit-btn" name="btnAddMore"> Deletar Projeto </a>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="tab-content profile-tab" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Id:</label>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>Na Web:</p>
+                    <a href="">Site</a><br />
+                    <a href="">Facebook</a><br />
+                    <a href="">Instagram</a>
+                    <p>Referências:</p>
+                    <a href="">Reportagem 1:</a><br />
+                    <a href="">Reporagem 2:</a><br />
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Id:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <p>{{projeto.id}}</p>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <p>{{p.id}}</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Empreendedor:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <p>(nome do responsável)</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Empreendedor:</label>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Email:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <p>(email do responsável)</p>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <p>(nome do responsável)</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Telefone:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <p>(telefone do responsável)</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Email:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>(email do responsável)</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Telefone:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>(telefone do responsável)</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Descrição:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>(descrição detalhada do projeto)</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Descrição:</label>
+                            </div>
+                            <div class="col-md-8">
+                                <p>{{projeto.descricao}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

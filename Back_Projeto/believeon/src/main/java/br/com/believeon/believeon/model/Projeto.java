@@ -8,9 +8,9 @@ public class Projeto {
 	private String descricao;
 	private String resumo;
 	private String meta;
-	
-	
-	
+	private String empreendedor;
+	private String email;
+	private String telefone;
 	
 	public int getId() {
 		return id;
@@ -48,10 +48,26 @@ public class Projeto {
 	public void setMeta(String meta) {
 		this.meta = meta;
 	}
-	
-	
+	public String getEmpreendedor() {
+		return empreendedor;
+	}
+	public void setEmpreendedor(String empreendedor) {
+		this.empreendedor = empreendedor;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 	public String toString() {
-		return "{\"id\":"+this.id+", \"imagens\":"+this.imagens+", \"titulo\":"+this.titulo+", \"descricao\":"+this.descricao+",\"resumo\":"+this.resumo+"}";
+		return "{\"id\":"+this.id+", \"imagens\":"+this.imagens+", \"titulo\":"+this.titulo+", \"descricao\":"+this.descricao+",\"resumo\":"+this.resumo+",\"meta\":"+this.meta+",\"empreendedor\":"+this.empreendedor+",\"email\":"+this.email+",\"telefone\":"+this.telefone+"}";
 	}
 
 }

@@ -16,24 +16,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
 
+
   constructor(private proj: ProjetosService, private rota: ActivatedRoute) { }
+  private idBusca: number;
+  private pesquisa:number;
 
-
-    //Variaveis
-
-  //variável que armazena as postagens feitas pelo admnistrador.
-  private projeto: Projeto[];
+   
+  private projeto: Projeto=null;
+  private all: Projeto[];
+  
 
   ngOnInit() {
-
-      this.proj.listarProjetos().subscribe((res: Projeto[])=>{
-        this.projeto = res;
-      },(err)=>{
-        alert("ERRO")
-      });
+    this.pegaProj();
   }
    private pj: Projeto;
 
+   pegaProj(){
+    this.proj.listarProjetos().subscribe((postOut: Projeto[]) => {
+      this.all = postOut;
+      console.log(this.all);
+    })
+  }
 
    public deletarProjeto(id: number){
      this.proj.deletar(id).subscribe((res)=>{
@@ -41,9 +44,22 @@ export class PerfilComponent implements OnInit {
        document.location.reload(true);
      },
      (err)=>{
-       alert("Não deletou")
+       alert("Não deletou");
      })
    }
+   private pesquisar(){
+    this.pesquisa=this.idBusca
+    if(this.pesquisa <= 0 || this.pesquisa == NaN){
+    alert("Item não encontrado");
+    this.pesquisa = null;
+      }else{
+        this.proj.listarProjetoId(this.pesquisa).subscribe((res: Projeto) =>{
+          this.projeto = res;
+          console.log(this.projeto);
 
+      }
+      )
+    }
+  }
 
 }
