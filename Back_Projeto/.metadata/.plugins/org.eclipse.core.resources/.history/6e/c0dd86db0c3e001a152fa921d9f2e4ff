@@ -1,0 +1,7 @@
+package br.com.believeon.believeon.controller;
+
+
+@Rest
+public class AdministradorController {
+
+}

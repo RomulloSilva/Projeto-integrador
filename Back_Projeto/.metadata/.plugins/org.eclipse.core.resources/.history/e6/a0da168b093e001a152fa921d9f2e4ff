@@ -1,0 +1,24 @@
+package br.com.believeon.believeon.security;
+import javax.xml.bind.DatatypeConverter;
+
+import br.com.believeon.believeon.model.Projeto;
+
+public class Validacao {
+	
+	private static final String PREFIXO = "&BELIEVEON&";
+	
+	
+	
+	
+	
+	
+	/*Aqui codificamos o token*/
+	public static generateToken(Projeto projeto) {
+	String texto = PREFIXO + projeto.toString();
+	String Token = DataTypeConverter.printHexBinary(texto.getBytes());
+	return Token;
+	}
+	
+	
+
+}

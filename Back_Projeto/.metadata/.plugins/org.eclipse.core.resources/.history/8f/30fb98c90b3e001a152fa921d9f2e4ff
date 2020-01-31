@@ -1,0 +1,23 @@
+package br.com.believeon.believeon.model;
+
+public class Administrador {
+	
+	private String emailADM;
+	private String senhaADM;
+	
+	
+	
+	public String getEmailADM() {
+		return emailADM;
+	}
+	public void setEmailADM(String emailADM) {
+		this.emailADM = emailADM;
+	}
+	public String getSenhaADM() {
+		return senhaADM;
+	}
+	public void setSenhaADM(String senhaADM) {
+		this.senhaADM = senhaADM;
+	}
+
+}

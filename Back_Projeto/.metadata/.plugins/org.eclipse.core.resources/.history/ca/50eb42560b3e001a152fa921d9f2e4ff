@@ -1,0 +1,8 @@
+package br.com.believeon.believeon.model;
+
+public class Administrador {
+	
+	private String emailADM;
+	private String senhaADM;
+
+}
