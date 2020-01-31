@@ -12,4 +12,5 @@ public interface IProjetoService {
 
 	public void adicionarNovoProjeto(Projeto projeto);
 	
+	public void atualizarprojeto(Projeto projeto);
 };

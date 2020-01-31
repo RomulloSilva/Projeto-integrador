@@ -33,4 +33,8 @@ public class ProjetoServiceImpl implements IProjetoService {
 
 	}
 	
+	public void atualizarprojeto(Projeto projeto) {
+		repo.save(projeto);
+	}
+	
 }
