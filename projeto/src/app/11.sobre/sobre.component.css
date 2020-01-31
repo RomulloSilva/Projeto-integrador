@@ -41,30 +41,30 @@ padding : 50px 0;
    box-shadow:15px 20px 0px rgba(0,0,0,0.1);
   }
 
-.login-sec{
+.caixa{
   padding: 50px 30px; 
   position:relative;
 }
-.login-sec .copy-text{
+.caixa .copy-text{
   position:absolute; 
   width:80%;
    bottom:20px; 
    font-size:13px; 
    text-align:center;
   }
-.login-sec .copy-text i{
+.caixa .copy-text i{
   color:#FEB58A;
 }
-.login-sec .copy-text a{
+.caixa .copy-text a{
   color:#E36262;
 }
-.login-sec h2{
+.caixa h2{
   margin-bottom:30px; 
   font-weight:800; 
   font-size:30px; 
   color: #DE6262;
 }
-.login-sec h2:after{
+.caixa h2:after{
   content:" "; 
   width:100px; 
   height:5px; 

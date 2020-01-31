@@ -9,4 +9,14 @@ export class Projeto{
 	public  empreendedor: string;
 	public  email: string;
 	public  telefone: string;
+	
+	  /*public idPorj: number;
+	  public nomeProj: string;
+	  public descricaoProj: string;
+	  public valorProj: string;
+	  public linkFoto: string;*/
+
+
+
+	 
 }
