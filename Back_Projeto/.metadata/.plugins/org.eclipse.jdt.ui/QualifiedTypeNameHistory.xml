@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.persistence.Query"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.NamedQuery"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.dao.CategoriaRepo"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.model.Categoria"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.dao.MetaRepo"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.dao.InvestidorRepo"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.model.Investidor"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.service.IMetaService"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.service.IInvestidorService"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.model.Meta"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.service.ICategoriaService"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+</qualifiedTypeNameHistroy>
