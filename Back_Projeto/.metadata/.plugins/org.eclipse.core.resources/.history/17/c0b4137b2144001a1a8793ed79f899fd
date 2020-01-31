@@ -1,0 +1,9 @@
+package br.com.believeon.projeto.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import br.com.generation.sistemafaculdade.model.Empreendedor;
+
+public interface EmpreendedorRepo extends CrudRepository <Empreendedor, Integer> {
+
+}

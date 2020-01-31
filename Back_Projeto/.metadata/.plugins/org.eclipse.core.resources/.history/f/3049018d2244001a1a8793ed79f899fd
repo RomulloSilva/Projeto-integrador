@@ -1,0 +1,60 @@
+package br.com.believeon.projeto.model;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name="tbl_empreendedor")
+public class Empreendedor {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="idEmp")
+	private int idEmp;
+	
+	@Column(name="nomeCurso", length = 150)
+	private String nome;
+	
+	@Column(name="nome_do_prof_responsavel", length = 100)
+	private String profResponsavel;
+	
+	//indiccando que:
+	//um curso pode conter vários alunos
+	//colocando um List porque quero ao puxar o curso, saber a lista de alunos que estão nele
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "empreendedor") 
+	@JsonIgnoreProperties("empreendedor")
+	private List<Projeto> projetos;
+	
+	
+	public int getIdEmp() {
+		return idEmp;
+	}
+	public void setIdEmp(int idEmp) {
+		this.idEmp = idEmp;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getProfResponsavel() {
+		return profResponsavel;
+	}
+	public void setProfResponsavel(String profResponsavel) {
+		this.profResponsavel = profResponsavel;
+	}
+	
+	
+
+}

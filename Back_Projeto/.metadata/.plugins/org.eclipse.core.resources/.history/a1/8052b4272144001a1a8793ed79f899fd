@@ -1,0 +1,13 @@
+package br.com.projeto.believeon;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BelieveOnApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BelieveOnApplication.class, args);
+	}
+
+}
