@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.usuario = Globals.USUARIO;
     
     if(!this.usuario){
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
     }
     else{
       //Permite que os dados do usuário sejam utilizados pelo componente.

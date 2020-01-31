@@ -1,35 +1,128 @@
-<div id="conteudo">
-    <div class="container mt-2 mb-2">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="well well-sm">
-                    <div class="media">
-                        <a class="thumbnail pull-left mt-3" href="#">
-                            <img class="imagemPefil" src="../../assets/imagens/card (1).jpg">
-                        </a>
-                        <div class="media-body ml-3">
-                            <h2 class="media-heading">{{usuario.nome}}</h2>
-                            <p><span class="label label-info">{{usuario.telefone}}</span></p>
-                            <p><span class="label label-warning">{{usuario.email}}</span></p>
+<div class="container-fluid d-flex align-items-md-center">
+    <div class="row mt-2">
+        <div class="col-md-3">
+            <div class="caixaDoInvestidor">
+                <div class="card profile-card-3">
+                    <div class="background-block">
+                        <img src="../../assets/imagens/card (3).jpg" class="img-fluid" />
+                    </div>
+
+                    <div class="card-content">
+                        <h2>{{usuario.nome}}<small>Investidor</small></h2>
+                        <small>Email:{{usuario.email}}</small><br>
+                        <small>Tel:{{usuario.email}}</small>
+                        <div class="align-content-center mt-2">
+
+                            <button type="button" class="btn btn-dark">Doar</button>
+                            <button type="button" class="btn btn-dark">Vitrine</button>
+                            <button type="button" class="btn btn-dark">Logout</button>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md4">
-                <div>
-                    <p>
-                        <a [routerLink]="'/listaP'" class="btn btn-xs btn-default mt-2 mb-2"><span
-                                class="glyphicon glyphicon-comment"></span>Doar</a>
-                        <a href="#" class="btn btn-xs btn-default mt-2 mb-2"><span
-                                class="glyphicon glyphicon-heart"></span> Doações</a>
-                        <a href="#" class="btn btn-xs btn-default mt-2 mb-2"><span
-                                class="glyphicon glyphicon-ban-circle"></span>Mudar foto</a>
-                    </p>
+        </div>
+        <div class="col-md-9 bg-white">
+            <div>
+                <h2 clas="mx-auto">Projetos Doados por:{{usuario.nome}}</h2>
+            </div>
+            Aqui vai ficar os projetos que ele doar...
+
+
+            <div class="card-group mb-3 ">
+                <div class="card ml-2">
+                    <img src="../../assets/imagens/card (1).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card ml-2">
+                    <img src="../../assets/imagens/card (2).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card ml-2">
+                    <img src="../../assets/imagens/card (3).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!---->
+            <div class="card-group mb-3">
+                <div class="card ml-2">
+                    <img src="../../assets/imagens/card (1).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card ml-2">
+                    <img src="../../assets/imagens/card (2).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card ml-2">
+                    <img src="../../assets/imagens/card (3).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+            <!---->
+            <div class="card-group mb-3">
+                <div class="card ml-2">
+                    <img src="../../assets/imagens/card (1).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card ml-2">
+                    <img src="../../assets/imagens/card (2).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card ml-2">
+                    <img src="../../assets/imagens/card (3).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </div>
