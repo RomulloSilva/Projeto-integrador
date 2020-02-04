@@ -26,7 +26,7 @@ public mostraEmpreId(id: number){
  }
 
 
- public loginInvest(empreendedor: Empreendedor){
+ public loginEmpre(empreendedor: Empreendedor){
   return this.http.post("http://localhost:8080", empreendedor);
 }
 

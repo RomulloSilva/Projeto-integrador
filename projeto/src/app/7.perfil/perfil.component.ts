@@ -38,7 +38,7 @@ export class PerfilComponent implements OnInit {
     })
   }
 
-   public deletarProjeto(id: number){
+   /*public deletarProjeto(id: number){
      this.proj.deletar(id).subscribe((res)=>{
        alert("Apagado com sucesso");
        document.location.reload(true);
@@ -46,7 +46,8 @@ export class PerfilComponent implements OnInit {
      (err)=>{
        alert("Não deletou");
      })
-   }
+   }*/
+   
    private pesquisar(){
     this.pesquisa=this.idBusca
     if(this.pesquisa <= 0 || this.pesquisa == NaN){

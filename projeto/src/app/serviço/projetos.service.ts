@@ -14,26 +14,26 @@ export class ProjetosService {
 
 
   public listarProjetos(){
-    return this.http.get("http://localhost:8080/ajuste/projeto/todos");
+    return this.http.get("http://localhost:8080/projetos/todos");
   }
 
   public listarProjetoId(id: number){
-    return this.http.get("http://localhost:8080/ajuste/projeto/"+id);
+    return this.http.get("http://localhost:8080/projetos/"+id);
   }
 
   public adicionarProjeto(projeto: Projeto){
     console.log(projeto);
-    return this.http.post("http://localhost:8080/ajuste/projeto/novo", projeto);
+    return this.http.post("http://localhost:8080/projeto/novo", projeto);
   }
 
   public exibirTodosProjetos(){
     console.log("Exibiu todos Aeeeeh");
-    return this.http.get("http://localhost:8080/ajuste/projeto/todos");
+    return this.http.get("http://localhost:8080/projetos/todos");
   }
 
   public atualizarProjeto(projeto: Projeto){
     console.log(projeto);
-    return this.http.put("http://localhost:8080/ajuste/projeto", projeto)
+    return this.http.put("http://localhost:8080/projetos/atualizar", projeto)
   }
 
 }

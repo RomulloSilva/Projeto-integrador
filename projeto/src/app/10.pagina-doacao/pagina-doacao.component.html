@@ -1,7 +1,7 @@
 <div class= "conteiner d-flex justify-content-center titulo mb-2">
     <div class="row">
         <div class=" col-md-12">
-            <h1>Projeto P</h1>
+            <h1>Projeto:<div [(ngModel)]="projeto.nomeProj"></div></h1>
             <small>Por José</small>
           </div>
     </div>
@@ -14,7 +14,7 @@
          <div class="col-md-8 caixaDoProjeto1">
             <div class="square-box">
                 <div class="square-content mr-2">
-                    <img src="../../assets/imagens/bussiness.jpg" class="img-fluid mt-2">
+                    <img src="[(ngModel)]='projeto.nomeProj'" class="img-fluid mt-2">
                     <div><small>CATEGORIA</small></div>
                   </div>
             </div>
@@ -24,7 +24,7 @@
            <div class="square-box">
            <div class="square-content">
              <div class="caixa1 mt-2 mr-2 ">
-                 <h2 class="meta text-center">R$ 80.000,00</h2>
+                 <h2 class="meta text-center">R$ <div [(ngModel)]="projeto.valorProj"></div></h2>
                  <small>Esse projeto tem 4 metas</small><br>
                  <div class="progress mx-auto"><div class="progress-bar bg-success" style="width:40%">40%</div>
                   </div><br><br>
@@ -57,7 +57,7 @@
                 <div class="card-header text-success">José Aldo</div>
                 <div class="card-body text-success">
                   <h5 class="card-title">Descrição</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"[(ngModel)]="projeto.descricaoProj"></p>
                 </div>
                 <div class="card-footer bg-transparent text-success">
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-sm">contato</button>

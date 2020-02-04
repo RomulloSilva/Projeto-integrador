@@ -159,7 +159,7 @@ export class MenuComponent implements OnInit {
   public loginEmp(){
         this.empreendedor.emailEmp = this.inputEmail;
         this.empreendedor.emailEmp = this.inputPassword;
-        this.emp.loginInvest(this.empreendedor).subscribe((res: Empreendedor)=>{
+        this.emp.loginEmpre(this.empreendedor).subscribe((res: Empreendedor)=>{
           console.log("Conectado");
           this.empLogado = true;
           Globals.EMPREENDEDOR = res;
@@ -176,10 +176,10 @@ export class MenuComponent implements OnInit {
 
   // Cria função que envia os dados e tem mensagem de erro caso o email seja duplicado e outra de sucesso.(tem de ser fora do ngOnInit).
   enviarDados() {
-    this.busca.insere(this.usuario).subscribe(
+    this.emp.loginEmpre(this.empreendedor).subscribe(
       res => {
         console.log(res);
-        alert("Bem-vindo ao B.lieveOn " + this.usuario.nome);
+        alert("Bem-vindo ao B.lieveOn " + this.empreendedor.nomeEmp);
       },
       error => {
         console.log(error);
@@ -195,12 +195,12 @@ export class MenuComponent implements OnInit {
 
   //Funções de validação.
   private forcaSenha() {
-    if (this.usuario.senha.indexOf("@") >= 0 && this.usuario.senha.length >= 10 || this.usuario.senha.indexOf("#") >= 0 && this.usuario.senha.length >= 10 || this.usuario.senha.indexOf("$") >= 0 && this.usuario.senha.length >= 10 || this.usuario.senha.indexOf("%") >= 0 && this.usuario.senha.length >= 10 || this.usuario.senha.indexOf("&") >= 0 && this.usuario.senha.length >= 10) {
+    if (this.empreendedor.senhaEmp.indexOf("@") >= 0 && this.empreendedor.senhaEmp.length >= 10 || this.empreendedor.senhaEmp.indexOf("#") >= 0 && this.empreendedor.senhaEmp.length >= 10 || this.empreendedor.senhaEmp.indexOf("$") >= 0 && this.empreendedor.senhaEmp.length >= 10 || this.empreendedor.senhaEmp.indexOf("%") >= 0 && this.empreendedor.senhaEmp.length >= 10 || this.empreendedor.senhaEmp.indexOf("&") >= 0 && this.empreendedor.senhaEmp.length >= 10) {
       this.msgSenha1 = "Senha Forte!";
       this.msgSenha2 = null;
       this.idResposta = "msgCorreta"
       this.msgSenha = null;
-    } else if (this.usuario.senha.length < 10) {
+    } else if (this.empreendedor.senhaEmp.length < 10) {
       this.msgSenha2 = "Senha Fraca!";
       this.msgSenha1 = null;
       this.idResposta = "msgErro"
@@ -212,27 +212,27 @@ export class MenuComponent implements OnInit {
     var u = 0;
     var regex = /[0-9]/;
 
-    if (this.usuario.nome == "" || this.usuario.nome == null || regex.test(this.usuario.nome) || this.usuario.nome.indexOf(" ") == -1) {
+    if (this.empreendedor.nomeEmp == "" || this.empreendedor.nomeEmp == null || regex.test(this.empreendedor.nomeEmp) || this.empreendedor.nomeEmp.indexOf(" ") == -1) {
       this.msgNome = "Digite um nome válido.";
       u++;
     } else {
       this.msgNome = null;
     }
-    if (this.usuario.email == "" || this.usuario.email == null || this.usuario.email.indexOf("@") == -1 || this.usuario.email.indexOf(".com") == -1) {
+    if (this.empreendedor.emailEmp == "" || this.empreendedor.emailEmp == null || this.empreendedor.emailEmp.indexOf("@") == -1 || this.empreendedor.emailEmp.indexOf(".com") == -1) {
 
       this.msgEmail = "Digite um e-mail válido.";
       u++;
     } else {
       this.msgEmail = null;
     }
-    var tel = Number(this.usuario.telefone);
-    if (this.usuario.telefone == null || this.usuario.telefone.length != 11 || isNaN(tel)) {
+    var tel = Number(this.empreendedor.telefoneEmp);
+    if (this.empreendedor.telefoneEmp == null || this.empreendedor.telefoneEmp.length != 11 || isNaN(tel)) {
       this.msgTelefone = "Digite um telefone válido.";
       u++;
     } else {
       this.msgTelefone = null;
     }
-    if (this.usuario.senha == "" || this.usuario.senha == null) {
+    if (this.empreendedor.senhaEmp == "" || this.empreendedor.senhaEmp== null) {
       this.msgSenha = "Digite uma senha."
       this.idResposta = "msgErro"
       this.msgSenha1 = null;
@@ -242,7 +242,7 @@ export class MenuComponent implements OnInit {
       this.msgSenha = null;
     }
 
-    if (this.confirmaSenha != this.usuario.senha || this.confirmaSenha == null) {
+    if (this.confirmaSenha != this.empreendedor.senhaEmp || this.confirmaSenha == null) {
       this.msgConfirmaSenha = "Senhas incompatíveis.";
       u++
     } else {
@@ -261,12 +261,12 @@ export class MenuComponent implements OnInit {
   //---------------------------Funções do investidor--------------------------------//
 
   private forcaSenhaInvest() {
-    if (this.senhaInvest.indexOf("@") >= 0 && this.senhaInvest.length >= 10 || this.senhaInvest.indexOf("#") >= 0 && this.senhaInvest.length >= 10 || this.senhaInvest.indexOf("$") >= 0 && this.senhaInvest.length >= 10 || this.senhaInvest.indexOf("%") >= 0 && this.senhaInvest.length >= 10 || this.senhaInvest.indexOf("&") >= 0 && this.senhaInvest.length >= 10) {
+    if (this.investidor.senha.indexOf("@") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("#") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("$") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("%") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("&") >= 0 && this.investidor.senha.length >= 10) {
       this.msgSenhaInvest1 = "Segurança: Forte!";
       this.msgSenhaInvest2 = null;
       this.idResposta = "msgCorreta"
       this.msgSenhaInvest = null;
-    } else if (this.senhaInvest.length < 10) {
+    } else if (this.investidor.senha.length < 10) {
       this.msgSenhaInvest2 = "Segurança: Fraca.";
       this.msgSenhaInvest1 = null;
       this.idResposta = "msgErro"
@@ -279,27 +279,27 @@ export class MenuComponent implements OnInit {
     var u = 0;
     var regex = /[0-9]/;
 
-    if (this.nomeInvest == "" || this.nomeInvest == null || regex.test(this.nomeInvest)) {
+    if (this.investidor.nome == "" || this.investidor.nome == null || regex.test(this.investidor.nome)) {
       this.msgNomeInvest = "Digite seu nome completo.";
       u++;
     } else {
       this.msgNomeInvest = null;
     }
-    if (this.emailInvest == "" || this.emailInvest == null || this.emailInvest.indexOf("@") == -1 || this.emailInvest.indexOf(".com") == -1) {
+    if (this.investidor.email == "" || this.investidor.email == null || this.investidor.email.indexOf("@") == -1 || this.investidor.email.indexOf(".com") == -1) {
 
       this.msgEmailInvest = "Digite um e-mail válido";
       u++;
     } else {
       this.msgEmailInvest = null;
     }
-    var tel = Number(this.telefoneInvest);
-    if (this.telefoneInvest == null || this.telefoneInvest.length != 11 || isNaN(tel)) {
+    var tel = Number(this.investidor.telefone);
+    if (this.investidor.telefone == null || this.investidor.telefone.length != 11 || isNaN(tel)) {
       this.msgTelefoneInvest = "Digite um telefone válido.";
       u++;
     } else {
       this.msgTelefoneInvest = null;
     }
-    if (this.senhaInvest == "" || this.senhaInvest == null) {
+    if (this.investidor.senha == "" || this.investidor.senha == null) {
       this.msgSenhaInvest = "Digite uma senha."
       this.idResposta = "msgErro"
       this.msgSenhaInvest1 = null;
@@ -309,7 +309,7 @@ export class MenuComponent implements OnInit {
       this.msgSenhaInvest = null;
     }
 
-    if (this.confirmaSenhaInvest != this.senhaInvest || this.confirmaSenhaInvest == null) {
+    if (this.confirmaSenhaInvest != this.investidor.senha || this.confirmaSenhaInvest == null) {
       this.msgConfirmaSenhaInvest = "Senhas incompatíveis.";
       u++
     } else {
@@ -318,7 +318,7 @@ export class MenuComponent implements OnInit {
 
     if (u < 1) {
 
-      alert("Bem-vindo ao B.lieveOn " + this.nomeInvest);
+      alert("Bem-vindo ao B.lieveOn " + this.investidor.nome);
 
 
     }

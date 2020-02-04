@@ -17,8 +17,7 @@ export class CadastrarProjetoComponent implements OnInit {
   private idAlimenta: number;
 	private  imagensAlimenta: string; 
 	private  tituloAlimenta: string; 
-	private  descricaoAlimenta: string; 
-	private  resumoAlimenta: string; 
+	private  descricaoAlimenta: string;  
   private  metaAlimenta: string; 
   private projeto: Projeto = new Projeto();
 
@@ -33,7 +32,6 @@ export class CadastrarProjetoComponent implements OnInit {
     this.projeto.linkFoto = this.imagensAlimenta;
     this.projeto.nomeProj = this.tituloAlimenta;
     this.projeto.descricaoProj = this.descricaoAlimenta;
-    this.projeto.descricaoProj = this.resumoAlimenta;
     this.projeto.valorProj = this.metaAlimenta;
 
     this.proj.adicionarProjeto(this.projeto).subscribe(res=>{

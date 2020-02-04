@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscriber, from } from 'rxjs';
 
-import{Postagem} from './../model/postagem';
-import {ProdutosService} from './../serviço/produtos.service';
+
+/**Importações */
+import {Projeto} from '../model/Projeto';
+import {ProjetosService} from '../serviço/projetos.service';
 
 
 @Component({
@@ -13,11 +15,11 @@ import {ProdutosService} from './../serviço/produtos.service';
 export class ListaPComponent implements OnInit {
 
   private idBusca: number;
-  private produto: Postagem=null;
+  private projeto: Projeto=null;
 
-  constructor(private ProdutosService: ProdutosService) { }
+  constructor(private ProjetosService: ProjetosService) { }
 
-  post: Postagem[];
+  post: Projeto[];
   
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class ListaPComponent implements OnInit {
 
 
   pegaPost(){
-    this.ProdutosService.pegarPostagens().subscribe((postOut: Postagem[]) => {
+    this.ProjetosService.listarProjetos().subscribe((postOut: Projeto[]) => {
       this.post = postOut;
       console.log(this.post);
     })
@@ -37,8 +39,8 @@ export class ListaPComponent implements OnInit {
     alert("Item não encontrado")
     
       }else{
-        this.ProdutosService.buscarCodigoDoProjeto(this.idBusca).subscribe((search: Postagem) =>{
-          this.produto = search;
+        this.ProjetosService.listarProjetoId(this.idBusca).subscribe((search: Projeto) =>{
+          this.projeto = search;
       }
       )
     }

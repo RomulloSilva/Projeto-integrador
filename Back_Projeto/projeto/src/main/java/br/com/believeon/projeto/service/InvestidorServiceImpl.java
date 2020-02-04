@@ -18,17 +18,16 @@ public class InvestidorServiceImpl implements IInvestidorService{
 	public void adicionarNovoInvestidor(Investidor investidor) {
 		repo.save(investidor);
 }
-	@Autowired
+
 	public List<Investidor> recuperarTodos(){
 		return (List<Investidor>) repo.findAll();
 	}
 	
-	@Autowired
+
 	public Investidor recuperarInvPorId(int idInv) {
 		return repo.findById(idInv).get();
 	}
 	
-	@Autowired
 	public void atualizarInvestidor(Investidor investidor) {
 		repo.save(investidor);
 	}
