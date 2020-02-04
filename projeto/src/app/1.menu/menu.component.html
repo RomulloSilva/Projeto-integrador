@@ -55,12 +55,9 @@
                                         <input [(ngModel)]="inputPassword" [ngModelOptions]="{standalone: true}" type="password" id="inputPassword" class="form-control" placeholder="" required>
                                     </div>
                                     <div class="custom-control custom-checkbox mb-3 mt-3">
-                                        <label class="custom-control-label " for="customCheck1">Lembrar-me</label>
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <br>
-                                        <a href="#">Esqueci minha senha.</a>
                                     </div>
-                                    <!--Botão formulario de login--><button (click)="efetuaLogin()" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+                                    <!--Botão formulario de login--><div class="d-flex justify-content-between"><button (click)="efetuaLogin()" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Investidor</button>
+                                    <button (click)="loginEmp()" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Empreendedor</button></div>
                                 </form>
                             </div>
                         </div>

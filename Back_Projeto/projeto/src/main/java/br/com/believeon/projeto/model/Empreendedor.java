@@ -33,6 +33,9 @@ public class Empreendedor {
 	
 	@Column(name="telefoneEmp", length = 100)
 	private String telefoneEmp;
+	
+	@Column(name= "imgEmp", length = 500)
+	private String imgEmp;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "empreendedor") 
 	@JsonIgnoreProperties("empreendedor")
@@ -74,4 +77,12 @@ public class Empreendedor {
 	public void setProjetos(List<Projeto> projetos) {
 		this.projetos = projetos;
 	}
+	public String getImgEmp() {
+		return imgEmp;
+	}
+	public void setImgEmp(String imgEmp) {
+		this.imgEmp = imgEmp;
+	}
+	
+	
 }

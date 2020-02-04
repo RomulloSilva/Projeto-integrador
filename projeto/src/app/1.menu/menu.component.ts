@@ -16,7 +16,12 @@ import {Token} from '../model/Token';
 import {Projeto} from '../model/Projeto';
 import {Administrador} from '../model/Administrador';
 //utilizamos o router tambem.
-
+/**Imposrtações para validar login de investidor e Empreendedor */
+import {Investidor} from '../model/Investidor';
+import {Empreendedor} from '../model/Empreendedor';
+import {EmpreendedorService} from'../serviço/empreendedor.service';
+import {InvestidorService} from '../serviço/investidor.service';
+/**FIM**/
 
 @Component({
   selector: 'app-menu',
@@ -60,6 +65,11 @@ export class MenuComponent implements OnInit {
 
   //Variável para invocar o objeto Usuário(sempre da new para não da erro).
   public usuario: Usuario = new Usuario();
+  //variavel de invocação dos objetos.
+  public investidor: Investidor = new Investidor();
+  public invLogado: boolean = false;
+  public empreendedor: Empreendedor = new Empreendedor();
+  public empLogado: boolean = false;
 
   //Variável que é usada para retirar dados que só podem ser utilizados qquando logado.
   public estaLogado: boolean = false;
@@ -71,7 +81,7 @@ export class MenuComponent implements OnInit {
 
 
   
-  constructor(private busca: ProdutosService, private srv: ProdutosService, private router: Router, private adm: AdministradorService) { }
+  constructor(private busca: ProdutosService, private srv: ProdutosService, private router: Router, private adm: AdministradorService, private inv: InvestidorService, private emp: EmpreendedorService) { }
 
 
   ngOnInit() {
@@ -105,6 +115,7 @@ export class MenuComponent implements OnInit {
           //Rota para levar ao componente perfil onde postamos os projetos.
           this.router.navigate(['perfil']);
           $('#fecharModal').click();
+          alert("Administrador logado");
         },
         (err)=>{
           console.log("Não conectado");
@@ -112,14 +123,17 @@ export class MenuComponent implements OnInit {
         })
       }else{
 
-        this.usuario.email = this.inputEmail;
-        this.usuario.senha = this.inputPassword;
+        this.investidor.email = this.inputEmail;
+        this.investidor.senha = this.inputPassword;
     
-        this.srv.login(this.usuario).subscribe((res:Usuario)=>{
+        this.inv.loginInvest(this.investidor).subscribe((res:Investidor)=>{
           console.log("Conectado");
+
+          //var que faz os componentes do investidor aparecer.
+          this.invLogado = true;
   
             //Atribuir o Globals ao objet
-            Globals.USUARIO = res;
+            Globals.INVESTIDOR = res;
   
             //var que faz os dados aparecerem.
             this.estaLogado = true;
@@ -127,11 +141,12 @@ export class MenuComponent implements OnInit {
           this.router.navigate(['login']);
           //jquery que faz o modal sair após ser logado.
           $('#fecharModal').click();//Aqui vai o id do modal.
+          alert("Investidor logado")
         
         },
         (erro)=>{
           console.log("Não conectado");
-          alert("Senha ou email errados")
+          alert("Senha ou email errados Investidor")
           //Como somos o commerce não vamos ter rota, só msg de erro.
   
         })
@@ -141,6 +156,23 @@ export class MenuComponent implements OnInit {
      
   }
 
+  public loginEmp(){
+        this.empreendedor.emailEmp = this.inputEmail;
+        this.empreendedor.emailEmp = this.inputPassword;
+        this.emp.loginInvest(this.empreendedor).subscribe((res: Empreendedor)=>{
+          console.log("Conectado");
+          this.empLogado = true;
+          Globals.EMPREENDEDOR = res;
+          this.router.navigate(['login'])
+          $('#fecharModal').click();
+          alert("Investidor logado")
+        },(erro)=>{
+          console.log("Não conectado");
+          alert("Senha ou email errados do empreendedor");
+        })
+
+
+  }
 
   // Cria função que envia os dados e tem mensagem de erro caso o email seja duplicado e outra de sucesso.(tem de ser fora do ngOnInit).
   enviarDados() {

@@ -27,6 +27,9 @@ public class Investidor {
 	
 	@Column(name="telefoneInv", length = 100)
 	private String telefone;
+	
+	@Column(name= "imgInv", length = 500)
+	private String imgInv;
 
 	public int getIdInv() {
 		return idInv;
@@ -58,4 +61,12 @@ public class Investidor {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	public String getImgInv() {
+		return imgInv;
+	}
+	public void setImgInv(String imgInv) {
+		this.imgInv = imgInv;
+	}
+	
+	
 }

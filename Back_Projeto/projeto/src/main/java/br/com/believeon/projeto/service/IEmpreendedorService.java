@@ -10,6 +10,7 @@ public interface IEmpreendedorService {
 	public Empreendedor recuperarDetalhes(int idEmp);
 	public List<Empreendedor> recuperarTodos();
 	public void atualizarEmpreendedor(Empreendedor empreendedor);
+
 	
 	
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 //importações da tarefa 10.
 import {ProjetosService} from '../serviço/projetos.service';
+import {Meta} from '../model/Meta';
+import {Empreendedor} from '../model/Empreendedor';
 import {Projeto} from '../model/Projeto';
 import { ActivatedRoute } from '@angular/router';
 
@@ -15,6 +17,8 @@ export class EditaProjetoComponent implements OnInit {
 
 
   public projeto: Projeto = new Projeto();
+  public meta: Meta = new Meta();
+  public empreendedor: Empreendedor = new Empreendedor();
  
 
   //var
@@ -36,15 +40,15 @@ export class EditaProjetoComponent implements OnInit {
     this.idAlimenta = this.rota.snapshot.params["id"];
     this.busca.listarProjetoId(this.idAlimenta).subscribe((res:Projeto)=>{
       this.projeto = res;
-      this.idAlimenta =this.projeto.id;
-      this.imagensAlimenta =this.projeto.imagens;
-      this.tituloAlimenta =this.projeto.titulo;
-      this.descricaoAlimenta =this.projeto.descricao;
-      this.resumoAlimenta =this.projeto.resumo;
-      this.metaAlimenta =this.projeto.meta;
-      this.empreendedorAlimenta =this.projeto.empreendedor;
-      this.emailAlimenta =this.projeto.email;
-      this.telefoneAlimenta =this.projeto.telefone;
+      this.idAlimenta =this.projeto.idProj;
+      this.imagensAlimenta =this.projeto.linkFoto;
+      this.tituloAlimenta =this.projeto.nomeProj;
+      this.descricaoAlimenta =this.projeto.descricaoProj;
+      this.resumoAlimenta =this.projeto.descricaoProj;
+      this.metaAlimenta =this.projeto.valorProj;
+      this.empreendedorAlimenta =this.empreendedor.nomeEmp;
+      this.emailAlimenta =this.empreendedor.emailEmp;
+      this.telefoneAlimenta =this.empreendedor.telefoneEmp;
     },(err)=>{
       alert("Não funcionou a exibição do produto")
     })
@@ -57,12 +61,12 @@ export class EditaProjetoComponent implements OnInit {
  public enviarAlteracoes(){
 
   
-      this.projeto.id = this.idAlimenta;
-      this.projeto.imagens =  this.imagensAlimenta;
-      this.projeto.titulo = this.tituloAlimenta;
-      this.projeto.descricao = this.descricaoAlimenta;
-      this.projeto.resumo = this.resumoAlimenta;
-      this.projeto.meta = this.metaAlimenta;
+      this.projeto.idProj = this.idAlimenta;
+      this.projeto.linkFoto =  this.imagensAlimenta;
+      this.projeto.nomeProj = this.tituloAlimenta;
+      this.projeto.descricaoProj = this.descricaoAlimenta;
+      this.projeto.descricaoProj = this.resumoAlimenta;
+      this.projeto.valorProj = this.metaAlimenta;
       this.busca.atualizarProjeto(this.projeto).subscribe((res)=>{
         alert("Atualizado com sucesso");
       },

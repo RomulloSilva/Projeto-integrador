@@ -37,6 +37,7 @@ public class Projeto {
 	@Column(name="linkFoto", length = 100)
 	private String linkFoto;
 	
+	
 	@ManyToOne
 	@JsonIgnoreProperties ("projetos")
 	private Empreendedor empreendedor;

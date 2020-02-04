@@ -7,9 +7,9 @@
                         <img src="../../assets/imagens/card (3).jpg" class="img-fluid" />
                     </div>
                     <div class="card-content">
-                        <h2>{{usuario.nome}}<small>Investidor</small></h2>
-                        <small>Email:{{usuario.email}}</small><br>
-                        <small>Tel:{{usuario.email}}</small>
+                        <h2>{{usuario.nome}} {{empreendedor.nomeEmp}} <small>Investidor</small></h2>
+                        <small>Email:{{usuario.email}} {{empreendedor.emailEmp}}</small><br>
+                        <small>Tel:{{usuario.email}} {{empreendedor.telefoneEmp}}</small>
                         <div class="align-content-center mt-2">
                             <button type="button" class="btn btn-dark">Doar</button>
                             <button type="button" class="btn btn-dark">Vitrine</button>
@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-9 bg-white">
             <div>
-                <h2 clas="mx-auto">Projetos Doados por:{{usuario.nome}}</h2>
+                <h2 clas="mx-auto">Projetos Doados por:{{usuario.nome}} {{empreendedor.nomeEmp}}</h2>
             </div>
             Aqui vai ficar os projetos que ele doar...
             <div class="card-group mb-3 ">

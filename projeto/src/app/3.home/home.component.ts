@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import{Postagem} from './../model/postagem';
 import {ProdutosService} from './../serviço/produtos.service';
 
+/**Importações para os projetos */
+
+
 
 @Component({
   selector: 'app-home',

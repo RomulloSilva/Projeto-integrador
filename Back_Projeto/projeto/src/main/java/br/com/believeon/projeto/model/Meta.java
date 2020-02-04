@@ -33,6 +33,7 @@ public class Meta {
 	@Column(name="valorMeta", length = 100)
 	private String valorMeta;
 	
+	//private boolean situacao;
 	
 	
 	@ManyToOne
@@ -71,4 +72,6 @@ public class Meta {
 		this.valorMeta = valorMeta;
 	}
 
+	
+	
 }

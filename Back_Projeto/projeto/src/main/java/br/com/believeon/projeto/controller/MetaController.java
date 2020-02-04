@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.believeon.projeto.model.Meta;
-import br.com.believeon.projeto.model.Projeto;
 import br.com.believeon.projeto.service.IMetaService;
 
 @RestController
@@ -43,7 +42,7 @@ public class MetaController {
 	}
 	
 	
-	@PutMapping("/projetos/atualizar")
+	@PutMapping("/meta/atualizar")
 	public ResponseEntity<Meta> atualizarPeloId(@RequestBody Meta meta){
 	    service.atualizarMeta(meta);
 	    return ResponseEntity.ok(meta);

@@ -29,12 +29,12 @@ export class CadastrarProjetoComponent implements OnInit {
 
 
   public enviarProjeto(){
-    this.projeto.id = this.idAlimenta;
-    this.projeto.imagens = this.imagensAlimenta;
-    this.projeto.titulo = this.tituloAlimenta;
-    this.projeto.descricao = this.descricaoAlimenta;
-    this.projeto.resumo = this.resumoAlimenta;
-    this.projeto.meta = this.metaAlimenta;
+    this.projeto.idProj = this.idAlimenta;
+    this.projeto.linkFoto = this.imagensAlimenta;
+    this.projeto.nomeProj = this.tituloAlimenta;
+    this.projeto.descricaoProj = this.descricaoAlimenta;
+    this.projeto.descricaoProj = this.resumoAlimenta;
+    this.projeto.valorProj = this.metaAlimenta;
 
     this.proj.adicionarProjeto(this.projeto).subscribe(res=>{
       alert("Cadastro realizado com sucesso!!!");

@@ -21,7 +21,14 @@ export class EmpreendedorService {
 public mostraEmpreId(id: number){
   return this.http.get("http://localhost:8080/empreendedor/"+id);
 }
+ public atualizarEmpre(empreendedor: Empreendedor){
+   return this.http.put("http://localhost:8080/empreendedor/atualizar", empreendedor);
+ }
 
+
+ public loginInvest(empreendedor: Empreendedor){
+  return this.http.post("http://localhost:8080", empreendedor);
+}
 
 }
 
