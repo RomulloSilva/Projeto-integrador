@@ -10,8 +10,17 @@ export class EmpreendedorService {
 
   constructor(private http: HttpClient) { }
 
-/*Aqui fica os métodos*/
+  public adicionarEmpre(empreendedor: Empreendedor){
+    return this.http.post("http://localhost:8080/empreendedor/novo", empreendedor);
+  }
 
+  public mostrarTodosEmpre(){
+    return this.http.get("http://localhost:8080/empreendedor/todos");
+  }
+
+public mostraEmpreId(id: number){
+  return this.http.get("http://localhost:8080/empreendedor/"+id);
+}
 
 
 }

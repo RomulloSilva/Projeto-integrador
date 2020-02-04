@@ -1,7 +1,0 @@
-package br.com.believeon.projeto.dao;
-
-import org.springframework.data.repository.CrudRepository;
-
-public interface CategoriaController extends CrudRepository<CategoriaController,Integer>{
-
-}

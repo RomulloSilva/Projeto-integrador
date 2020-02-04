@@ -30,7 +30,28 @@
                   </div><br><br>
                  <small>Meta: R$ 180.000,00</small>
              </div>
-             <a class="btn btn-success mb-2 mt-2 mx-auto" href="#" role="button">Doar</a>
+             <button type="button" class="btn btn-success  mb-2 mt-2 mx-auto" data-toggle="modal" data-target=".bd-example-modal-lg">Doar!</button>
+             <!---Modal-->
+             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <!--Metas-->
+
+                  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
+                    <div class="btn-group mr-2 mx-auto" role="group" aria-label="Primeiro grupo">
+                      <button type="button" class="btn btn-success ml-2">Meta 1</button>
+                      <button type="button" class="btn btn-success ml-2">Meta 2</button>
+                      <button type="button" class="btn btn-success ml-2">Meta 3</button>
+                      <button type="button" class="btn btn-success ml-2">Meta 4</button>
+                    </div>
+                  </div>
+
+
+                  <!--Metas-->
+                </div>
+              </div>
+            </div>
+            <!----Modal-->
 
              <div class="card mb-3 mx-auto" style="max-width: 18rem;">
                 <div class="card-header text-success">José Aldo</div>
@@ -39,7 +60,18 @@
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
                 <div class="card-footer bg-transparent text-success">
-                    <button type="button" class="btn btn-success">contato</button>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-sm">contato</button>
+                    <!---Modal-->
+                    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                          <div class="text-success">Telefone:{{tel.empreendedor}}</div><br>
+                          <div clas="text-success">Email:{{Email.empreendedor}}</div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!----Modal-->
                 </div>
               </div> 
            </div>  
@@ -48,3 +80,5 @@
        </div>
        </div>
 </section>
+
+

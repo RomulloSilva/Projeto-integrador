@@ -9,6 +9,7 @@ public interface IEmpreendedorService {
 	public void adicionarNovoEmpreendedor (Empreendedor empreendedor);
 	public Empreendedor recuperarDetalhes(int idEmp);
 	public List<Empreendedor> recuperarTodos();
+	public void atualizarEmpreendedor(Empreendedor empreendedor);
 	
 	
 }

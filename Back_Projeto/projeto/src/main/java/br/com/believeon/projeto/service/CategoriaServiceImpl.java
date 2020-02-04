@@ -1,5 +1,7 @@
 package br.com.believeon.projeto.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,4 +18,16 @@ public class CategoriaServiceImpl implements ICategoriaService{
 	public void adicionarNovoCategoria(Categoria categoria) {
 		repo.save(categoria);
 }
+	
+	
+	public List<Categoria> recuperarTodos(){
+		return (List<Categoria>) repo.findAll();
+
+	}
+	
+	
+	public Categoria recuperaCatId(int idCat) {
+		return repo.findById(idCat).get();
+	}
 }
+

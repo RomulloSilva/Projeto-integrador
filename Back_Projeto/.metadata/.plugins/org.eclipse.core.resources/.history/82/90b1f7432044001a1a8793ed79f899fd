@@ -1,7 +1,0 @@
-package br.com.generation.sistemafaculdade.dao;
-
-import org.springframework.data.repository.CrudRepository;
-
-public interface InvestidorRepo extends CrudRepository<InvestidorRepo,Integer>{
-
-}

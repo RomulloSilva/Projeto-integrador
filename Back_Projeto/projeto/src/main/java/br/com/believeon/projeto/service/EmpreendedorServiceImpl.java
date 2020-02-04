@@ -31,5 +31,9 @@ public class EmpreendedorServiceImpl implements IEmpreendedorService{
 		return (List<Empreendedor>) repo.findAll();
 		}
 	
-
+	public void atualizarEmpreendedor(Empreendedor empreendedor) {
+		repo.save(empreendedor);
+	}
+	
+	
 }
