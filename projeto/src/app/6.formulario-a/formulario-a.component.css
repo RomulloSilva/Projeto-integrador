@@ -16,16 +16,17 @@
     background-color: rgb(235, 235, 235);
     font-size: 14px;
     height: 35px;
+
 }
 
 #texto1 {
-    margin-top: 300px;
+    margin-top: 8%;
     font-family: 'Cuprum', sans-serif;
-    margin-bottom: 20px;
 }
 
 #texto2 {
     font-family: 'Cuprum', sans-serif;
+    margin-top: 15%;
 }
 
 #teste {
@@ -42,4 +43,9 @@
     padding-right: 5px;
     padding-top: 1px;
     padding-bottom: 2px;
+}
+#mapa{
+    margin-top:8%;
+    margin-right:40%;
+    font-size:10px; 
 }

@@ -28,27 +28,27 @@ public class Projeto {
 	@Column(name="nomeProj", length = 100)
 	private String nomeProj;
 	
-	@Column(name="descricaoProj" ,length = 150)
+	@Column(name="descricaoProj" ,length = 200)
 	private String descricaoProj;
 	
 	@Column(name="valorProj", length = 16)
 	private String valorProj;
 	
-	@Column(name="linkFoto", length = 100)
+	@Column(name="linkFoto", length = 200)
 	private String linkFoto;
 	
 	
 	@ManyToOne
 	@JsonIgnoreProperties ("projetos")
-	private Empreendedor empreendedor;
+	private Empreendedor dono;
 	
 	@ManyToOne
 	@JsonIgnoreProperties ("projetos")
-	private Categoria categoria;
+	private Categoria categoriaProjeto;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "projeto")
 	@JsonIgnoreProperties ("projeto")
-	private List<Meta> metas;
+	private List<Meta> metasProjeto;
 
 	public int getIdProj() {
 		return idProj;
@@ -90,11 +90,30 @@ public class Projeto {
 		this.linkFoto = linkFoto;
 	}
 
-	public Empreendedor getEmpreendedor() {
-		return empreendedor;
+	public Empreendedor getDono() {
+		return dono;
 	}
 
-	public void setEmpreendedor(Empreendedor empreendedor) {
-		this.empreendedor = empreendedor;
+	public void setDono(Empreendedor dono) {
+		this.dono = dono;
 	}
+
+
+
+	public Categoria getCategoriaProjeto() {
+		return categoriaProjeto;
+	}
+
+	public void setCategoriaProjeto(Categoria categoriaProjeto) {
+		this.categoriaProjeto = categoriaProjeto;
+	}
+
+	public List<Meta> getMetasProjeto() {
+		return metasProjeto;
+	}
+
+	public void setMetasProjeto(List<Meta> metasProjeto) {
+		this.metasProjeto = metasProjeto;
+	}
+
 }

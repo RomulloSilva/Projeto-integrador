@@ -14,7 +14,7 @@
          <div class="col-md-8 caixaDoProjeto1">
             <div class="square-box">
                 <div class="square-content mr-2">
-                    <img src="[(ngModel)]='projeto.nomeProj'" class="img-fluid mt-2">
+                    <img src="{[(ngModel)]}='projeto.linkFoto'" class="img-fluid mt-2">
                     <div><small>CATEGORIA</small></div>
                   </div>
             </div>
@@ -39,10 +39,8 @@
 
                   <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
                     <div class="btn-group mr-2 mx-auto" role="group" aria-label="Primeiro grupo">
-                      <button type="button" class="btn btn-success ml-2">Meta 1</button>
+                      <button type="button" class="btn btn-success ml-2">{{projeto.metasProjeto.valorMeta}}</button>
                       <button type="button" class="btn btn-success ml-2">Meta 2</button>
-                      <button type="button" class="btn btn-success ml-2">Meta 3</button>
-                      <button type="button" class="btn btn-success ml-2">Meta 4</button>
                     </div>
                   </div>
 

@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="br.com.believeon.projeto.model.Categoria"/>
 <fullyQualifiedTypeName name="br.com.believeon.projeto.dao.MetaRepo"/>
 <fullyQualifiedTypeName name="br.com.believeon.projeto.dao.InvestidorRepo"/>
-<fullyQualifiedTypeName name="br.com.believeon.projeto.model.Investidor"/>
 <fullyQualifiedTypeName name="br.com.believeon.projeto.service.IMetaService"/>
 <fullyQualifiedTypeName name="br.com.believeon.projeto.service.IInvestidorService"/>
 <fullyQualifiedTypeName name="br.com.believeon.projeto.model.Meta"/>
@@ -25,5 +24,11 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 <fullyQualifiedTypeName name="br.com.believeon.projeto.email.EnviaEmailTLS"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.model.Empreendedor"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.model.Investidor"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.security.Token"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnoreProperties"/>
+<fullyQualifiedTypeName name="br.com.believeon.projeto.security.Validacao"/>
 <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
 </qualifiedTypeNameHistroy>

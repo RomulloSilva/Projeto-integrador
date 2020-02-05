@@ -14,12 +14,13 @@ import {ProjetosService} from '../serviço/projetos.service';
 })
 export class ListaPComponent implements OnInit {
 
-  private idBusca: number;
-  private projeto: Projeto=null;
+  public idProj: number;
+  public projeto: Projeto=null;
 
   constructor(private ProjetosService: ProjetosService) { }
 
-  post: Projeto[];
+  public post: Projeto[];
+  public listaProjeto: Projeto;
   
 
   ngOnInit() {
@@ -35,15 +36,15 @@ export class ListaPComponent implements OnInit {
   }
 
   private pesquisar(){
-    if(this.idBusca <= 0 || this.idBusca >10){
-    alert("Item não encontrado")
-    
-      }else{
-        this.ProjetosService.listarProjetoId(this.idBusca).subscribe((search: Projeto) =>{
-          this.projeto = search;
-      }
-      )
+    if(this.idProj != null){
+      this.ProjetosService.listarProjetoId(this.idProj).subscribe((res:Projeto)=>{
+        this.listaProjeto = res;
+        this.projeto = res;
+      })
+    }else{
+      this.listaProjeto = null;
     }
+    console.log(this.listaProjeto);
   }
 
 

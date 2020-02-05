@@ -1,11 +1,15 @@
 package br.com.believeon.projeto.model;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="tbl_investidor")
@@ -28,8 +32,9 @@ public class Investidor {
 	@Column(name="telefoneInv", length = 100)
 	private String telefone;
 	
-	@Column(name= "imgInv", length = 500)
+	@Column(name= "imgInv", length = 1000)
 	private String imgInv;
+	
 
 	public int getIdInv() {
 		return idInv;
@@ -68,5 +73,8 @@ public class Investidor {
 		this.imgInv = imgInv;
 	}
 	
+	public String toString() {
+		return idInv+";"+nome+";"+email;
+	}
 	
 }

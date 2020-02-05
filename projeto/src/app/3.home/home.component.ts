@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import{Postagem} from './../model/postagem';
-import {ProdutosService} from './../serviço/produtos.service';
+
 
 /**Importações para os projetos */
+import{Projeto} from'../model/Projeto';
+import {ProjetosService} from '../serviço/projetos.service';
 
 
 
@@ -15,13 +16,13 @@ import {ProdutosService} from './../serviço/produtos.service';
 })
 export class HomeComponent implements OnInit {
   
-  constructor(private ProdutosService: ProdutosService) { }
+  constructor(private proj: ProjetosService) { }
 
-  private post1:  Postagem=null;
-  private post2:  Postagem=null;
-  private post3:  Postagem=null;
-  private post4:  Postagem=null;
-  private post5:  Postagem=null;
+  private post1:  Projeto=null;
+  private post2:  Projeto=null;
+  private post3:  Projeto=null;
+  private post4:  Projeto=null;
+  private post5:  Projeto=null;
 
   ngOnInit() {
     this.pegarPost1();
@@ -32,25 +33,25 @@ export class HomeComponent implements OnInit {
 
 
   pegarPost1(){
-    this.ProdutosService.pegarNovasPostagens(1).subscribe((procura: Postagem)=>{
+    this.proj.listarProjetoId(1).subscribe((procura: Projeto)=>{
       this.post1 = procura;
     })
   }
 
   pegarPost2(){
-    this.ProdutosService.pegarNovasPostagens(2).subscribe((procura: Postagem)=>{
+    this.proj.listarProjetoId(2).subscribe((procura: Projeto)=>{
       this.post2 = procura;
     }) 
   }
 
   pegarPost3(){
-    this.ProdutosService.pegarNovasPostagens(3).subscribe((procura: Postagem)=>{
+    this.proj.listarProjetoId(3).subscribe((procura: Projeto)=>{
       this.post3 = procura;
     }) 
   }
 
   pegarPost4(){
-    this.ProdutosService.pegarNovasPostagens(4).subscribe((procura: Postagem)=>{
+    this.proj.listarProjetoId(4).subscribe((procura: Projeto)=>{
       this.post4 = procura;
     })
   }

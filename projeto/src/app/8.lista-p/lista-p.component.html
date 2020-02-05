@@ -4,7 +4,7 @@
         <div class="col-md-6 mt-3 mb-2">
             <div class="justify-content-center h-100">
                 <div class="searchbar">
-                    <input class="search_input" type="text" id="campoPesquisa" placeholder="Startup..." [(ngModel)]="idBusca">
+                    <input class="search_input" type="text" id="campoPesquisa" placeholder="Startup..." [(ngModel)]="idProj">
                     <button (click)="pesquisar()" class="search_icon"><i class="fa fa-search"></i></button>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     <div class="card-body pt-0">
                         <h5 class="card-title">{{prod.nomeProj}}</h5>
                         <p class="card-text">Meta: {{prod.valorProj}}</p>
-                        <a [routerLink]="['/paginaDoacao', projeto.idProj]"class="btn btn-primary">Saiba ++</a>
+                        <a [routerLink]="['/paginaDoacao', prod.idProj]"class="btn btn-primary">Saiba ++</a>
                     </div>
                 </div>
             </div>

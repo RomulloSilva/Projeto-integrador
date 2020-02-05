@@ -50,7 +50,7 @@ public class Administrador {
 	}
 
 	public String toString() {
-		return"{\"emailADM\":"+this.emailADM+", \"senhaADM\":"+this.senhaADM+", \"id\":"+this.id+", \"nome\":"+this.nome+"}";
+		return id+";"+nome+";"+emailADM;
 	}
 
 }

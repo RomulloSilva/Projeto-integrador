@@ -13,13 +13,13 @@ export class FormularioAComponent implements OnInit {
   private cidade: string;
   private estado: string;
   private msg: string;
-  private _msgNome: string = null;
-  private _msgSobrenome: string = null;
-  private _msgEmail: string = null;
-  private _msgTelefone: string = null;
-  private _msgCidade: string = null;
+  private _msgNome: string = "Nome:";
+  private _msgSobrenome: string = "Sobrenome:";
+  private _msgEmail: string ="E-mail:";
+  private _msgTelefone: string = "Telefone:";
+  private _msgCidade: string = "Sua cidade:";
   private _msgEstado: string = null;
-  private _msgTexto: string = null;
+  private _msgTexto: string = "Sua mensagem:";
 
   constructor() { }
 

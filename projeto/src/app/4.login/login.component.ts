@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 
 /**importação dos dados do empreendedor */
 import { Empreendedor } from '../model/Empreendedor';
+import { Investidor } from '../model/Investidor';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +19,14 @@ export class LoginComponent implements OnInit {
 
   usuario: Usuario;
 
+  // variaveis comuns aos objetos
+  nome: string;
+  email: string;
+  id: string;
+  telefone: string;
+
   //var do empreendedor.
-  empreendedor: Empreendedor;
+  empreendedor: Empreendedor = new Empreendedor();
 
   constructor(private router: Router) { }
 
@@ -27,6 +34,8 @@ export class LoginComponent implements OnInit {
 
     this.usuario = Globals.USUARIO;
     this.empreendedor = Globals.EMPREENDEDOR;
+
+  
     
     if(!this.usuario){
       this.router.navigate(['/login']);/**lembrar de colocar o home de volta */

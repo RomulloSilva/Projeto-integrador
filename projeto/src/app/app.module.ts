@@ -9,7 +9,6 @@ import { MenuComponent } from './1.menu/menu.component';
 import { RodapeComponent } from './2.rodape/rodape.component';
 import { HomeComponent } from './3.home/home.component';
 import { LoginComponent } from './4.login/login.component';
-import { FormularioEComponent } from './5.formulario-e/formulario-e.component';
 import { PerfilComponent } from './7.perfil/perfil.component';
 import { ListaPComponent } from './8.lista-p/lista-p.component';
 import { DescricaoPComponent } from './9.descricao-p/descricao-p.component';
@@ -29,7 +28,6 @@ import { CadastrarProjetoComponent } from './cadastrar-projeto/cadastrar-projeto
     RodapeComponent,
     HomeComponent,
     LoginComponent,
-    FormularioEComponent,
     FormularioAComponent,
     PerfilComponent,
     ListaPComponent,

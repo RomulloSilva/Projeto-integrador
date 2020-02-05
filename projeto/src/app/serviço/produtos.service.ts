@@ -19,8 +19,8 @@ Criando serviços para os produtos dentro export.------------------------*/
 
 
 
-  pegarNovasPostagens(idPorj: number):any{
-    return this.http.get(`http://localhost:8080/projetos/${idPorj}`);
+  pegarNovasPostagens(idProj: number):any{
+    return this.http.get(`http://localhost:8080/projetos/${idProj}`);
     /**Método responsável por exibir as 5 postagens novas na home da página, ou seja toda vez que novas Startup forem cadastradas elas seram exibidas aqui */
   }
 

@@ -22,7 +22,14 @@ export class PaginaDoacaoComponent implements OnInit {
   public meta: Meta = new Meta();
   public investidor: Investidor = new Investidor();
   public categoria: Categoria = new Categoria();
-  private idProj: number;
+  public idProj: number;
+
+  /*TESTE */
+  private post1:  Projeto=null;
+
+
+
+  
 
   constructor(private rota: ActivatedRoute, private busca: ProjetosService, private cat: CategoriaService, private met: MetaService, private invest: InvestidorService) { }
 
@@ -30,15 +37,26 @@ export class PaginaDoacaoComponent implements OnInit {
 
     this.idProj = this.rota.snapshot.params["idProj"]
     console.log("Veio com o parâmetro o valor = " + this.idProj);
-
+    
     this.busca.listarProjetoId(this.idProj).subscribe((res: Projeto)=>{
       this.projeto = res;
       console.log("RECUPERADO");
       console.log(this.projeto);
     });
 
+    this.pegarPost1();
+
+
   }
 
+  pegarPost1(){
+    this.busca.listarProjetoId(this.idProj).subscribe((procura: Projeto)=>{
+      this.post1 = procura;
+    })
+  }
+  
+    
+  
 
   /*public doar()*/
 }

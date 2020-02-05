@@ -10,9 +10,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import br.com.believeon.projeto.model.Investidor;
+import br.com.believeon.projeto.security.Token;
+import br.com.believeon.projeto.security.Validacao;
 import br.com.believeon.projeto.service.IInvestidorService;
 
 @RestController
@@ -49,13 +53,34 @@ public class InvestidorController {
 		return ResponseEntity.ok(investidor);
 	}
 	
+	
+	
+	
 	@PostMapping("/investidor/login")
-	public ResponseEntity<Investidor> logarInvestidor(@RequestBody Investidor investidor){
-		Investidor u = service.loginInvestidor(investidor.getEmail(), investidor.getSenha());
-		if(u != null) {
-			return ResponseEntity.ok(u);
+	public ResponseEntity<Token> autenticaInv(@RequestBody Investidor investidor){
+		Investidor inv = service.loginInvestidor(investidor.getEmail(), investidor.getSenha());
+		if (inv != null) {
+			Token tk = new Token();
+			tk.setConstruindoToken(Validacao.generateTokenInv(inv));
+			return ResponseEntity.ok(tk);
 		}
-		return ResponseEntity.notFound().build();
+		return ResponseEntity.status(403).build();
+	}
+	
+	
+	//Aqui é onde fica o método resposavel por carregar as informações do usuários para todos as páginas qnd logado.
+	@GetMapping("/investidor/infoDoInv")
+	public ResponseEntity<Investidor> getInfoInv(@RequestParam String token){		
+		
+		if (token != null) {
+			if (Validacao.temPrefixo(token)) {
+				Investidor inv = Validacao.getInv(token);
+				inv = service.recuperarInvPorId(inv.getIdInv());
+				return ResponseEntity.ok(inv);
+			}
+			return ResponseEntity.status(403).build();
+		}
+		return ResponseEntity.badRequest().build();
 	}
 
 }

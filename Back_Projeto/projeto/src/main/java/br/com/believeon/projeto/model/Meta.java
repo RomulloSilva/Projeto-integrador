@@ -37,9 +37,10 @@ public class Meta {
 	
 	
 	@ManyToOne
-	@JsonIgnoreProperties ("metas")
+	@JsonIgnoreProperties ("metasProjeto")
 	private Projeto projeto;
-
+	
+	
 	public int getIdMeta() {
 		return idMeta;
 	}

@@ -60,6 +60,7 @@ export class MenuComponent implements OnInit {
   public msgSenhaInvest2: string = null;
   public msgConfirmaSenhaInvest: string = null;
   public idResposta: String = null;
+  
 
  
 
@@ -70,6 +71,7 @@ export class MenuComponent implements OnInit {
   public invLogado: boolean = false;
   public empreendedor: Empreendedor = new Empreendedor();
   public empLogado: boolean = false;
+  public trocaMenu: number;
 
   //Variável que é usada para retirar dados que só podem ser utilizados qquando logado.
   public estaLogado: boolean = false;
@@ -93,7 +95,7 @@ export class MenuComponent implements OnInit {
     
     
 
-    
+    this.switchMenu()
 
     
   }
@@ -188,7 +190,14 @@ export class MenuComponent implements OnInit {
     );
   }
 
+  logout(){
+    this.trocaMenu = 0;
+    this.admLogado = false;
+    this.invLogado = false;
+    this.empLogado = false;
+    this.router.navigate(['home'])
 
+  }
 
 
 
@@ -252,15 +261,24 @@ export class MenuComponent implements OnInit {
     if (u < 1) {
 
       this.enviarDados();
-
-
+    }
+  }
+    private switchMenu(){
+    this.trocaMenu = 1;
+    if (this.invLogado == true){
+    this.trocaMenu = 1;
+    }
+    if (this.empLogado == true) {
+      this.trocaMenu = 2;
+    }
+    if (this.admLogado ==true) {
+      this.trocaMenu = 3;
     }
   }
 
-
   //---------------------------Funções do investidor--------------------------------//
 
-  private forcaSenhaInvest() {
+    private forcaSenhaInvest() {
     if (this.investidor.senha.indexOf("@") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("#") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("$") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("%") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("&") >= 0 && this.investidor.senha.length >= 10) {
       this.msgSenhaInvest1 = "Segurança: Forte!";
       this.msgSenhaInvest2 = null;

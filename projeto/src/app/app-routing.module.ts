@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './3.home/home.component';
 import { LoginComponent } from './4.login/login.component';
-import { FormularioEComponent } from './5.formulario-e/formulario-e.component';
 import { FormularioAComponent } from './6.formulario-a/formulario-a.component';
 import { PerfilComponent } from './7.perfil/perfil.component';
 import { ListaPComponent } from './8.lista-p/lista-p.component';
@@ -21,12 +20,11 @@ const routes: Routes = [
   {path: "" , redirectTo: 'home' , pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent  },
-  {path: 'formularioE', component: FormularioEComponent},
   {path: 'formularioA', component: FormularioAComponent },
   {path: 'perfil', component: PerfilComponent },
   {path: 'listaP', component: ListaPComponent},
   {path: 'descricaoP', component: DescricaoPComponent},
-  {path: 'paginaDoacao', component: PaginaDoacaoComponent},
+  {path: 'paginaDoacao/:id', component: PaginaDoacaoComponent},
   {path: 'sobre', component: SobreComponent},
   {path: 'listagem', component: ListagemComponent},
   {path: 'editaUser/:id', component: EditaUserComponent},

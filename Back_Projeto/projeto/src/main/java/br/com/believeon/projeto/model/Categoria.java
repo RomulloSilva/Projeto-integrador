@@ -25,8 +25,8 @@ public class Categoria {
 	@Column(name="nomeCat", length = 100)
 	private String nomeCat;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "categoria") 
-	@JsonIgnoreProperties("categoria")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "categoriaProjeto") 
+	@JsonIgnoreProperties("categoriaProjeto")
 	private List<Projeto> projetos;
 	
 	public int getIdCat() {

@@ -27,8 +27,12 @@ public mostraEmpreId(id: number){
 
 
  public loginEmpre(empreendedor: Empreendedor){
-  return this.http.post("http://localhost:8080", empreendedor);
+  return this.http.post("http://localhost:8080/empreendedor/login", empreendedor);
 }
+
+  public recuperarPorTokenEmp(token: string){
+    return this.http.get("http://localhost:8080/empreendedor/infoDoEmp?token="+ token);
+  }
 
 }
 

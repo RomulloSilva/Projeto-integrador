@@ -17,49 +17,45 @@
     </p>
     <div *ngIf="post1!= null">
         <div class="card position-sticky" style="width: 250px; height: 450px;">
-            <img class="card-img-top" src='{{post1.linkimg}}' alt="Imagem de capa do card">
+            <img class="card-img-top" src='{{post1.linkFoto}}' alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">{{post1.titulo}}</h5>
-                <p class="card-text">{{post1.texto}}</p>
+                <h5 class="card-title">{{post1.nomeProj}}</h5>
             </div>
             <div class="card-body">
-                <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
+                <a [routerLink]="['/paginaDoacao', post1.idProj]" class="btn btn-info align-bottom">Saiba mais</a>
             </div>
         </div>
     </div>
     <div *ngIf="post2 != null">
         <div class="card position-sticky" style="width: 250px; height: 450px">
-            <img class="card-img-top" src='{{post2.linkimg}}' alt="Imagem de capa do card">
+            <img class="card-img-top" src='{{post2.linkFoto}}' alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">{{post2.titulo}}</h5>
-                <p class="card-text">{{post2.texto}}</p>
+                <h5 class="card-title">{{post2.nomeProj}}</h5>
             </div>
             <div class="card-body">
-                <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
+                <a [routerLink]="['/paginaDoacao', post2.idProj]" class="btn btn-info align-bottom">Saiba mais</a>
             </div>
         </div>
     </div>
     <div *ngIf="post3!= null">
         <div class="card position-sticky" style="width: 250px; height: 450px">
-            <img class="card-img-top" src='{{post3.linkimg}}' alt="Imagem de capa do card">
+            <img class="card-img-top" src='{{post3.linkFoto}}' alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">{{post3.titulo}}</h5>
-                <p class="card-text">{{post3.texto}}</p>
+                <h5 class="card-title">{{post3.nomeProj}}</h5>
             </div>
             <div class="card-body">
-                <a href="#" class="btn btn-info align-bottom">Saiba mais</a>
+                <a [routerLink]="['/paginaDoacao', post3.idProj]" class="btn btn-info align-bottom">Saiba mais</a>
             </div>
         </div>
     </div>
     <div *ngIf="post4 != null">
         <div class="card position-sticky" style="width: 250px; height: 450px">
-            <img class="card-img-top" src='{{post4.linkimg}}' alt="Imagem de capa do card">
+            <img class="card-img-top" src='{{post4.linkFoto}}' alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">{{post4.titulo}}.</h5>
-                <p class="card-text">{{post4.texto}}</p>
+                <h5 class="card-title">{{post4.nomeProj}}</h5>
             </div>
             <div class="card-body">
-                <a [routerLink]="'/paginaDoacao'" class="btn btn-info align-bottom">Saiba mais</a>
+                <a [routerLink]="['/paginaDoacao', post4.idProj]" class="btn btn-info align-bottom">Saiba mais</a>
             </div>
         </div>
     </div>

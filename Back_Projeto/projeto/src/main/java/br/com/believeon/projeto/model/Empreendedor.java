@@ -34,12 +34,14 @@ public class Empreendedor {
 	@Column(name="telefoneEmp", length = 100)
 	private String telefoneEmp;
 	
-	@Column(name= "imgEmp", length = 500)
+	@Column(name= "imgEmp", length = 1000)
 	private String imgEmp;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "empreendedor") 
-	@JsonIgnoreProperties("empreendedor")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "dono") 
+	@JsonIgnoreProperties("dono")
 	private List<Projeto> projetos;
+	
+	
 	
 	public int getIdEmp() {
 		return idEmp;
@@ -82,6 +84,10 @@ public class Empreendedor {
 	}
 	public void setImgEmp(String imgEmp) {
 		this.imgEmp = imgEmp;
+	}
+	
+	public String toString() {
+		return idEmp+";"+nomeEmp+";"+emailEmp;
 	}
 	
 	
