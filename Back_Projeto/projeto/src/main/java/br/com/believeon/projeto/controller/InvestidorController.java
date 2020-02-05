@@ -48,5 +48,14 @@ public class InvestidorController {
 		service.atualizarInvestidor(investidor);
 		return ResponseEntity.ok(investidor);
 	}
+	
+	@PostMapping("/investidor/login")
+	public ResponseEntity<Investidor> logarInvestidor(@RequestBody Investidor investidor){
+		Investidor u = service.loginInvestidor(investidor.getEmail(), investidor.getSenha());
+		if(u != null) {
+			return ResponseEntity.ok(u);
+		}
+		return ResponseEntity.notFound().build();
+	}
 
 }

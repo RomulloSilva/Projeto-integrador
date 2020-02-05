@@ -32,6 +32,11 @@ public class InvestidorServiceImpl implements IInvestidorService{
 		repo.save(investidor);
 	}
 	
+	@Override
+	public Investidor loginInvestidor(String email, String senha) {
+		return repo.findByEmailAndSenha(email, senha);
+	}
+	
 	
 	
 	

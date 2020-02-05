@@ -11,6 +11,7 @@ public interface IEmpreendedorService {
 	public List<Empreendedor> recuperarTodos();
 	public void atualizarEmpreendedor(Empreendedor empreendedor);
 
+	public Empreendedor loginEmpreendedor(String emailEmp, String senhaEmp);
 	
 	
 }

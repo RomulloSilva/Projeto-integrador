@@ -36,4 +36,9 @@ public class EmpreendedorServiceImpl implements IEmpreendedorService{
 	}
 	
 	
+	@Override
+	public Empreendedor loginEmpreendedor(String emailEmp, String senhaEmp) {
+		return repo.findByEmailEmpAndSenhaEmp(emailEmp, senhaEmp);
+	}
+	
 }

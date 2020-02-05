@@ -10,5 +10,6 @@ public interface IInvestidorService {
 	public List<Investidor> recuperarTodos();
 	public Investidor recuperarInvPorId(int idInv);
 	public void atualizarInvestidor(Investidor investidor);
+	public Investidor loginInvestidor(String email, String senha);
 	
 }

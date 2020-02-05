@@ -51,6 +51,16 @@ public class EmpreendedorController {
 		service.atualizarEmpreendedor(empreendedor);
 		return ResponseEntity.ok(empreendedor);
 	}
+	
+	
+	@PostMapping("/empreendedor/login")
+	public ResponseEntity<Empreendedor> logarEmpreendedor(@RequestBody Empreendedor empreendedor){
+		Empreendedor u = service.loginEmpreendedor(empreendedor.getEmailEmp(), empreendedor.getSenhaEmp());
+		if(u != null) {
+			return ResponseEntity.ok(u);
+		}
+		return ResponseEntity.notFound().build();
+	}
 
 	
 }
