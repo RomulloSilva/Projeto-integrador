@@ -1,6 +1,6 @@
 import { Categoria } from './Categoria';
 import { Empreendedor } from './Empreendedor';
-import { Meta } from './Meta';
+import { Investidor } from './Investidor';
 
 export class Projeto{
 
@@ -11,7 +11,9 @@ export class Projeto{
 	public linkFoto: string;
 	public categoriaProjeto: Categoria;
 	public dono: Empreendedor;
-	public metasProjeto: Meta;
+	public apoiador: Investidor;
+	
+
 
 
 

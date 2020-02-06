@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {ProdutosService} from '../serviço/produtos.service';
+import { ProdutosService } from '../serviço/produtos.service';
 
 //Importar a classe de usuario.
-import { Usuario } from '../model/Usuario';
 import { Router } from '@angular/router';
 import { Globals } from '../model/Globals';
+//npm install jquery --save
+//npm install @types/jquery
 //importação do jquery
 import * as $ from 'jquery';
 
@@ -12,15 +13,15 @@ import * as $ from 'jquery';
 
 /**Importações utilizadas na tarefa 10, que valida o login do Administrador*/
 import { AdministradorService } from '../serviço/administrador.service';
-import {Token} from '../model/Token';
-import {Projeto} from '../model/Projeto';
-import {Administrador} from '../model/Administrador';
+import { Token } from '../model/Token';
+import { Projeto } from '../model/Projeto';
+import { Administrador } from '../model/Administrador';
 //utilizamos o router tambem.
 /**Imposrtações para validar login de investidor e Empreendedor */
-import {Investidor} from '../model/Investidor';
-import {Empreendedor} from '../model/Empreendedor';
-import {EmpreendedorService} from'../serviço/empreendedor.service';
-import {InvestidorService} from '../serviço/investidor.service';
+import { Investidor } from '../model/Investidor';
+import { Empreendedor } from '../model/Empreendedor';
+import { EmpreendedorService } from '../serviço/empreendedor.service';
+import { InvestidorService } from '../serviço/investidor.service';
 /**FIM**/
 
 @Component({
@@ -28,7 +29,7 @@ import {InvestidorService} from '../serviço/investidor.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
   providers: [Globals]
-  
+
 })
 export class MenuComponent implements OnInit {
 
@@ -60,12 +61,11 @@ export class MenuComponent implements OnInit {
   public msgSenhaInvest2: string = null;
   public msgConfirmaSenhaInvest: string = null;
   public idResposta: String = null;
-  
 
- 
 
-  //Variável para invocar o objeto Usuário(sempre da new para não da erro).
-  public usuario: Usuario = new Usuario();
+
+
+
   //variavel de invocação dos objetos.
   public investidor: Investidor = new Investidor();
   public invLogado: boolean = false;
@@ -75,103 +75,90 @@ export class MenuComponent implements OnInit {
 
   //Variável que é usada para retirar dados que só podem ser utilizados qquando logado.
   public estaLogado: boolean = false;
-  
-   //Variáveis do administrador
-   public admnistrador: Administrador = new Administrador();
-   public admLogado: boolean = false;
+
+  //Variáveis do administrador
+  public admnistrador: Administrador = new Administrador();
+  public admLogado: boolean = false;
 
 
 
-  
+
   constructor(private busca: ProdutosService, private srv: ProdutosService, private router: Router, private adm: AdministradorService, private inv: InvestidorService, private emp: EmpreendedorService) { }
 
 
   ngOnInit() {
 
     //Salvando o Token no localStorage
-    if(localStorage.getItem("admToken")){
+    if (localStorage.getItem("admToken")) {
       this.router.navigate(['/perfil']);
     }
-    
-    
+
+
 
     this.switchMenu()
 
-    
+
   }
 
-   
+
 
   //gui-validandologin3=esta função compara os dados e valida (compara a api com os dados inseridos nos inputs do form de login)
-    public efetuaLogin() {
+  public efetuaLogin() {
 
 
-      if(this.inputEmail == "ADM@adm.com" && this.inputPassword == "12345"){
-        this.admnistrador.emailADM = this.inputEmail;
-        this.admnistrador.senhaADM = this.inputPassword;
-        this.adm.loginAdm(this.admnistrador).subscribe((res:Administrador)=>{
-          console.log("Administrador logado")
+    if (this.inputEmail == "ADM@adm.com" && this.inputPassword == "12345") {
+      this.admnistrador.emailADM = this.inputEmail;
+      this.admnistrador.senhaADM = this.inputPassword;
+      this.adm.loginAdm(this.admnistrador).subscribe((res: Administrador) => {
+        console.log("Administrador logado")
 
-          //var que faz os componentes de ADM aparecer.
-          this.admLogado = true;
-          //Rota para levar ao componente perfil onde postamos os projetos.
-          this.router.navigate(['perfil']);
-          $('#fecharModal').click();
-          alert("Administrador logado");
-        },
-        (err)=>{
+        //var que faz os componentes de ADM aparecer.
+        this.admLogado = true;
+        //Rota para levar ao componente perfil onde postamos os projetos.
+        this.router.navigate(['perfil']);
+        $('#fecharModal').click();
+        alert("Administrador logado");
+      },
+        (err) => {
           console.log("Não conectado");
-        alert("Senha ou email do Administrador errados")
+          alert("Senha ou email do Administrador errados")
         })
-      }else{
+    } else {
 
-        this.investidor.email = this.inputEmail;
-        this.investidor.senha = this.inputPassword;
-    
-        this.inv.loginInvest(this.investidor).subscribe((res:Investidor)=>{
-          console.log("Conectado");
+      this.investidor.email = this.inputEmail;
+      this.investidor.senha = this.inputPassword;
 
-          //var que faz os componentes do investidor aparecer.
-          this.invLogado = true;
-  
-            //Atribuir o Globals ao objet
-            Globals.INVESTIDOR = res;
-  
-            //var que faz os dados aparecerem.
-            this.estaLogado = true;
-          
-          this.router.navigate(['login']);
-          //jquery que faz o modal sair após ser logado.
-          $('#fecharModal').click();//Aqui vai o id do modal.
-          alert("Investidor logado")
-        
-        },
-        (erro)=>{
-          console.log("Não conectado");
-          alert("Senha ou email errados Investidor")
-          //Como somos o commerce não vamos ter rota, só msg de erro.
-  
-        })
 
-      }
+      this.inv.loginInvest(this.investidor).subscribe((res: Token) => {
+        console.log("Conectado");
+        localStorage.setItem("strInvTk",res.construindoToken);
+        this.router.navigate(['/login'])
+        $('#fecharModal').click();
+        alert("investidor logado");
+        this.invLogado = true;    
+      }, (erro) => {
+        console.log("Não conectado");
+        alert("Senha ou email errados do investidor");
+      })
 
-     
   }
+}
 
-  public loginEmp(){
-        this.empreendedor.emailEmp = this.inputEmail;
-        this.empreendedor.emailEmp = this.inputPassword;
-        this.emp.loginEmpre(this.empreendedor).subscribe((res: Empreendedor)=>{
-          console.log("Conectado");
-          this.empLogado = true;
-          Globals.EMPREENDEDOR = res;
-          this.router.navigate(['login'])
-          $('#fecharModal').click();
-          alert("Investidor logado")
-        },(erro)=>{
-          console.log("Não conectado");
-          alert("Senha ou email errados do empreendedor");
-        })
+  public loginEmp() {
+    this.empreendedor.emailEmp = this.inputEmail;
+    this.empreendedor.senhaEmp = this.inputPassword;
+
+    this.emp.loginEmpre(this.empreendedor).subscribe((res: Token) => {
+      console.log("Conectado");
+      localStorage.setItem("strInvTk",res.construindoToken);
+      this.router.navigate(['/login'])
+      $('#fecharModal').click();
+      alert("empreendedor logado");
+      this.empLogado = true;    
+    }, (erro) => {
+      console.log("Não conectado");
+      alert("Senha ou email errados do empreendedor");
+    })
 
 
   }
@@ -190,12 +177,14 @@ export class MenuComponent implements OnInit {
     );
   }
 
-  logout(){
+  logout() {
     this.trocaMenu = 0;
-    this.admLogado = false;
-    this.invLogado = false;
-    this.empLogado = false;
+    this.admLogado = true;
+    this.invLogado = true;
+    this.empLogado = true;
+    localStorage.clear();
     this.router.navigate(['home'])
+
 
   }
 
@@ -241,7 +230,7 @@ export class MenuComponent implements OnInit {
     } else {
       this.msgTelefone = null;
     }
-    if (this.empreendedor.senhaEmp == "" || this.empreendedor.senhaEmp== null) {
+    if (this.empreendedor.senhaEmp == "" || this.empreendedor.senhaEmp == null) {
       this.msgSenha = "Digite uma senha."
       this.idResposta = "msgErro"
       this.msgSenha1 = null;
@@ -263,22 +252,22 @@ export class MenuComponent implements OnInit {
       this.enviarDados();
     }
   }
-    private switchMenu(){
+  private switchMenu() {
     this.trocaMenu = 1;
-    if (this.invLogado == true){
-    this.trocaMenu = 1;
+    if (this.invLogado == true) {
+      this.trocaMenu = 1;
     }
     if (this.empLogado == true) {
-      this.trocaMenu = 2;
+      this.trocaMenu = 1;
     }
-    if (this.admLogado ==true) {
-      this.trocaMenu = 3;
+    if (this.admLogado == true) {
+      this.trocaMenu = 1;
     }
   }
 
   //---------------------------Funções do investidor--------------------------------//
 
-    private forcaSenhaInvest() {
+  private forcaSenhaInvest() {
     if (this.investidor.senha.indexOf("@") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("#") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("$") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("%") >= 0 && this.investidor.senha.length >= 10 || this.investidor.senha.indexOf("&") >= 0 && this.investidor.senha.length >= 10) {
       this.msgSenhaInvest1 = "Segurança: Forte!";
       this.msgSenhaInvest2 = null;

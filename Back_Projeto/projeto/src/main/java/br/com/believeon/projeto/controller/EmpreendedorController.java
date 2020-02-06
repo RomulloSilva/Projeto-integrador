@@ -57,37 +57,6 @@ public class EmpreendedorController {
 	}
 	
 	
-	/*@PostMapping("/empreendedor/login")
-	public ResponseEntity<Token> autenticaEmp(@RequestBody Empreendedor empreendedor){
-		Empreendedor emp = service.loginEmpreendedor(empreendedor.getEmailEmp(), empreendedor.getSenhaEmp());
-		if(emp != null) {
-			Token tk = new Token();
-			tk.setConstruindoToken(Validacao.generateTokenEmp(emp));
-			return ResponseEntity.ok(tk);
-		}
-		return ResponseEntity.status(403).build();
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//Aqui é onde fica o método resposavel por carregar as informações do usuários para todos as páginas qnd logado.
-		@GetMapping("/empreendedor/infoDoEmp")
-		public ResponseEntity<Empreendedor> getInfoEmp(@RequestParam String token){
-			if (token != null) {
-				if (Validacao.temPrefixo(token)) {
-					return ResponseEntity.ok(Validacao.getEmp(token));
-				}
-				return ResponseEntity.status(403).build();
-			}
-			return ResponseEntity.badRequest().build();
-		}*/
-	
 	
 	@PostMapping("/empreendedor/login")
 	public ResponseEntity<Token> autenticaInv(@RequestBody Empreendedor empreendedor){
@@ -102,6 +71,10 @@ public class EmpreendedorController {
 	
 	
 	//Aqui é onde fica o método resposavel por carregar as informações do usuários para todos as páginas qnd logado.
+	/**
+	 * @param token
+	 * @return
+	 */
 	@GetMapping("/empreendedor/infoDoEmp")
 	public ResponseEntity<Empreendedor> getInfoEmp(@RequestParam String token){		
 		
@@ -109,6 +82,7 @@ public class EmpreendedorController {
 			if (Validacao.temPrefixo(token)) {
 				Empreendedor emp = Validacao.getEmp(token);
 				emp = service.recuperarDetalhes(emp.getIdEmp());
+		
 				return ResponseEntity.ok(emp);
 			}
 			return ResponseEntity.status(403).build();

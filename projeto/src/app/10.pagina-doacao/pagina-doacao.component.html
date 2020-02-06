@@ -1,82 +1,61 @@
-<div class= "conteiner d-flex justify-content-center titulo mb-2">
-    <div class="row">
-        <div class=" col-md-12">
-            <h1>Projeto:<div [(ngModel)]="projeto.nomeProj"></div></h1>
-            <small>Por José</small>
-          </div>
+<div class="conteiner d-flex justify-content-center titulo mb-2">
+  <div class="row">
+    <div class=" col-md-12">
+      <h1>Projeto:<div> {{ projeto.nomeProj }}</div>
+      </h1>
+      <small>Por: {{projeto.dono.nomeEmp}}</small>
     </div>
+  </div>
 </div>
 
 
 <section class="caixaDosDetalhes">
-    <div class="container ">
-        <div class="row">
-         <div class="col-md-8 caixaDoProjeto1">
-            <div class="square-box">
-                <div class="square-content mr-2">
-                    <img src="{[(ngModel)]}='projeto.linkFoto'" class="img-fluid mt-2">
-                    <div><small>CATEGORIA</small></div>
-                  </div>
+  <div class="container ">
+    <div class="row">
+      <div class="col-md-8 caixaDoProjeto1">
+        <div class="square-box">
+          <div class="square-content mr-2">
+            <img src="{{projeto.linkFoto}}" class="img-fluid w-75 h-75 mt-2">
+            <div><small>CATEGORIA: {{projeto.categoriaProjeto.nomeCat}}</small></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-4 caixaDoProjeto2">
+        <div class="square-box">
+          <div class="square-content">
+            <div class="caixa1 mt-2 mr-2 ">
+              <h2 class="meta text-center">R$ {{ projeto.valorProj }}</h2>
+              <br>
             </div>
+            <button type="button" class="btn btn-success mb-2 mt-2 mx-auto">Apoie!</button>
 
-         </div>
-         <div class="col-md-4 caixaDoProjeto2">
-           <div class="square-box">
-           <div class="square-content">
-             <div class="caixa1 mt-2 mr-2 ">
-                 <h2 class="meta text-center">R$ <div [(ngModel)]="projeto.valorProj"></div></h2>
-                 <small>Esse projeto tem 4 metas</small><br>
-                 <div class="progress mx-auto"><div class="progress-bar bg-success" style="width:40%">40%</div>
-                  </div><br><br>
-                 <small>Meta: R$ 180.000,00</small>
-             </div>
-             <button type="button" class="btn btn-success  mb-2 mt-2 mx-auto" data-toggle="modal" data-target=".bd-example-modal-lg">Doar!</button>
-             <!---Modal-->
-             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <!--Metas-->
+            <div class="card mb-3 mx-auto" style="max-width: 18rem;">
+              <div class="card-header text-success">{{projeto.dono.nomeEmp}}</div>
+              <div class="card-body text-success">
+                <h5 class="card-title">Descrição</h5>
+                <p class="card-text"> {{ projeto.descricaoProj }}</p>
+              </div>
+              <div class="card-footer bg-transparent text-success">
+                <button type="button" class="btn btn-success" data-toggle="modal"
+                  data-target=".bd-example-modal-sm">contato</button>
+                <!---Modal-->
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+                  aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="text-success">Telefone: {{projeto.dono.telefoneEmp}}</div><br>
+                      <div clas="text-success">Email: {{projeto.dono.emailEmp}}</div>
 
-                  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
-                    <div class="btn-group mr-2 mx-auto" role="group" aria-label="Primeiro grupo">
-                      <button type="button" class="btn btn-success ml-2">{{projeto.metasProjeto.valorMeta}}</button>
-                      <button type="button" class="btn btn-success ml-2">Meta 2</button>
                     </div>
                   </div>
-
-
-                  <!--Metas-->
                 </div>
+                <!----Modal-->
               </div>
             </div>
-            <!----Modal-->
-
-             <div class="card mb-3 mx-auto" style="max-width: 18rem;">
-                <div class="card-header text-success">José Aldo</div>
-                <div class="card-body text-success">
-                  <h5 class="card-title">Descrição</h5>
-                  <p class="card-text"[(ngModel)]="projeto.descricaoProj"></p>
-                </div>
-                <div class="card-footer bg-transparent text-success">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-sm">contato</button>
-                    <!---Modal-->
-                    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                          <div class="text-success">Telefone:{{tel.empreendedor}}</div><br>
-                          <div clas="text-success">Email:{{Email.empreendedor}}</div>
-
-                        </div>
-                      </div>
-                    </div>
-                    <!----Modal-->
-                </div>
-              </div> 
-           </div>  
-         </div>
+          </div>
         </div>
-       </div>
-       </div>
+      </div>
+    </div>
+  </div>
 </section>
-
-

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 //Importação do Globals, para que o componente possa consultar os dados do usuario.
 import { Globals } from '../model/Globals';
-import { Usuario } from '../model/Usuario';
-import {Router} from '@angular/router';
-
-
+import { Router } from '@angular/router';
 /**importação dos dados do empreendedor */
 import { Empreendedor } from '../model/Empreendedor';
-import { Investidor } from '../model/Investidor';
+import { EmpreendedorService } from '../serviço/empreendedor.service';
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -17,40 +17,41 @@ import { Investidor } from '../model/Investidor';
 })
 export class LoginComponent implements OnInit {
 
-  usuario: Usuario;
-
-  // variaveis comuns aos objetos
-  nome: string;
-  email: string;
-  id: string;
-  telefone: string;
 
   //var do empreendedor.
   empreendedor: Empreendedor = new Empreendedor();
 
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, private emp: EmpreendedorService) { }
 
   ngOnInit() {
 
-    this.usuario = Globals.USUARIO;
-    this.empreendedor = Globals.EMPREENDEDOR;
+    console.log(localStorage.getItem("strInvTk"));
+    if (!localStorage.getItem("strInvTk")) {
+      this.router.navigate(['/home']);
+    } else {
+       console.log("Recuperando dados do empreendedor");
+      this.emp.recuperarPorTokenEmp(localStorage.getItem("strInvTk")).subscribe((res: Empreendedor) => {
+        console.log("recuperei o empreendedor")
+        this.empreendedor = res;
+        console.log(res);
+      })
 
-  
-    
-    if(!this.usuario){
-      this.router.navigate(['/login']);/**lembrar de colocar o home de volta */
     }
-    else{
-      //Permite que os dados do usuário sejam utilizados pelo componente.
-    this.usuario = Globals.USUARIO;
-    }
+
+    /*this.emp.recuperarPorTokenEmp()
+
+    this.empreendedor = Globals.EMPREENDEDOR;
+    console.log(this.empreendedor);
 
     if(!this.empreendedor){
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
     }else{
+       //Permite que os dados do empreendedor sejam utilizados pelo componente.
       this.empreendedor = Globals.EMPREENDEDOR;
-    }
+    }*/
   }
+
 
 
 }

@@ -16,11 +16,12 @@ export class ListaPComponent implements OnInit {
 
   public idProj: number;
   public projeto: Projeto=null;
+  public post: Projeto[];
+  public listaProjeto: Projeto;
 
   constructor(private ProjetosService: ProjetosService) { }
 
-  public post: Projeto[];
-  public listaProjeto: Projeto;
+ 
   
 
   ngOnInit() {
@@ -38,13 +39,16 @@ export class ListaPComponent implements OnInit {
   private pesquisar(){
     if(this.idProj != null){
       this.ProjetosService.listarProjetoId(this.idProj).subscribe((res:Projeto)=>{
-        this.listaProjeto = res;
         this.projeto = res;
+      },(err)=>{
+        this.projeto = null;
+        alert("Projeto pesquisado não esta em nosso banco")
       })
-    }else{
-      this.listaProjeto = null;
-    }
-    console.log(this.listaProjeto);
+    }/*else{
+      this.projeto = null;
+
+    }*/
+    console.log(this.projeto);
   }
 
 

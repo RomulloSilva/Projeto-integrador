@@ -3,10 +3,14 @@
         <div class="col-md-6"></div>
         <div class="col-md-6 mt-3 mb-2">
             <div class="justify-content-center h-100">
-                <div class="searchbar">
-                    <input class="search_input" type="text" id="campoPesquisa" placeholder="Startup..." [(ngModel)]="idProj">
-                    <button (click)="pesquisar()" class="search_icon"><i class="fa fa-search"></i></button>
-                </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Pesquise projetos pelo id" aria-label="Pesquise projetos pelo id" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-info" type="button" id="button-addon2">
+                                <img src="../../assets/imagens/search.png" class="search" alt="">
+                            </button>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -41,8 +45,8 @@
         <div *ngFor="let prod of post">
             <div class="card mx-3 mb-3 mt-3" style="width: 18rem;">
                 <div class="card listaProduto">
-                    <div class="card-img-block">
-                        <img class="card-img-top" src='{{prod.linkFoto}}' alt="Imagem de capa do card">
+                    <div class="card-img-block d-flex justify-content-center">
+                        <img class="card-img-top img-fluid" src='{{prod.linkFoto}}' alt="Imagem de capa do card">
                     </div>
                     <div class="card-body pt-0">
                         <h5 class="card-title">{{prod.nomeProj}}</h5>

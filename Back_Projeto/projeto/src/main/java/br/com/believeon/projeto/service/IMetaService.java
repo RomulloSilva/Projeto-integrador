@@ -1,4 +1,4 @@
-package br.com.believeon.projeto.service;
+/* package br.com.believeon.projeto.service;
 
 
 import java.util.List;
@@ -15,3 +15,5 @@ public interface IMetaService {
 	
 	public Meta RecuperaPorId(int idMeta);
 }
+
+*/

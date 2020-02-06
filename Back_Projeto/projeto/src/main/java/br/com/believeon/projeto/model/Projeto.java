@@ -1,15 +1,15 @@
 package br.com.believeon.projeto.model;
 
-import java.util.List;
+/*import java.util.List;*/
 
-import javax.persistence.CascadeType;
+/*import javax.persistence.CascadeType;*/
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+/*import javax.persistence.OneToMany;*/
 import javax.persistence.Table;
 
 
@@ -46,9 +46,13 @@ public class Projeto {
 	@JsonIgnoreProperties ("projetos")
 	private Categoria categoriaProjeto;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "projeto")
+	@ManyToOne
+	@JsonIgnoreProperties("projetos")
+	private Investidor apoiador;
+	
+	/*@OneToMany(cascade = CascadeType.ALL, mappedBy = "projeto")
 	@JsonIgnoreProperties ("projeto")
-	private List<Meta> metasProjeto;
+	private List<Meta> metasProjeto;*/
 
 	public int getIdProj() {
 		return idProj;
@@ -108,12 +112,22 @@ public class Projeto {
 		this.categoriaProjeto = categoriaProjeto;
 	}
 
-	public List<Meta> getMetasProjeto() {
+	public Investidor getApoiador() {
+		return apoiador;
+	}
+
+	public void setApoiador(Investidor apoiador) {
+		this.apoiador = apoiador;
+	}
+
+	/*public List<Meta> getMetasProjeto() {
 		return metasProjeto;
 	}
 
 	public void setMetasProjeto(List<Meta> metasProjeto) {
 		this.metasProjeto = metasProjeto;
-	}
+	}*/
+	
+	
 
 }

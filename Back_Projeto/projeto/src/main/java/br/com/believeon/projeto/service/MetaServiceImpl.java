@@ -1,4 +1,4 @@
-package br.com.believeon.projeto.service;
+/* package br.com.believeon.projeto.service;
 
 import java.util.List;
 
@@ -30,3 +30,5 @@ public class MetaServiceImpl implements IMetaService{
 		repo.save(meta);
 	}
 }
+
+*/

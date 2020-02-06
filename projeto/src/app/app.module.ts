@@ -11,7 +11,6 @@ import { HomeComponent } from './3.home/home.component';
 import { LoginComponent } from './4.login/login.component';
 import { PerfilComponent } from './7.perfil/perfil.component';
 import { ListaPComponent } from './8.lista-p/lista-p.component';
-import { DescricaoPComponent } from './9.descricao-p/descricao-p.component';
 import { PaginaDoacaoComponent } from './10.pagina-doacao/pagina-doacao.component';
 import { SobreComponent } from './11.sobre/sobre.component';
 import { FormularioAComponent } from './6.formulario-a/formulario-a.component';
@@ -31,7 +30,6 @@ import { CadastrarProjetoComponent } from './cadastrar-projeto/cadastrar-projeto
     FormularioAComponent,
     PerfilComponent,
     ListaPComponent,
-    DescricaoPComponent,
     PaginaDoacaoComponent,
     SobreComponent,
     ListagemComponent,

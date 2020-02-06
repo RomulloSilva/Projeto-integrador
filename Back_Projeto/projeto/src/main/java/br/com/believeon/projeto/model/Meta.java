@@ -1,4 +1,4 @@
-package br.com.believeon.projeto.model;
+/* package br.com.believeon.projeto.model;
 
 
 
@@ -76,3 +76,5 @@ public class Meta {
 	
 	
 }
+
+*/

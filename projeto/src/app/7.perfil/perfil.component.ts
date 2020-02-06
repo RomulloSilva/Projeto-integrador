@@ -19,7 +19,6 @@ export class PerfilComponent implements OnInit {
 
   constructor(private proj: ProjetosService, private rota: ActivatedRoute) { }
   private idBusca: number;
-  private pesquisa:number;
 
    
   private projeto: Projeto=null;
@@ -29,7 +28,7 @@ export class PerfilComponent implements OnInit {
   ngOnInit() {
     this.pegaProj();
   }
-   private pj: Projeto;
+  
 
    pegaProj(){
     this.proj.listarProjetos().subscribe((postOut: Projeto[]) => {
@@ -38,29 +37,19 @@ export class PerfilComponent implements OnInit {
     })
   }
 
-   /*public deletarProjeto(id: number){
-     this.proj.deletar(id).subscribe((res)=>{
-       alert("Apagado com sucesso");
-       document.location.reload(true);
-     },
-     (err)=>{
-       alert("Não deletou");
-     })
-   }*/
+   
    
    private pesquisar(){
-    this.pesquisa=this.idBusca
-    if(this.pesquisa <= 0 || this.pesquisa == NaN){
-    alert("Item não encontrado");
-    this.pesquisa = null;
-      }else{
-        this.proj.listarProjetoId(this.pesquisa).subscribe((res: Projeto) =>{
-          this.projeto = res;
-          console.log(this.projeto);
-
-      }
-      )
+   
+    if( this.idBusca != null){
+      this.proj.listarProjetoId(this.idBusca).subscribe((res:Projeto)=>{
+        this.projeto = res;
+      },(err)=>{
+        this.projeto = null;
+        alert("Projeto pesquisado não esta em nosso banco")
+      })
     }
+    console.log(this.projeto);
   }
 
 }

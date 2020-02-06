@@ -6,7 +6,7 @@
     background: linear-gradient(to bottom, #C8D5DE, #C8D5DE);  
   float:left;
   width:100%;
-  padding : 50px 0;
+  padding: 50px 0;
 }
 
 .caixaDosDetalhes{
@@ -31,10 +31,6 @@
 
 
 
-
-
-
-
     .square-box:before{
     content: "";
     display: block;
@@ -46,7 +42,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    color: #F2F3F5;
+    color:tomato;
     text-align: center;
     }
 

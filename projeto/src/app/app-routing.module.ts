@@ -6,7 +6,6 @@ import { LoginComponent } from './4.login/login.component';
 import { FormularioAComponent } from './6.formulario-a/formulario-a.component';
 import { PerfilComponent } from './7.perfil/perfil.component';
 import { ListaPComponent } from './8.lista-p/lista-p.component';
-import { DescricaoPComponent } from './9.descricao-p/descricao-p.component';
 import { PaginaDoacaoComponent } from './10.pagina-doacao/pagina-doacao.component';
 import { SobreComponent } from './11.sobre/sobre.component';
 import {ListagemComponent} from './listagem/listagem.component';
@@ -23,7 +22,6 @@ const routes: Routes = [
   {path: 'formularioA', component: FormularioAComponent },
   {path: 'perfil', component: PerfilComponent },
   {path: 'listaP', component: ListaPComponent},
-  {path: 'descricaoP', component: DescricaoPComponent},
   {path: 'paginaDoacao/:id', component: PaginaDoacaoComponent},
   {path: 'sobre', component: SobreComponent},
   {path: 'listagem', component: ListagemComponent},

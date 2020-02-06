@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 //importações da tarefa 10.
 import {ProjetosService} from '../serviço/projetos.service';
-import {Meta} from '../model/Meta';
-import {Empreendedor} from '../model/Empreendedor';
 import {Projeto} from '../model/Projeto';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,8 +15,6 @@ export class EditaProjetoComponent implements OnInit {
 
 
   public projeto: Projeto = new Projeto();
-  public meta: Meta = new Meta();
-  public empreendedor: Empreendedor = new Empreendedor();
  
 
   //var
@@ -46,9 +42,9 @@ export class EditaProjetoComponent implements OnInit {
       this.descricaoAlimenta =this.projeto.descricaoProj;
       this.resumoAlimenta =this.projeto.descricaoProj;
       this.metaAlimenta =this.projeto.valorProj;
-      this.empreendedorAlimenta =this.empreendedor.nomeEmp;
-      this.emailAlimenta =this.empreendedor.emailEmp;
-      this.telefoneAlimenta =this.empreendedor.telefoneEmp;
+      this.empreendedorAlimenta =this.projeto.dono.nomeEmp;
+      this.emailAlimenta =this.projeto.dono.emailEmp;
+      this.telefoneAlimenta =this.projeto.dono.telefoneEmp;
     },(err)=>{
       alert("Não funcionou a exibição do produto")
     })

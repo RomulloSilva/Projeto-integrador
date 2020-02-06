@@ -64,6 +64,7 @@ public class Validacao {
 		c.setIdEmp(Integer.parseInt(partes[1]));
 		c.setNomeEmp(partes[2]);
 		c.setEmailEmp(partes[3]);
+		
 		return c;
 	}
 	
@@ -78,6 +79,7 @@ public class Validacao {
 		c.setIdInv(Integer.parseInt(partes[1]));
 		c.setNome(partes[2]);
 		c.setEmail(partes[3]);
+		//c.setImgInv(partes[4]);
 		return c;
 	}
 	

@@ -2,23 +2,23 @@
     <form action="/action_page.php">
         <div class="form-group">
           <label for="id:">Id</label>
-          <input type="id"  [(ngModel)]="idAlimenta" class="form-control" id="id">
+          <input type="id"  [(ngModel)]="idAlimenta" [ngModelOptions]="{standalone: true}" class="form-control" id="id">
         </div>
         <div class="form-group">
             <label for="imagem">Imagem</label>
-            <input type="imagem" [(ngModel)]="imagensAlimenta"  class="form-control" id="imagem">
+            <input type="imagem" [(ngModel)]="imagensAlimenta" [ngModelOptions]="{standalone: true}" class="form-control" id="imagem">
           </div>
           <div class="form-group">
             <label for="Título">Título</label>
-            <input type="titulo" [(ngModel)]= "tituloAlimenta" class="form-control" id="titulo">
+            <input type="titulo" [(ngModel)]= "tituloAlimenta"[ngModelOptions]="{standalone: true}" class="form-control" id="titulo">
           </div>
           <div class="form-group">
             <label for="descrição">Descrição</label>
-            <input type="descrição"  [(ngModel)]= "descricaoAlimenta" class="form-control" id="descricao">
+            <input type="descrição"  [(ngModel)]= "descricaoAlimenta"  [ngModelOptions]="{standalone: true}"class="form-control" id="descricao">
           </div>
           <div class="form-group">
             <label for="meta">Meta</label>
-            <input type="meta"  [(ngModel)]="metaAlimenta" class="form-control" id="meta">
+            <input type="meta"  [(ngModel)]="metaAlimenta" [ngModelOptions]="{standalone: true}" class="form-control" id="meta">
           </div>
         <div class="checkbox">
           <label><input type="checkbox">Lembrar de mim</label>
