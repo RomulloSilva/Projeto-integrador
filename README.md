@@ -14,4 +14,4 @@ Somos um grupo de jovens sonhadores e realistas, assim observamos que nem só de
 -   Metodologia SCRUM: metodologia ágil para gestão e planejamento de projetos de desenvolvimento web.
 
 
-###### By Gabrielle Pereira Lima, Fernanda de Almeida Ferreira, Guilherme Givigi e Romulo da Conceição da Silva. 
+###### By  [Gabrielle Pereira Lima](https://br.linkedin.com/in/gabriellepreli) ,[ Fernanda de Almeida Ferreira](https://www.linkedin.com/in/fernanda-ferreira-marsol),[ Guilherme Givigi ](https://br.linkedin.com/in/guilherme-givigi-797357113) e   [Romulo da Conceição da Silva](https://br.linkedin.com/in/romulo-da-concei%C3%A7%C3%A3o-da-silva)
