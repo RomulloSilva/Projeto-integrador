@@ -93,7 +93,20 @@ export class MenuComponent implements OnInit {
       this.router.navigate(['/perfil']);
     }
 
+    if(!Globals.INVESTIDOR){
+      this.inv.recuperarPorToken(localStorage.getItem("strInvTk")).subscribe((res:Investidor) => {
+        Globals.INVESTIDOR = res;
+        this.investidor = res;
 
+      });
+    }
+    if(!Globals.EMPREENDEDOR){
+      this.emp.recuperarPorTokenEmp(localStorage.getItem("strInvTk")).subscribe((res:Empreendedor) => {
+        Globals.EMPREENDEDOR = res;
+        this.empreendedor = res;
+
+      });
+    }
 
     this.switchMenu()
 
@@ -113,9 +126,14 @@ export class MenuComponent implements OnInit {
         console.log("Administrador logado")
 
         //var que faz os componentes de ADM aparecer.
-        this.admLogado = true;
+        
         //Rota para levar ao componente perfil onde postamos os projetos.
-        this.router.navigate(['perfil']);
+        this.router.navigate(['home']);
+        
+        this.trocaMenu = 1;
+        this.invLogado = false;
+        this.empLogado = false;
+        this.admLogado = true;
         $('#fecharModal').click();
         alert("Administrador logado");
       },
@@ -132,13 +150,16 @@ export class MenuComponent implements OnInit {
       this.inv.loginInvest(this.investidor).subscribe((res: Token) => {
         console.log("Conectado");
         localStorage.setItem("strInvTk",res.construindoToken);
-        this.router.navigate(['/login'])
         $('#fecharModal').click();
         alert("investidor logado");
-        this.invLogado = true;    
+        this.trocaMenu = 3;
+        this.invLogado = true;
+        this.empLogado = false;
+        this.admLogado = false; 
+        this.router.navigate(['/home'])
       }, (erro) => {
         console.log("Não conectado");
-        alert("Senha ou email errados do investidor");
+        alert("Senha ou email incorretos.");
       })
 
   }
@@ -150,14 +171,18 @@ export class MenuComponent implements OnInit {
 
     this.emp.loginEmpre(this.empreendedor).subscribe((res: Token) => {
       console.log("Conectado");
-      localStorage.setItem("strInvTk",res.construindoToken);
-      this.router.navigate(['/login'])
+      localStorage.setItem("strEmpTk",res.construindoToken);
       $('#fecharModal').click();
       alert("empreendedor logado");
-      this.empLogado = true;    
+      this.trocaMenu = 2;
+      this.invLogado = false;
+      this.empLogado = true;
+      this.admLogado = false; 
+      this.router.navigate(['/home'])
+
     }, (erro) => {
       console.log("Não conectado");
-      alert("Senha ou email errados do empreendedor");
+      alert("Senha ou email incorretos.");
     })
 
 
@@ -179,9 +204,9 @@ export class MenuComponent implements OnInit {
 
   logout() {
     this.trocaMenu = 0;
-    this.admLogado = true;
-    this.invLogado = true;
-    this.empLogado = true;
+    this.admLogado = false;
+    this.invLogado = false;
+    this.empLogado = false;
     localStorage.clear();
     this.router.navigate(['home'])
 
@@ -253,15 +278,15 @@ export class MenuComponent implements OnInit {
     }
   }
   private switchMenu() {
-    this.trocaMenu = 1;
-    if (this.invLogado == true) {
+    this.trocaMenu = 0;
+    if (this.admLogado == true) {
       this.trocaMenu = 1;
     }
     if (this.empLogado == true) {
-      this.trocaMenu = 1;
+      this.trocaMenu = 2;
     }
-    if (this.admLogado == true) {
-      this.trocaMenu = 1;
+    if (this.invLogado == true) {
+      this.trocaMenu = 3;
     }
   }
 

@@ -4,9 +4,9 @@
         <div class="col-md-6 mt-3 mb-2">
             <div class="justify-content-center h-100">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Pesquise projetos pelo id" aria-label="Pesquise projetos pelo id" aria-describedby="button-addon2">
+                        <input [(ngModel)]="idProj" type="text" class="form-control" placeholder="Pesquise projetos pelo id" aria-label="Pesquise projetos pelo id" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-info" type="button" id="button-addon2">
+                            <button class="btn btn-outline-info" (click)="pesquisar()" type="button" id="button-addon2">
                                 <img src="../../assets/imagens/search.png" class="search" alt="">
                             </button>
                         </div>
