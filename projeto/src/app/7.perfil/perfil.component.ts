@@ -21,7 +21,7 @@ export class PerfilComponent implements OnInit {
   private pesquisa: number;
   private idBusca: number;
   private projeto: Projeto=null;
-  private all: Projeto[];
+  private all: Projeto[] = [];
   
 
   ngOnInit() {

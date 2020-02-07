@@ -19,6 +19,7 @@ import { EditaUserComponent } from './edita-user/edita-user.component';
 import {FaqComponent} from './faq/faq.component';
 import { EditaProjetoComponent } from './edita-projeto/edita-projeto.component';
 import { CadastrarProjetoComponent } from './cadastrar-projeto/cadastrar-projeto.component';
+import { LoginInvComponent } from './login-inv/login-inv.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CadastrarProjetoComponent } from './cadastrar-projeto/cadastrar-projeto
     EditaUserComponent,
     FaqComponent,
     EditaProjetoComponent,
-    CadastrarProjetoComponent
+    CadastrarProjetoComponent,
+    LoginInvComponent
   ],
   imports: [
     BrowserModule,

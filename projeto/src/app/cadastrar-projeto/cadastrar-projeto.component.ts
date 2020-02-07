@@ -23,7 +23,7 @@ export class CadastrarProjetoComponent implements OnInit {
   
   nomeProj: string;
   valorProj: string; 
-  dono: number;
+  idDono: number;
   descricaoProj: string;
   linkFoto: string;
   apoiador: number;
@@ -38,13 +38,13 @@ export class CadastrarProjetoComponent implements OnInit {
   }
 
   public confirmaDados() {
-    if (this.linkFoto == null || this.nomeProj == null || this.descricaoProj == null || this.valorProj == null  || this.dono == null || this.apoiador == null || this.categoriaProjeto == null) {
+    if (this.linkFoto == null || this.nomeProj == null || this.descricaoProj == null || this.valorProj == null  || this.idDono == null  || this.categoriaProjeto == null) {
       console.log(
         this.nomeProj,
         this.linkFoto,
         this.descricaoProj,
         this.valorProj,
-        this.dono,
+        this.idDono,
         this.apoiador,
         this.categoriaProjeto
       )
@@ -55,11 +55,17 @@ export class CadastrarProjetoComponent implements OnInit {
       this.projeto.nomeProj = this.nomeProj;
       this.projeto.descricaoProj = this.descricaoProj;
       this.projeto.valorProj = this.valorProj;
+      this.projeto.dono = new Empreendedor();
+      this.projeto.categoriaProjeto = new Categoria();
+      this.projeto.dono.idEmp = this.idDono;
+      this.projeto.categoriaProjeto.idCat = this.categoriaProjeto;
       /*this.projeto.apoiador = ;
       this.projeto.dono = ;
       this.projeto.categoriaProjeto = ;*/
       this._mensagem = "Você confirma os dados inseridos?";
       this._aprovado = true;
+
+      console.log(this.projeto);
     }
   }
   public enviarProjeto() {

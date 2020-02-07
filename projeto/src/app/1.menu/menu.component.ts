@@ -112,13 +112,8 @@ export class MenuComponent implements OnInit {
 
 
   }
-
-
-
   //gui-validandologin3=esta função compara os dados e valida (compara a api com os dados inseridos nos inputs do form de login)
   public efetuaLogin() {
-
-
     if (this.inputEmail == "ADM@adm.com" && this.inputPassword == "12345") {
       this.admnistrador.emailADM = this.inputEmail;
       this.admnistrador.senhaADM = this.inputPassword;
@@ -207,7 +202,8 @@ export class MenuComponent implements OnInit {
     this.admLogado = false;
     this.invLogado = false;
     this.empLogado = false;
-    localStorage.clear();
+    localStorage.removeItem("strInvTk");
+    localStorage.removeItem("strEmpTk");
     this.router.navigate(['home'])
 
 
@@ -355,17 +351,4 @@ export class MenuComponent implements OnInit {
 
     }
   }
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
