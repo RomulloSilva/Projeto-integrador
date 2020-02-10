@@ -29,7 +29,7 @@
             </div>
             
             <div *ngIf="projeto.apoiador">
-              <button type="button" class="btn btn-success mb-2 mt-2 mx-auto">Apoiado</button>
+              <button type="button" class="btn btn-success mb-2 mt-2 mx-auto">Apoiado por {{projeto.apoiador.nome}}</button>
             </div>
             <div *ngIf="!projeto.apoiador">
               <button type="button" class="btn btn-success mb-2 mt-2 mx-auto" (click)="doar()">Apoie!</button>

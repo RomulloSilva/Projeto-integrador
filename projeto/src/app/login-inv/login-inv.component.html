@@ -10,10 +10,9 @@
                         <h2>{{investidor.nome}} <small>Investidor</small></h2>
                         <small>Email: {{investidor.email}}</small><br>
                         <small>Tel: {{investidor.telefone}}</small>
-                        <div class="align-content-center mb-2 mt-2">
-                            <button type="button" class="btn btn-dark mr-2">Vitrine</button>
-                            <button type="button" class="btn btn-dark">Logout</button>
+                        <div class="d-flex justify-content-center mb-2 mt-2">
 
+                            <button [routerLink]="'/listaP'" type="button" class="btn btn-dark mr-2 ">Vitrine</button>
                         </div>
                     </div>
                 </div>

@@ -35,7 +35,7 @@ export class SobreComponent implements OnInit {
   }
 
   pegarPost3(){
-    this.proj.listarProjetoId(14).subscribe((procura: Projeto)=>{
+    this.proj.listarProjetoId(26).subscribe((procura: Projeto)=>{
       this.post3 = procura;
     }) 
   }
