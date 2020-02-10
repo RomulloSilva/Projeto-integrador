@@ -1,18 +1,17 @@
-<div class="container">
-    <div class="row d-flex justify-content-center mt-2 mb-2">
+<div class="container-fluid bg-white">
+    <div class="row d-flex justify-content-center">
         <div class="col-md-3">
             <div class="caixaDoInvestidor">
-                <div class="card profile-card-3">
+                <div class="card profile-card-3" id="cardTamanho">
                     <div class="background-block mx-auto">
                         <img src="{{investidor.imgInv}}" class="img-fluid"/>
                     </div>
                     <div class="card-content">
-                        <h2>{{investidor.nome}} <small>Investidor</small></h2>
+                        <h2 id="nomeInvestidor">{{investidor.nome}} <small>Investidor</small></h2>
                         <small>Email: {{investidor.email}}</small><br>
                         <small>Tel: {{investidor.telefone}}</small>
-                        <div class="d-flex justify-content-center mb-2 mt-2">
-
-                            <button [routerLink]="'/listaP'" type="button" class="btn btn-dark mr-2 ">Vitrine</button>
+                        <div class="align-content-center mb-2 mt-2">
+                            <button type="button" class="btn btn-dark mr-2" [routerLink]="'/listaP'">Vitrine</button>
                         </div>
                     </div>
                 </div>
@@ -20,10 +19,8 @@
         </div>
         <div class="col-md-9 bg-white">
             <div>
-                <h2 clas="mx-auto">Projetos Criados por:{{investidor.nome}}</h2>
-            </div>
+                <h2 clas="mx-auto" id="titulo1">Meus Projetos:</h2>
             Aqui Estão seus projetos...
-
             <div class="d-flex justify-content-center">
                 <div class="card mr-2" style="width: 18rem;" *ngFor="let item of investidor.projetos">
                     <img class="card-img-top" src="{{item.linkFoto}}" alt="Card image cap">
@@ -31,7 +28,6 @@
                         <p class="card-text">{{item.descricaoProj}}</p>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>

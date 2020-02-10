@@ -1,61 +1,61 @@
-<div class="conteiner d-flex justify-content-center titulo mb-2">
+<div class="container-fluid bg-white">
+<div class="d-flex titulo mb-2">
   <div class="row">
     <div class=" col-md-12">
-      <h1>Projeto:{{projeto.nomeProj}}</h1>
+      <h1 id="titulo">PROJETO:</h1><h4>{{projeto.nomeProj}}</h4>
       <small>Por: {{projeto.dono.nomeEmp}}</small>
     </div>
   </div>
 </div>
-
-
 <section class="caixaDosDetalhes">
-  <div class="container ">
+  <div class="container">
     <div class="row">
-      <div class="col-md-8 caixaDoProjeto1">
-        <div class="square-box">
-          <div class="square-content mr-2">
-            <img src="{{projeto.linkFoto}}" class="img-fluid w-75 h-75 mt-2">
-            <div><small>CATEGORIA: {{projeto.categoriaProjeto.nomeCat}}</small></div>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-md-4 caixaDoProjeto2">
+      <div class="col-md-4 caixaDoProjeto1">
         <div class="square-box">
           <div class="square-content">
-            <div class="caixa1 mt-2 mr-2 ">
-              <h2 class="meta text-center">R$ {{projeto.valorProj}}</h2>
+            <img src="{{projeto.linkFoto}}" class="img-fluid">
+            <div></div>
+          </div>
+        </div>
+      </div>
+          <div class="col-md-4 caixaDoProjeto2">
+              <div class="card-body ">
+                  <h5 class="card-title">Resumo:</h5>
+              </div>
+      </div>
+      <div class="col-md-4 caixaDoProjeto3">
+        <div class="square-box">
+          <div class="square-content">
+            <div class="caixa1 mt-2 ml-5" style="max-width: 18rem;">
+              <h2 class="meta text-center">{{projeto.valorProj}}</h2>
               <br>
             </div>
-            
             <div *ngIf="projeto.apoiador">
-              <button type="button" class="btn btn-success mb-2 mt-2 mx-auto">Apoiado por {{projeto.apoiador.nome}}</button>
+              <button type="button" class="btn btn-info mb-2 mt-2 mx-auto">Apoiado</button>
             </div>
             <div *ngIf="!projeto.apoiador">
-              <button type="button" class="btn btn-success mb-2 mt-2 mx-auto" (click)="doar()">Apoie!</button>
+              <button type="button" class="btn btn-info mb-2 mt-2 mx-auto" (click)="doar()">Apoie!</button>
             </div>
-
             <div class="card mb-3 mx-auto" style="max-width: 18rem;">
-              <div class="card-header text-success">{{projeto.dono.nomeEmp}}</div>
-              <div class="card-body text-success">
-                <h5 class="card-title">Descrição</h5>
+              <h5 class="card-header">{{projeto.dono.nomeEmp}}</h5>
+              <div class="card-body ">
+                <small>CATEGORIA: {{projeto.categoriaProjeto.nomeCat}}</small>
+                <h5 class="card-title">Descrição:</h5>
                 <p class="card-text"> {{projeto.descricaoProj}}</p>
               </div>
-              <div class="card-footer bg-transparent text-success">
-                <button type="button" class="btn btn-success" data-toggle="modal"
-                  data-target=".bd-example-modal-sm">contato</button>
+              <div class="card-footer bg-transparent ">
+                <div><b>Telefone:</b> {{projeto.dono.telefoneEmp}}</div><br>
+                <div><b>Email:</b> {{projeto.dono.emailEmp}}</div>
+                
                 <!---Modal-->
                 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
                   aria-labelledby="mySmallModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-sm">
                     <div class="modal-content">
-                      <div class="text-success">Telefone: {{projeto.dono.telefoneEmp}}</div><br>
-                      <div clas="text-success">Email: {{projeto.dono.emailEmp}}</div>
 
                     </div>
                   </div>
                 </div>
-                <!----Modal-->
               </div>
             </div>
           </div>

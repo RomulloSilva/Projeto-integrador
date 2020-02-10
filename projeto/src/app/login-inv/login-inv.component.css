@@ -1,0 +1,17 @@
+#nomeInvestidor{
+    font-family: 'Open Sans', sans-serif;
+}
+#titulo1{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.profile-card-3 {
+    font-family: 'Open Sans', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    height:100%;
+    border:none;
+  }

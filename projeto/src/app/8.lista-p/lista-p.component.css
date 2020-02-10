@@ -28,10 +28,6 @@
     font-size:14px;
     font-weight:300;
 }
-.listaProduto .btn-primary{
-    background-color:#4E5E30;
-    border-color:#4E5E30;
-}
 /*Card da Startup pesquisada*/
 
 .produtoPesquisado{
@@ -113,5 +109,13 @@
     color:white;
     text-decoration:none;
     }
+  .container-fluid{
+    background: rgb(52,50,85);
+    background: linear-gradient(180deg, rgba(52,50,85,1) 0%, rgba(52,86,93,1) 100%);
+  }
+  #fundo{
+      background-image: url(../../assets/imagens/fundoVitrine.jpg);
+      opacity:30%;
+  }
 
 

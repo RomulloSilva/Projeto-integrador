@@ -5,7 +5,6 @@ import {Router} from '@angular/router';
 import{Investidor} from '../model/Investidor';
 import {InvestidorService} from '../serviço/investidor.service';
 
-
 @Component({
   selector: 'app-login-inv',
   templateUrl: './login-inv.component.html',
@@ -35,10 +34,4 @@ export class LoginInvComponent implements OnInit {
       }
   }
 
-
-  
-
-
 }
-
-

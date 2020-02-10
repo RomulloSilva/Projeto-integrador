@@ -1,12 +1,7 @@
 .background-block{
-
   height:268px;
   width: 50%
 
-}
-
-#teste{
-    max-height: 840px;
 }
 
 .btn{
@@ -28,7 +23,6 @@
   .caixaDoInvestidor {
     padding: 20px 0 10px 0;
     background: #FFFFFF;
- 
   }
 
  
@@ -40,7 +34,7 @@
     overflow: hidden;
     width: 100%;
     text-align: center;
-    height:368px;
+    height:100%;
     border:none;
   }
   
@@ -54,6 +48,7 @@
     font-size: 15px;
     margin-top:10px;
   }
+ 
  
   
   
