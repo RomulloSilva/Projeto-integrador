@@ -4,7 +4,7 @@
 
 ### Idealização
 
-Somos um grupo de jovens sonhadores e realistas, assim observamos que nem só de sonhos vive uma empresa. Temos o intuito de apoiar empreendedores que sonham muito, mas possuem pouco capital. Conectamos investidores que acreditam na mudança social e podem investir verba para que sonhadores possam colocar seus planos em prática. Assim nasceu a inovadora BelieveOn. Onde sonhos deixam de existir... e se tornam realidade!
+Somos um grupo de jovens sonhadores e realistas, assim observamos que nem só de sonhos vive uma empresa. Temos o intuito de apoiar empreendedores que sonham muito, mas possuem pouco capital. Conectamos investidores que acreditam na mudança social e podem investir verba para que sonhadores possam colocar seus planos em prática. Assim nasceu a inovadora BelieveOn. Onde os sonhos se tornam realidade!
 ### Tecnologias utilizadas
 -   Fundamentos de programação: variáveis, tipos de dados, códigos e sequências utilizados em programação
 -   Estrutura de dados: princípios, estrutura e hierarquia de dados e programação orientada a objetos
